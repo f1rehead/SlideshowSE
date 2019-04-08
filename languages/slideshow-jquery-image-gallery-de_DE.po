@@ -769,30 +769,6 @@ msgid "Custom styles can be created and customized %shere%s."
 msgstr ""
 "Eigene Layouts (CSS-Dateien) können %shier%s erstellt und bearbeitet werden."
 
-#: views/SlideshowPluginPostType/support-plugin.php:3
-msgid "Help to keep this plugin free!"
-msgstr "Helfen Sie, dass das Plugin auch weiterhin kostenlos bleibt!"
-
-#: views/SlideshowPluginPostType/support-plugin.php:6
-msgid ""
-"In order to keep you provided with the newest features, updates and bug "
-"fixes, a lot of motivation is required. Therefore I'm kindly asking you to "
-"consider making a small donation to the plugin or rating it as 5-stars on "
-"Wordpress.org. Thank you in advance!"
-msgstr ""
-"Um sicherzustellen, dass es auch weiterhin Programm-Erweiterungen, Hilfe bei "
-"Fragen und Updates gibt, bin ich auf Ihre Motivation und Unterstützung "
-"angewiesen. Deshalb bitte ich um eine kleine Spende für das Plugin oder um "
-"eine 5-Sterne Bewertung auf Wordpress.org. Vielen Dank vorab!"
-
-#: views/SlideshowPluginPostType/support-plugin.php:15
-msgid "Rate on Wordpress.org"
-msgstr "Bewerten auf Wordpress.org"
-
-#: views/SlideshowPluginPostType/support-plugin.php:24
-msgid "Frequently Asked Questions (FAQ)"
-msgstr "Häufig gestellte Fragen (FAQ)"
-
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18

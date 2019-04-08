@@ -885,34 +885,6 @@ msgid "Custom styles can be created and customized %shere%s."
 msgstr "Estilos podem ser criados e personalizados %saqui%s."
 
 # @ slideshow-jquery-image-gallery
-#: views/SlideshowPluginPostType/support-plugin.php:3
-msgid "Help to keep this plugin free!"
-msgstr "Ajude a manter este plugin grátis!"
-
-# @ slideshow-jquery-image-gallery
-#: views/SlideshowPluginPostType/support-plugin.php:6
-msgid ""
-"In order to keep you provided with the newest features, updates and bug "
-"fixes, a lot of motivation is required. Therefore I'm kindly asking you to "
-"consider making a small donation to the plugin or rating it as 5-stars on "
-"Wordpress.org. Thank you in advance!"
-msgstr ""
-"A fim de mantê-lo fornecido com os novos recursos, o apoio do fórum, e "
-"correções de erros, muita motivação é necessária. Portanto, eu estou pedindo "
-"gentilmente que você considere fazer uma pequena doação para o plugin ou "
-"classificação como 5 estrelas em Wordpress.org. Obrigado com antecedência!"
-
-# @ slideshow-jquery-image-gallery
-#: views/SlideshowPluginPostType/support-plugin.php:15
-msgid "Rate on Wordpress.org"
-msgstr "Taxa em Wordpress.org"
-
-# @ slideshow-jquery-image-gallery
-#: views/SlideshowPluginPostType/support-plugin.php:24
-msgid "Frequently Asked Questions (FAQ)"
-msgstr "Perguntas Frequentes (FAQ)"
-
-# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18

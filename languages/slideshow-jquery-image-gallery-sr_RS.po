@@ -762,30 +762,6 @@ msgstr "Obriši slajd "
 msgid "Custom styles can be created and customized %shere%s."
 msgstr "Kustomizirani stilovi mogu se kreirati i kustomizirati %sovde%s."
 
-#: views/SlideshowPluginPostType/support-plugin.php:3
-msgid "Help to keep this plugin free!"
-msgstr "Pomozite da ovaj plugin ostane besplatan!"
-
-#: views/SlideshowPluginPostType/support-plugin.php:6
-msgid ""
-"In order to keep you provided with the newest features, updates and bug "
-"fixes, a lot of motivation is required. Therefore I'm kindly asking you to "
-"consider making a small donation to the plugin or rating it as 5-stars on "
-"Wordpress.org. Thank you in advance!"
-msgstr ""
-"Da biste stalno bili opremljeni najnovijim karakteristikama, ažuriranjima i "
-"popravkama bagova, potrebno je dosta motivacije. Stoga vas ljubazno molim da "
-"razmotrite mogućnost pružanja male donacije za plugin ili da ga ocenite sa "
-"pet zvezdica na Wordpress.org. Hvala unapred!"
-
-#: views/SlideshowPluginPostType/support-plugin.php:15
-msgid "Rate on Wordpress.org"
-msgstr "Oceni na Wordpress.org"
-
-#: views/SlideshowPluginPostType/support-plugin.php:24
-msgid "Frequently Asked Questions (FAQ)"
-msgstr "Česta pitanja (FAQ)"
-
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18

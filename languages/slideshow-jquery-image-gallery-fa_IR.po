@@ -755,30 +755,6 @@ msgid "Custom styles can be created and customized %shere%s."
 msgstr ""
 "استایل سفارشی را در %s اینجا %s می توان ایجاد و در آن تغییرات اعمال کرد"
 
-#: views/SlideshowPluginPostType/support-plugin.php:3
-msgid "Help to keep this plugin free!"
-msgstr "کمک به حفظ این افزونه !"
-
-#: views/SlideshowPluginPostType/support-plugin.php:6
-msgid ""
-"In order to keep you provided with the newest features, updates and bug "
-"fixes, a lot of motivation is required. Therefore I'm kindly asking you to "
-"consider making a small donation to the plugin or rating it as 5-stars on "
-"Wordpress.org. Thank you in advance!"
-msgstr ""
-"درود بر شما. برای توسعه بیشتر و رفع اشکال این افزونه، به انگیزه بیشتری "
-"نیازمندیم. شما می توانید با مراجعه به wordpress.org و اعطای رتبه 5 ستاره به "
-"افزونه این کار را انجام دهید. بی گمان مهرورزی شما با ارائه زود هنگام نسخه "
-"های بعدی به بهترین شکل پاسخ داده خواهد شد."
-
-#: views/SlideshowPluginPostType/support-plugin.php:15
-msgid "Rate on Wordpress.org"
-msgstr "رای دادن در Wordpress.org"
-
-#: views/SlideshowPluginPostType/support-plugin.php:24
-msgid "Frequently Asked Questions (FAQ)"
-msgstr "پرسش و پاسخهای متداول (FAQ)"
-
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18

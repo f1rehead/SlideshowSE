@@ -1,14 +1,13 @@
 ﻿=== Slideshow ===
 
-Contributors: stefanboonstra
-Donate link: http://stefanboonstra.com/donate-to-slideshow/
+Contributors: f1rehead, stefanboonstra
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
-Requires at least: 3.5
-Tested up to: 4.3
-Stable tag: 2.3.1
+Requires at least: 5.0
+Tested up to: 5.1.1
+Stable tag: 2.5.0
 License: GPLv2
 
-Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
+Free, easy plugin to integrate slideshows into you WordPress site. A fork of the original project from Stefan Boonstra.
 
 
 == Description ==
@@ -59,15 +58,10 @@ different images, settings and styles for each one of them.
  - Turkish        (83%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
  - Ukrainian      (100% - uk_UK - Translated by [Coupofy](http://www.coupofy.com/))
 
-= Project board =
-
-Check upcoming features, bug-fixes and development progress that are currently on the Slideshow project board at:
-[Slideshow project board - Trello.com](https://trello.com/board/slideshow-plugin-wordpress/506311260cc04591010463c2)
-
 = Need the (uncompressed) source code? =
 
-Find the Slideshow project's source code in my [GitHub](https://github.com/Boonstra/Slideshow) repository. The
-uncompressed files can be compiled using [Prepros](http://alphapixels.com/prepros/), or [CodeKit](http://incident57.com/codekit/).
+The forked code is available on [GitHub](https://github.com/f1rehead/Slideshow). 
+The original project's source code is also in a [GitHub](https://github.com/Boonstra/Slideshow) repository.
 
 
 == Installation ==
@@ -83,8 +77,6 @@ image. Insert the image by clicking 'Insert'. The same goes for text and video s
 your newly created slideshow to insert. You can also use the shortcode or code snippet visible in your slideshow admin
 panel to deploy your slideshow anywhere on your website. Use the widget to show any of your slideshows in the sidebar
 of your website.
-
-5. Feel like a sir.
 
 
 == Frequently Asked Questions ==
@@ -175,6 +167,10 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.5.0 =
+* Removed "Support this plugin" code and translations.
+* Edits to Read Me due to forking the code.
 
 = 2.3.2 =
 *   Fixed: Setting the "Stylesheet location" setting to "Footer" no longer causes HTML5 validations errors.

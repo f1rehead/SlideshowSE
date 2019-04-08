@@ -769,30 +769,6 @@ msgstr "Supprimer la diapositive"
 msgid "Custom styles can be created and customized %shere%s."
 msgstr "Les styles personnalisés peuvent être créés et modifiés %sici%s."
 
-#: views/SlideshowPluginPostType/support-plugin.php:3
-msgid "Help to keep this plugin free!"
-msgstr "Aidez à maintenir ce plugin gratuit"
-
-#: views/SlideshowPluginPostType/support-plugin.php:6
-msgid ""
-"In order to keep you provided with the newest features, updates and bug "
-"fixes, a lot of motivation is required. Therefore I'm kindly asking you to "
-"consider making a small donation to the plugin or rating it as 5-stars on "
-"Wordpress.org. Thank you in advance!"
-msgstr ""
-"Améliorer ce plugin, maintenir le forum d'aide et pousser des corrections "
-"demande beaucoup de motivation. En conséquence, pouvez-vous envisager une "
-"petite donation ou alors attribuer 5 étoiles à ce plugin sur Wordpress.org. "
-"Merci à vous !"
-
-#: views/SlideshowPluginPostType/support-plugin.php:15
-msgid "Rate on Wordpress.org"
-msgstr "Evaluer sur Wordpress.org"
-
-#: views/SlideshowPluginPostType/support-plugin.php:24
-msgid "Frequently Asked Questions (FAQ)"
-msgstr "Questions fréquentes (FAQ)"
-
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18

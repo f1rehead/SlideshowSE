@@ -743,29 +743,6 @@ msgstr "删除幻灯片"
 msgid "Custom styles can be created and customized %shere%s."
 msgstr "点击 %s 这里%s自定义样式"
 
-#: views/SlideshowPluginPostType/support-plugin.php:3
-msgid "Help to keep this plugin free!"
-msgstr "协助保持本插件免费"
-
-#: views/SlideshowPluginPostType/support-plugin.php:6
-msgid ""
-"In order to keep you provided with the newest features, updates and bug "
-"fixes, a lot of motivation is required. Therefore I'm kindly asking you to "
-"consider making a small donation to the plugin or rating it as 5-stars on "
-"Wordpress.org. Thank you in advance!"
-msgstr ""
-"我很爽快地希望你们能考虑对本插件作出一些小捐赠，或者能在wordpress.org给予5星"
-"好评，这样能让我保持积极性，在未来提供给你们插件的持续更新、论坛支持和bug的修"
-"复，先跟你们提前谢谢！"
-
-#: views/SlideshowPluginPostType/support-plugin.php:15
-msgid "Rate on Wordpress.org"
-msgstr "为本插件打分"
-
-#: views/SlideshowPluginPostType/support-plugin.php:24
-msgid "Frequently Asked Questions (FAQ)"
-msgstr "常见问题"
-
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18

@@ -755,30 +755,6 @@ msgstr "Smazat list"
 msgid "Custom styles can be created and customized %shere%s."
 msgstr "Přizpůsobené šablony stylů můžete upravit %szde%s."
 
-#: views/SlideshowPluginPostType/support-plugin.php:3
-msgid "Help to keep this plugin free!"
-msgstr "Pomozte, aby tento plugin byl zdarma!"
-
-#: views/SlideshowPluginPostType/support-plugin.php:6
-msgid ""
-"In order to keep you provided with the newest features, updates and bug "
-"fixes, a lot of motivation is required. Therefore I'm kindly asking you to "
-"consider making a small donation to the plugin or rating it as 5-stars on "
-"Wordpress.org. Thank you in advance!"
-msgstr ""
-"K tomu, abych Vás stále mohl zásobovat novými vlastnostmi, poskytovat "
-"podporu na fóru a vychytával chyby, je potřeba spousta motivace. Proto Vás "
-"laskavě žádám, abyste zvážili malou dotaci pluginu nebo ho ohodnotili pěti "
-"hvězdičkami na Wordpress.org. Velice Vám děkuji."
-
-#: views/SlideshowPluginPostType/support-plugin.php:15
-msgid "Rate on Wordpress.org"
-msgstr "Ohodnotit na Wordpress.org"
-
-#: views/SlideshowPluginPostType/support-plugin.php:24
-msgid "Frequently Asked Questions (FAQ)"
-msgstr "Často kladené otázky (FAQ)"
-
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18

@@ -764,30 +764,6 @@ msgstr "Apagar slide"
 msgid "Custom styles can be created and customized %shere%s."
 msgstr "Estilos personalizados podem ser criados e customizados %saqui%s."
 
-#: views/SlideshowPluginPostType/support-plugin.php:3
-msgid "Help to keep this plugin free!"
-msgstr "Ajude a manter este plugin grátis!"
-
-#: views/SlideshowPluginPostType/support-plugin.php:6
-msgid ""
-"In order to keep you provided with the newest features, updates and bug "
-"fixes, a lot of motivation is required. Therefore I'm kindly asking you to "
-"consider making a small donation to the plugin or rating it as 5-stars on "
-"Wordpress.org. Thank you in advance!"
-msgstr ""
-"De forma a continuar a oferecer funcionalidades novas, apoio através do "
-"fórum e resolução de bugs, é precisa imensa motivação. Por isso, peço-lhe "
-"gentilmente que considere um pequeno donativo para o plugin, ou que o avalie "
-"com 5 estrelas em Wordpress.org. Agradeço-lhe desde já!"
-
-#: views/SlideshowPluginPostType/support-plugin.php:15
-msgid "Rate on Wordpress.org"
-msgstr "Avaliar em Wordpress.org"
-
-#: views/SlideshowPluginPostType/support-plugin.php:24
-msgid "Frequently Asked Questions (FAQ)"
-msgstr "Perguntas Mais Frequentes (FAQ)"
-
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18

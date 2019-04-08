@@ -751,29 +751,6 @@ msgstr "Skasuj slajd"
 msgid "Custom styles can be created and customized %shere%s."
 msgstr "Własne style możesz tworzyć i edytować %sTu%s"
 
-#: views/SlideshowPluginPostType/support-plugin.php:3
-msgid "Help to keep this plugin free!"
-msgstr "Pomóż aby ta wtyczka była wciąż darmowa!"
-
-#: views/SlideshowPluginPostType/support-plugin.php:6
-msgid ""
-"In order to keep you provided with the newest features, updates and bug "
-"fixes, a lot of motivation is required. Therefore I'm kindly asking you to "
-"consider making a small donation to the plugin or rating it as 5-stars on "
-"Wordpress.org. Thank you in advance!"
-msgstr ""
-"Abu móc rozwijać program i utrzymać forum potrzeba wiele motywacji. "
-"Niniejszym bardzo proszę o rozpatrzenie niewielkiego datku  lub ocenę 5 "
-"gwiazdek na Wordpress.org. Z góry dziękuję!"
-
-#: views/SlideshowPluginPostType/support-plugin.php:15
-msgid "Rate on Wordpress.org"
-msgstr "Oceń na Wordpress.org"
-
-#: views/SlideshowPluginPostType/support-plugin.php:24
-msgid "Frequently Asked Questions (FAQ)"
-msgstr "Pytania i odpowiedzi (FAQ)"
-
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18

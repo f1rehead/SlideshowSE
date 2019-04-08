@@ -758,31 +758,7 @@ msgstr "Видалити слайд"
 msgid "Custom styles can be created and customized %shere%s."
 msgstr "Стилі можуть бути створені й змінені %sтут%s."
 
-#: views/SlideshowPluginPostType/support-plugin.php:3
-msgid "Help to keep this plugin free!"
-msgstr "Допоможіть зберегти плагін безкоштовним!"
-
-#: views/SlideshowPluginPostType/support-plugin.php:6
-msgid ""
-"In order to keep you provided with the newest features, updates and bug "
-"fixes, a lot of motivation is required. Therefore I'm kindly asking you to "
-"consider making a small donation to the plugin or rating it as 5-stars on "
-"Wordpress.org. Thank you in advance!"
-msgstr ""
-"Для надання вам нових можливостей, підтримки на форумі, виправленні помилок "
-"необхідна значна мотивація. Тому просимо вас зробити невеличкий внесок до "
-"плагіну або оцінити його в п'ять балів на сайті Wordpress.org. Заздалегідь "
-"дякую!"
-
-#: views/SlideshowPluginPostType/support-plugin.php:15
-msgid "Rate on Wordpress.org"
-msgstr "Оцінювання та відгук на WordPress.org"
-
-#: views/SlideshowPluginPostType/support-plugin.php:24
-msgid "Frequently Asked Questions (FAQ)"
-msgstr "Часті питання (ЧАВО)"
-
-#: views/SlideshowPluginShortcode/shortcode-inserter.php:4
+##: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:13
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:24
 msgid "Insert a Slideshow"
