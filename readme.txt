@@ -74,7 +74,7 @@ The original project's source code is also in a [GitHub](https://github.com/Boon
 3. Click on 'Insert Image Slide' to insert an image slide, a popup will appear where you can search for the desired
 image. Insert the image by clicking 'Insert'. The same goes for text and video slides, don't forget to save!
 
-4. Add the Slideshow to you post. 
+4. Add the Slideshow to your post. 
     If you are using the Classic editor, go to a post or a page and click the 'Insert Slideshow' button above the editor. A popup appears where you can select
 your newly created slideshow to insert. You can also use the shortcode or code snippet visible in your slideshow admin
 panel to deploy your slideshow anywhere on your website. Use the widget to show any of your slideshows in the sidebar
