@@ -1,0 +1,14 @@
+{
+	"name": "boonstra/slideshow",
+	"title": "Slideshow",
+	"category": "common",
+	"icon": "format-gallery",
+	"description": "A slideshow bock",
+	"textdomain": "boonstra",
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
