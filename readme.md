@@ -1,18 +1,24 @@
 # Slideshow
 
 Contributors: f1rehead, stefanboonstra
+
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
+
 Requires at least: 5.0
+
 Tested up to: 5.4.1
+
 Stable tag: 2.5.0
+
 License: GPL-2.0-or-later
+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
 
 Free, easy plugin to integrate slideshows into you WordPress site. A fork of the original project from Stefan Boonstra.
 
 
 ## Description
-
 
 Slideshow provides an easy way to integrate a slideshow for any WordPress installation.
 
@@ -23,7 +29,6 @@ Fancy doing something crazy? You can create and use as many slideshows as you'd 
 different images, settings and styles for each one of them.
 
 ## Features
-
 
  - Create as many slideshows with as many slides as you like
  - Image slides
