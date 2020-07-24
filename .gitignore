@@ -1,24 +1,40 @@
-#############
-## IDEA
-#############
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Ignore PHPStorm .idea folder
 .idea/
 .idea/workspace.xml
 
-#############
-## SVN
-#############
+# Coverage directory used by tools like istanbul
+coverage
 
-# Ignore SVN folder
-.svn/
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
 
-############
-## Windows
-############
+# Dependency directories
+node_modules/
+
+# Mac desktop directory
+.DS_Store
 
 # Windows image file caches
 Thumbs.db
 
-# Folder config file
+# Windows Folder config file
 Desktop.ini
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variables file
+.env

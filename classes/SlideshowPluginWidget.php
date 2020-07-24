@@ -15,7 +15,8 @@ class SlideshowPluginWidget extends WP_Widget
 	 *
 	 * @since 1.2.0
 	 */
-	function SlideshowPluginWidget()
+	//function SlideshowPluginWidget()
+	function __construct()
 	{
 		// Settings
 		$options = array(

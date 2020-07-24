@@ -710,6 +710,21 @@ msgstr ""
 msgid "Youtube Video ID"
 msgstr ""
 
+#: views/SlideshowPluginPostType/slides.php:90
+#: views/SlideshowPluginPostType/slides.php:230
+#: views/SlideshowPluginSlideInserter/insert-video-button.php:2
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:94
+#: views/SlideshowPluginSlideshowSlide/backend_embed.php:26
+msgid "Media slide"
+msgstr ""
+
+#: views/SlideshowPluginPostType/slides.php:95
+#: views/SlideshowPluginPostType/slides.php:235
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:103
+#: views/SlideshowPluginSlideshowSlide/backend_embed.php:35
+msgid "Media URL"
+msgstr ""
+
 #: views/SlideshowPluginPostType/slides.php:133
 #: views/SlideshowPluginPostType/slides.php:255
 #: views/SlideshowPluginSlideInserter/insert-image-button.php:2

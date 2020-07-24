@@ -1,11 +1,12 @@
-﻿=== Slideshow ===
+=== Slideshow ===
 
 Contributors: f1rehead, stefanboonstra
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 5.0
-Tested up to: 5.1.1
+Tested up to: 5.4.1
 Stable tag: 2.5.0
-License: GPLv2
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Free, easy plugin to integrate slideshows into you WordPress site. A fork of the original project from Stefan Boonstra.
 
@@ -68,15 +69,17 @@ The original project's source code is also in a [GitHub](https://github.com/Boon
 
 1. Install Slideshow either via the WordPress.org plugin directory, or by uploading the files to your server.
 
-2. After activating Slideshow, click on 'Slideshows' and create a new slideshow.
+2. After activating Slideshow, click on 'Slideshows' in the admin interface left navigation and create a new slideshow.
 
 3. Click on 'Insert Image Slide' to insert an image slide, a popup will appear where you can search for the desired
 image. Insert the image by clicking 'Insert'. The same goes for text and video slides, don't forget to save!
 
-4. Go to a post or a page and click the 'Insert Slideshow' button above the editor. A popup appears where you can select
+4. Add the Slideshow to you post. 
+    If you are using the Classic editor, go to a post or a page and click the 'Insert Slideshow' button above the editor. A popup appears where you can select
 your newly created slideshow to insert. You can also use the shortcode or code snippet visible in your slideshow admin
 panel to deploy your slideshow anywhere on your website. Use the widget to show any of your slideshows in the sidebar
 of your website.
+    If you are using Gutenberg, add a new block and search for Slideshow or choose Common > Slideshow from the blocks list. Choose the slideshow you want to add from the popup menu.
 
 
 == Frequently Asked Questions ==
@@ -116,7 +119,7 @@ anymore.
 
 = Some users can add, edit or delete slideshows, although I do not want them to. Can I prevent this from happening? =
 
-Yes you can. On your WordPress admin page, go to the 'Slideshows' menu item and click on 'General Settings', then go to
+Yes, you can. On your WordPress admin page, go to the 'Slideshows' menu item and click on 'General Settings', then go to
 the 'User Capabilities' tab (If you're not already there). The privileges that allow user groups to perform certain
 actions are listed here. To allow, for instance, a contributor to add a slideshow, click the box in front of 'Contributor'
 to grant him the right to add slideshows.
@@ -171,6 +174,8 @@ personal taste.
 = 2.5.0 =
 * Removed "Support this plugin" code and translations.
 * Edits to Read Me due to forking the code.
+* Minor bugfixes
+* First (limited) version of Gutenberg block
 
 = 2.3.2 =
 *   Fixed: Setting the "Stylesheet location" setting to "Footer" no longer causes HTML5 validations errors.
@@ -548,6 +553,6 @@ personal taste.
 == Links ==
 
 *	[Stefan Boonstra](http://stefanboonstra.com/)
-*   [Slideshow project board](https://trello.com/board/slideshow-plugin-wordpress/506311260cc04591010463c2)
-*   [GitHub](https://github.com/Boonstra/Slideshow)
-*   [Prepros](http://alphapixels.com/prepros/)
+*   [Original Project GitHub](https://github.com/Boonstra/Slideshow)
+*   [Forked Project GitHub](https://github.com/f1rehead/Slideshow)
+

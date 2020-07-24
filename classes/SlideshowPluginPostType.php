@@ -80,6 +80,8 @@ class SlideshowPluginPostType
 				'hierarchical'         => false,
 				'menu_position'        => null,
 				'menu_icon'            => version_compare($wp_version, '3.8', '<') ? SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/adminIcon.png' : 'dashicons-format-gallery',
+				'show_in_rest' 		   => true, // added for Wordpress 5 REST API v2 support
+				'rest_base'            => 'slideshows', // added for Wordpress 5 REST API v2 support
 				'supports'             => array('title'),
 				'register_meta_box_cb' => array(__CLASS__, 'registerMetaBoxes')
 			)

@@ -1,6 +1,5 @@
-
-// @codekit-append slideshow/slideshow.constructor.js
-// @codekit-append slideshow/slideshow.base.js
-// @codekit-append slideshow/slideshow.animation.js
-// @codekit-append slideshow/slideshow.calculation.js
-// @codekit-append slideshow/slideshow.modules.js
+//=include slideshow/slideshow.constructor.js
+//=include slideshow/slideshow.base.js
+//=include slideshow/slideshow.animation.js
+//=include slideshow/slideshow.calculation.js
+//=include slideshow/slideshow.modules.js

@@ -125,6 +125,43 @@
 		</div>
 	</div>
 
+	<div class="embed-slide-template" style="display: none;">
+		<div class="widefat sortable-slides-list-item postbox">
+
+			<div class="handlediv" title="<?php _e('Click to toggle'); ?>"><br></div>
+
+			<div class="hndle">
+				<div class="slide-icon embed-slide-icon"></div>
+				<div class="slide-title">
+					<?php _e('Embedded Media slide', 'slideshow-jquery-image-gallery'); ?>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<div class="inside">
+
+				<div class="slideshow-group">
+
+					<div class="slideshow-label"><?php _e('Media URL to embed', 'slideshow-jquery-image-gallery'); ?></div>
+					<input type="text" class="mediaURL" style="width: 100%;" />
+
+				</div>
+
+				<div class="slideshow-group">
+
+				</div>
+
+				<div class="slideshow-group slideshow-delete-slide">
+					<span><?php _e('Delete slide', 'slideshow-jquery-image-gallery'); ?></span>
+				</div>
+
+				<input type="hidden" class="type" value="embed" />
+
+			</div>
+
+		</div>
+	</div>
+
 	<div class="image-slide-template" style="display: none;">
 		<div class="widefat sortable-slides-list-item postbox">
 

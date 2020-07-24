@@ -4,9 +4,8 @@
  * @author Stefan Boonstra
  * @version 2.2.12
  */
-slideshow_jquery_image_gallery_backend_script = function()
-{
-	var $    = jQuery,
+slideshow_jquery_image_gallery_backend_script = ( function () {
+	var $ = jQuery,
 		self = {};
 
 	self.isBackendInitialized = false;
@@ -17,28 +16,26 @@ slideshow_jquery_image_gallery_backend_script = function()
 	 *
 	 * Triggers the slideshowBackendReady on the document to inform all backend scripts they can start.
 	 */
-	self.init = function()
-	{
-		if (self.isBackendInitialized)
-		{
+	self.init = function () {
+		if ( self.isBackendInitialized ) {
 			return;
 		}
 
 		self.isBackendInitialized = true;
 
-		$(document).trigger('slideshowBackendReady');
+		$( document ).trigger( 'slideshowBackendReady' );
 	};
 
-	$(document).ready(self.init);
+	$( document ).ready( self.init );
 
-	$(window).load(self.init);
+	$( window ).load( self.init );
 
 	return self;
-}();
+} )();
 
-// @codekit-append backend/generalSettings.js
-// @codekit-append backend/editSlideshow.js
-// @codekit-append backend/shortcode.js
+//=include backend/generalSettings.js
+//=include backend/editSlideshow.js
+//=include backend/shortcode.js
 
 ///**
 // * Simple logging function for Internet Explorer

@@ -3,13 +3,18 @@
  Plugin Name: Slideshow
  Plugin URI: http://wordpress.org/extend/plugins/slideshow-jquery-image-gallery/
  Description: The slideshow plugin is easily deployable on your website. Add any image that has already been uploaded to add to your slideshow, add text slides, or even add a video. Options and styles are customizable for every single slideshow on your website.
- Version: 2.3.1
+ Version: 2.5.0
  Requires at least: 3.5
- Author: StefanBoonstra
+ Author: John West, StefanBoonstra
  Author URI: http://stefanboonstra.com/
  License: GPLv2
  Text Domain: slideshow-jquery-image-gallery
 */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Class SlideshowPluginMain fires up the application on plugin load and provides some
@@ -22,7 +27,7 @@
 class SlideshowPluginMain
 {
 	/** @var string $version */
-	static $version = '2.3.1';
+	static $version = '2.5.0';
 
 	/**
 	 * Bootstraps the application by assigning the right functions to
@@ -36,6 +41,8 @@ class SlideshowPluginMain
 
 		// Initialize localization on init
 		add_action('init', array(__CLASS__, 'localize'));
+		// Initialize the Gutenberg block
+		add_action( 'init', 'boonstra_slideshow_block_init' );
 
 		// Enqueue hooks
 		add_action('wp_enqueue_scripts'   , array(__CLASS__, 'enqueueFrontendScripts'));
@@ -234,10 +241,60 @@ class SlideshowPluginMain
 				require_once $file;
 			}
 		}
-
+		// Don't forget the render callback for the Gutenberg block
+		require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'block.php';
 		spl_autoload_register('slideshowPluginAutoLoader');
 	}
 }
+
+/**
+ * Registers all block assets so that they can be enqueued through the block editor
+ * in the corresponding context.
+ *
+ * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/applying-styles-with-stylesheets/
+ */
+function boonstra_slideshow_block_init() {
+	$dir = dirname( __FILE__ );
+
+	$script_asset_path = "$dir/build/index.asset.php";
+	if ( ! file_exists( $script_asset_path ) ) {
+		throw new Error(
+			'You need to run `npm start` or `npm run build` for the "boonstra/slideshow" block first.'
+		);
+	}
+	$index_js     = 'build/index.js';
+	$script_asset = require( $script_asset_path );
+	wp_register_script(
+		'boonstra-slideshow-block-editor',
+		plugins_url( $index_js, __FILE__ ),
+		$script_asset['dependencies'],
+		$script_asset['version']
+	);
+
+	$editor_css = 'build/index.css';
+	wp_register_style(
+		'boonstra-slideshow-block-editor',
+		plugins_url( $editor_css, __FILE__ ),
+		array(),
+		filemtime( "$dir/$editor_css" )
+	);
+
+	$style_css = 'build/style-index.css';
+	wp_register_style(
+		'boonstra-slideshow-block',
+		plugins_url( $style_css, __FILE__ ),
+		array(),
+		filemtime( "$dir/$style_css" )
+	);
+
+	register_block_type( 'boonstra/slideshow', array(
+		'editor_script' => 'boonstra-slideshow-block-editor',
+		'editor_style'  => 'boonstra-slideshow-block-editor',
+		'style'         => 'boonstra-slideshow-block',
+		'render_callback' => 'boonstra_slideshow_render_slideshow_block',
+		) );
+	}
+// add_action( 'init', 'boonstra_slideshow_block_init' );
 
 /**
  * Activate plugin
