@@ -1,19 +1,13 @@
 # Slideshow
-
+`
 Contributors: f1rehead, stefanboonstra
-
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
-
 Requires at least: 5.0
-
 Tested up to: 5.4.1
-
 Stable tag: 2.5.0
-
 License: GPL-2.0-or-later
-
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-
+`
 
 Free, easy plugin to integrate slideshows into you WordPress site. A fork of the original project from Stefan Boonstra.
 
@@ -152,6 +146,17 @@ contain some invalid HTML. Most times invalid HTML is caused by placing the slid
 an anchor tag (`<a></a>`) or paragraph tag (`<p></p>`), while you can only place a slideshow within a 'div' element
 (`<div></div>`).
 
+### Why are you forking this plugin?
+
+Good question! There are a couple reasons I, f1rehead, am forking this plugin. First, I maintain a site that has hundreds
+of Slideshows and, to be honest, it's less work to update the plugin that it is to find a new one and manually convert all
+the slideshows to whatever the new one is. Secondly, there is a real dearth of good quality, FREE slideshow plugins for 
+Wordpress. I'm not saying this one is the best, but it's really good and more or less honors Wordpress UI. 
+There's nothing worse than installing a new slideshow plugin only to find that either your admin interface is now an ungodly
+color with giant, weird fonts and icons and your slideshows are now being stored in the cloud for a monthly
+fee. Ugh. So, I'll be maintaining this fork to suit my needs but I'm completely willing to entertain suggestions or pull
+requests. I'm not going to rewrite it or anything, but I will work to keep it functioning in the up-to-date versions of 
+Wordpress and I'll implement new features as I need them (i.e. the Gutenberg block, which I hope to improve).
 
 ## Screenshots
 
