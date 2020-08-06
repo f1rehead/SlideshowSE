@@ -18,6 +18,9 @@ build/Release
 # Dependency directories
 node_modules/
 
+# build directory is created with npm build
+build/
+
 # Mac desktop directory
 .DS_Store
 
