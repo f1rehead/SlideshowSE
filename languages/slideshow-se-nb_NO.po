@@ -1,0 +1,844 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Slideshow Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-19 11:56+0100\n"
+"PO-Revision-Date: 2014-08-19 11:57+0100\n"
+"Last-Translator: Håkon Sigland <sigland@gmail.com>\n"
+"Language-Team: Stefan Boonstra <wordpress@stefanboonstra.com>\n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:82
+#: classes/SlideshowSEPluginGeneralSettings.php:83
+#: views/SlideshowSEPluginGeneralSettings/general-settings.php:14
+msgid "General Settings"
+msgstr "Generelle innstillinger"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:150
+msgid "New"
+msgstr "Ny"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:151
+msgid "Are you sure you want to delete this custom style?"
+msgstr "Vil du slette denne tilpassede stilen?"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:196
+#: classes/SlideshowSEPluginInstaller.php:803
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:6
+msgid "Light"
+msgstr "Lys"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:197
+#: classes/SlideshowSEPluginInstaller.php:803
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:7
+msgid "Dark"
+msgstr "Mørk"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:353
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:57
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:143
+msgid "Untitled"
+msgstr "Uten navn"
+
+#: classes/SlideshowSEPluginInstaller.php:800
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:472
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:111
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:43
+msgid "Yes"
+msgstr "Ja"
+
+#: classes/SlideshowSEPluginInstaller.php:801
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:473
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:112
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:44
+msgid "No"
+msgstr "Nei"
+
+#: classes/SlideshowSEPluginInstaller.php:803
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:610
+msgid "The style used for this slideshow"
+msgstr "Stilen brukt i denne framvisningen"
+
+#: classes/SlideshowSEPluginInstaller.php:803
+msgid "Custom"
+msgstr "Tilpasset"
+
+#: classes/SlideshowSEPluginInstaller.php:804
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:126
+msgid "Custom style editor"
+msgstr "Tilpasset stilredigerer"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:518
+msgid "Animation used for transition between slides"
+msgstr "Overgangsanimasjon mellom lysbilder"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+msgid "Slide"
+msgstr "Lysbilde"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Fade"
+msgstr "Ton ned"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+#: classes/SlideshowSEPluginInstaller.php:806
+#: classes/SlideshowSEPluginInstaller.php:807
+#: classes/SlideshowSEPluginInstaller.php:808
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:548
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:549
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:550
+msgid "Animation"
+msgstr "Animasjon"
+
+#: classes/SlideshowSEPluginInstaller.php:806
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:519
+msgid "Number of seconds the slide takes to slide in"
+msgstr "Antall sekunder lysbildet skal gli inn"
+
+#: classes/SlideshowSEPluginInstaller.php:807
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:520
+msgid "Number of seconds the description takes to slide in"
+msgstr "Antall sekunder beskrivelsen bruker på å gli inn"
+
+#: classes/SlideshowSEPluginInstaller.php:808
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:521
+msgid "Seconds between changing slides"
+msgstr "Sekunder til neste lysbilde"
+
+#: classes/SlideshowSEPluginInstaller.php:809
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:522
+msgid "Number of slides to fit into one slide"
+msgstr "Antall lysbilder tilpasset til et lysbilde"
+
+#: classes/SlideshowSEPluginInstaller.php:809
+#: classes/SlideshowSEPluginInstaller.php:810
+#: classes/SlideshowSEPluginInstaller.php:811
+#: classes/SlideshowSEPluginInstaller.php:812
+#: classes/SlideshowSEPluginInstaller.php:813
+#: classes/SlideshowSEPluginInstaller.php:814
+#: classes/SlideshowSEPluginInstaller.php:815
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:551
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:552
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:553
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:554
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:556
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:557
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:558
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:559
+msgid "Display"
+msgstr "Vis"
+
+#: classes/SlideshowSEPluginInstaller.php:810
+msgid "Width of the slideshow, set to parent&#39;s width on 0"
+msgstr "Bredde på lysbildeshowet, set to parent&#39;s width on 0"
+
+#: classes/SlideshowSEPluginInstaller.php:811
+msgid "Height of the slideshow"
+msgstr "Høyde på lysbildeshowet"
+
+#: classes/SlideshowSEPluginInstaller.php:812
+msgid "Height of the description boxes"
+msgstr "Høyde på beskrivelsesboksene"
+
+#: classes/SlideshowSEPluginInstaller.php:813
+msgid "Fit image into slide (stretching it)"
+msgstr "Tilpass bilde til lysbilde (strekk det)"
+
+#: classes/SlideshowSEPluginInstaller.php:814
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:529
+msgid "Show title and description"
+msgstr "Vis tittel og beskrivelse"
+
+#: classes/SlideshowSEPluginInstaller.php:815
+msgid "Hide description box, it will pop up when a mouse hovers over the slide"
+msgstr "Skjul beskrivelse, vil vises når musen beveges over lysbildet"
+
+#: classes/SlideshowSEPluginInstaller.php:816
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:531
+msgid "Automatically slide to the next slide"
+msgstr "Automatisk overgang til neste lysbilde"
+
+#: classes/SlideshowSEPluginInstaller.php:816
+#: classes/SlideshowSEPluginInstaller.php:817
+#: classes/SlideshowSEPluginInstaller.php:818
+#: classes/SlideshowSEPluginInstaller.php:819
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:560
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:561
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:562
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:563
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:564
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:565
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:566
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:567
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:568
+msgid "Control"
+msgstr "Kontroll"
+
+#: classes/SlideshowSEPluginInstaller.php:817
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:532
+msgid "Return to the beginning of the slideshow after last slide"
+msgstr "Gå tilbake til begynnelsen av showet etter siste lysbilde"
+
+#: classes/SlideshowSEPluginInstaller.php:818
+msgid "Activate buttons (so the user can scroll through the slides)"
+msgstr "Aktiver knapper (så brukeren kan klikke gjennom lysbildene)"
+
+#: classes/SlideshowSEPluginInstaller.php:819
+msgid "Show control panel (play and pause button)"
+msgstr "Vis kontrollpanel (spill av og pause-knapp)"
+
+#: classes/SlideshowSEPluginPostType.php:45
+msgid "Slideshows"
+msgstr "Lysbildeshow"
+
+#: classes/SlideshowSEPluginPostType.php:46
+#: views/SlideshowSEPluginWidget/form.php:7
+msgid "Slideshow"
+msgstr "Lysbildeshow"
+
+#: classes/SlideshowSEPluginPostType.php:47
+msgid "Add New Slideshow"
+msgstr "Legg til nytt lysbildeshow"
+
+#: classes/SlideshowSEPluginPostType.php:48
+msgid "Edit slideshow"
+msgstr "Rediger lysbildeshow"
+
+#: classes/SlideshowSEPluginPostType.php:49
+msgid "New slideshow"
+msgstr "Nytt lysbildeshow"
+
+#: classes/SlideshowSEPluginPostType.php:50
+msgid "View slideshow"
+msgstr "Vis lysbildeshow"
+
+#: classes/SlideshowSEPluginPostType.php:51
+msgid "Search slideshows"
+msgstr "Søk i lysbildeshow"
+
+#: classes/SlideshowSEPluginPostType.php:52
+#: classes/SlideshowSEPluginPostType.php:53
+msgid "No slideshows found"
+msgstr "Ikke noe lysbildeshow funnet"
+
+#: classes/SlideshowSEPluginPostType.php:98
+msgid "Information"
+msgstr "Informasjon"
+
+#: classes/SlideshowSEPluginPostType.php:107
+msgid "Slides List"
+msgstr "Lysbildeliste"
+
+#: classes/SlideshowSEPluginPostType.php:116
+msgid "Slideshow Style"
+msgstr "Lysbildeshow stil"
+
+#: classes/SlideshowSEPluginPostType.php:125
+msgid "Slideshow Settings"
+msgstr "Lysbildeshow innstillinger"
+
+#: classes/SlideshowSEPluginPostType.php:173
+msgid "Slideshow created"
+msgstr "Lysbildeshow opprettet"
+
+#: classes/SlideshowSEPluginPostType.php:177
+msgid "Slideshow updated"
+msgstr "Lysbildeshow oppdatert"
+
+#: classes/SlideshowSEPluginPostType.php:224
+#: classes/SlideshowSEPluginSlideInserter.php:238
+#: views/SlideshowSEPluginPostType/slides.php:2
+msgid "Insert"
+msgstr "Sett inn"
+
+#: classes/SlideshowSEPluginPostType.php:232
+msgid "Open all"
+msgstr "Åpne alle"
+
+#: classes/SlideshowSEPluginPostType.php:234
+msgid "Close all"
+msgstr "Lukk alle"
+
+#: classes/SlideshowSEPluginPostType.php:240
+#: views/SlideshowSEPluginPostType/slides.php:10
+msgid "Add slides to this slideshow by using one of the buttons above."
+msgstr "Legg til lysbilder i dette showet ved å bruke en av knappene over."
+
+#: classes/SlideshowSEPluginPostType.php:320
+msgid "Duplicate"
+msgstr "Dupliser"
+
+#: classes/SlideshowSEPluginPostType.php:371
+msgid "Copy"
+msgstr "Kopier"
+
+#: classes/SlideshowSEPluginShortcode.php:148
+msgid "No slideshow selected."
+msgstr "Ikke noe lysbildeshow valgt."
+
+#: classes/SlideshowSEPluginSlideInserter.php:194
+msgid "More results loaded"
+msgstr "Flere resultater innlastet"
+
+#: classes/SlideshowSEPluginSlideInserter.php:249
+msgid "Load more results"
+msgstr "Last inn flere resultater"
+
+#: classes/SlideshowSEPluginSlideInserter.php:260
+msgid "No images were found, click here to upload some."
+msgstr "Ingen bilder funnet, klikk her for å laste opp."
+
+#: classes/SlideshowSEPluginSlideInserter.php:332
+msgid "Are you sure you want to delete this slide?"
+msgstr "Er du sikker du vil slette dette lysbildet?"
+
+#: classes/SlideshowSEPluginSlideInserter.php:333
+msgid "Insert image slide"
+msgstr "Sett inn bilde"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:523
+msgid "Maximum width. When maximum width is 0, maximum width is ignored"
+msgstr "Max bredde. Når max bredde er 0, blir max bredde ignorert."
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:524
+msgid "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
+msgstr "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:524
+msgid "More info"
+msgstr "Mer informasjon"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:524
+#, php-format
+msgid ""
+"Proportional relationship%s between slideshow's width and height (width:"
+"height)"
+msgstr ""
+"Proporsjonal relasjon%s mellom lysbildeshowets bredde og høyde (bredde:høyde)"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:525
+msgid "Slideshow's height"
+msgstr "Lysbildeshowets høyde"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:526
+msgid "Image behaviour"
+msgstr "Bildeoppførsel"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:527
+msgid "Shrink slideshow's height when width shrinks"
+msgstr "Reduser lysbildeshowets høyde når bredde reduseres"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:528
+msgid ""
+"Enable responsiveness (Shrink slideshow's width when page's width shrinks)"
+msgstr "Aktiver dynamisk bredde (reduser bredde når sidens bredde reduseres)"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:530
+msgid "Hide description box, pop up when mouse hovers over"
+msgstr "Skjul beskrivelse, vises når musen beveges over"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:533
+msgid "Pause slideshow when mouse hovers over"
+msgstr "Sett lysbildeshow på pause når musen beveges over"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:534
+msgid "Activate navigation buttons"
+msgstr "Aktiver navigasjonsknapper"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:535
+msgid "Hide navigation buttons, show when mouse hovers over"
+msgstr "Skjul navigasjonsknapper, vises når musen beveges over"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:536
+msgid "Activate pagination"
+msgstr "Aktiver sidenummer"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:537
+msgid "Hide pagination, show when mouse hovers over"
+msgstr "Skjul sidenummer, vises når musen beveges over"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:538
+msgid "Activate control panel (play and pause button)"
+msgstr "Aktiver kontrollpanel (spill- og pauseknapp)"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:539
+msgid "Hide control panel, show when mouse hovers over"
+msgstr "Skjul kontrollpanel, vises når musen beveges over"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:540
+msgid "Wait until the next slide has loaded before showing it"
+msgstr "Vent til neste lysbilde er lastet før det vises"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:541
+msgid "Show a loading icon until the first slide appears"
+msgstr "Vis et innlastingsikon til første lysbilde vises"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:542
+msgid "Randomize slides"
+msgstr "Tilfeldig rekkefølge på lysbilder"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:543
+#, php-format
+msgid "Avoid content filter (disable if '%s' is shown)"
+msgstr "Unngå innholdsfilter (deaktiver hvis '%s' vises)"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Left"
+msgstr "Gli venstre"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Right"
+msgstr "Gli høyre"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Up"
+msgstr "Gli opp"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Down"
+msgstr "Gli ned"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Cross Fade"
+msgstr ""
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Direct Fade"
+msgstr "Direkte nedtoning"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Random Animation"
+msgstr "Tilfeldig animasjon"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+msgid "Natural and centered"
+msgstr "Naturlig og sentrert"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+msgid "Crop to fit"
+msgstr "Beskjær for å passe"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+msgid "Stretch to fit"
+msgstr "Strekk for å passe"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:569
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:570
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:571
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:572
+msgid "Miscellaneous"
+msgstr "Annet"
+
+#: classes/SlideshowSEPluginWidget.php:23
+msgid "Enables you to show your slideshows in the widget area of your website."
+msgstr ""
+"Gjør deg i stand til å vise lysbildeshow i widgetområdet på nettsiden din."
+
+#: classes/SlideshowSEPluginWidget.php:29
+msgid "Slideshow Widget"
+msgstr "Lysbildeshow widget"
+
+#: views/SlideshowSEPlugin/slideshow.php:23
+msgid "Play"
+msgstr "Spill av"
+
+#: views/SlideshowSEPlugin/slideshow.php:23
+msgid "Pause"
+msgstr "Pause"
+
+#: views/SlideshowSEPlugin/slideshow.php:25
+msgid "Previous"
+msgstr "Forrige"
+
+#: views/SlideshowSEPlugin/slideshow.php:26
+msgid "Next"
+msgstr "Neste"
+
+#: views/SlideshowSEPlugin/slideshow.php:28
+msgid "Go to slide"
+msgstr "Gå til lysbilde"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:46
+msgid "Default stylesheets"
+msgstr "Standard stiler"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:60
+msgid "Create a new custom style from this style"
+msgstr "Lag en ny tilpasset stil fra denne stilen"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:62
+msgid "Customize"
+msgstr "Tilpass"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:76
+msgid "Custom stylesheets"
+msgstr "Tilpassede stiler"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:89
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:172
+msgid "Edit this style"
+msgstr "Rediger denne stilen"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:91
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:174
+#: views/SlideshowSEPluginPostType/slides.php:138
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:112
+msgid "Edit"
+msgstr "Rediger"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:98
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:181
+msgid "Delete this style"
+msgstr "Slett denne stilen"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:100
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:183
+msgid "Delete"
+msgstr "Slett"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:110
+msgid "Click 'Customize' to create a new custom stylesheet."
+msgstr "Klikk 'Tilpass' for å lage en ny tilpasset stil"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:130
+msgid "Select a stylesheet to start customizing it."
+msgstr "Velg en stil for å tilpasse det"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:139
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:192
+#: views/SlideshowSEPluginPostType/slides.php:59
+#: views/SlideshowSEPluginPostType/slides.php:144
+#: views/SlideshowSEPluginPostType/slides.php:196
+#: views/SlideshowSEPluginPostType/slides.php:264
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:120
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:18
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:150
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:80
+#: views/SlideshowSEPluginWidget/form.php:2
+msgid "Title"
+msgstr "Tittel"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:148
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:200
+msgid "Style"
+msgstr "Stil"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:11
+msgid "Note"
+msgstr "Notat"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:18
+#, php-format
+msgid ""
+"The settings set on this page apply only to newly created slideshows and "
+"therefore do not alter any existing ones. To adapt a slideshow's settings, "
+"%sclick here.%s"
+msgstr ""
+"Innstillingene på denne siden vil bare påvirke nye lysbildeshow og vil ikke "
+"endre allerede eksisterende. For å tilpasse innstillingene for et "
+"lysbildeshow, %sklikk her.%s"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:29
+#: views/SlideshowSEPluginGeneralSettings/general-settings.php:15
+msgid "Default Slideshow Settings"
+msgstr "Standard lysbildeshowinnstillinger"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:41
+#: views/SlideshowSEPluginPostType/settings.php:12
+msgid "settings"
+msgstr "innstillinger"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:77
+msgid "Default Slideshow Stylesheet"
+msgstr "Standard lysbildeshowstil"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:11
+msgid "Add slideshows"
+msgstr "Legg til lysbildeshow"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:12
+msgid "Edit slideshows"
+msgstr "Rediger lysbildeshow"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:13
+msgid "Delete slideshows"
+msgstr "Slett lysbildeshow"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:20
+msgid "User Capabilities"
+msgstr "Brukermuligheter"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:22
+msgid "Select the user roles that will able to perform certain actions."
+msgstr "Velg brukerrollene som kan utføre spesielle handlinger"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:38
+msgid "Untitled role"
+msgstr "Rolle uten navn"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:65
+msgid "Settings"
+msgstr "Innstillinger"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:69
+msgid "Stylesheet location"
+msgstr "Stilsett plassering"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:72
+msgid "top"
+msgstr "topp"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:73
+msgid "bottom"
+msgstr "bunn"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings.php:16
+msgid "Custom Styles"
+msgstr "Tilpassede stiler"
+
+#: views/SlideshowSEPluginPostType/information.php:1
+msgid ""
+"To use this slideshow in your website either add this piece of shortcode to "
+"your posts or pages"
+msgstr ""
+"For å bruke dette lysbildeshowet på din hjemmeside, enten legg denne "
+"kortkoden til ditt innlegg eller side"
+
+#: views/SlideshowSEPluginPostType/information.php:5
+msgid ""
+"Or add this piece of code to where ever in your website you want to place "
+"the slideshow"
+msgstr ""
+"Eller legg til denne koden hvor du ønsker å plassere lysbildeshowet på din "
+"hjemmeside"
+
+#: views/SlideshowSEPluginPostType/information.php:9
+#, php-format
+msgid "Or go to the %swidgets page%s and show the slideshow as a widget."
+msgstr "Eller gå til %swidgetsiden%s og vil lysbildeshowet som en widget."
+
+#: views/SlideshowSEPluginPostType/settings.php:26
+#: views/SlideshowSEPluginPostType/style-settings.php:11
+msgid "Default"
+msgstr "Standard"
+
+#: views/SlideshowSEPluginPostType/slides.php:54
+#: views/SlideshowSEPluginPostType/slides.php:191
+#: views/SlideshowSEPluginSlideInserter/insert-text-button.php:2
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:9
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:69
+msgid "Text slide"
+msgstr "Tekstlysbilde"
+
+#: views/SlideshowSEPluginPostType/slides.php:61
+#: views/SlideshowSEPluginPostType/slides.php:150
+#: views/SlideshowSEPluginPostType/slides.php:198
+#: views/SlideshowSEPluginPostType/slides.php:270
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:135
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:33
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:165
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:95
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: views/SlideshowSEPluginPostType/slides.php:63
+#: views/SlideshowSEPluginPostType/slides.php:200
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:51
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:113
+msgid "Background color"
+msgstr "Bakgrunnsfarge"
+
+#: views/SlideshowSEPluginPostType/slides.php:68
+#: views/SlideshowSEPluginPostType/slides.php:155
+#: views/SlideshowSEPluginPostType/slides.php:205
+#: views/SlideshowSEPluginPostType/slides.php:275
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:150
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:59
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:180
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:121
+msgid "URL"
+msgstr "URL"
+
+#: views/SlideshowSEPluginPostType/slides.php:70
+#: views/SlideshowSEPluginPostType/slides.php:157
+#: views/SlideshowSEPluginPostType/slides.php:207
+#: views/SlideshowSEPluginPostType/slides.php:277
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:153
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:62
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:183
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:124
+msgid "Open URL in"
+msgstr "Åpne URL i"
+
+#: views/SlideshowSEPluginPostType/slides.php:72
+#: views/SlideshowSEPluginPostType/slides.php:159
+#: views/SlideshowSEPluginPostType/slides.php:209
+#: views/SlideshowSEPluginPostType/slides.php:279
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:155
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:64
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:185
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:126
+msgid "Same window"
+msgstr "Samme vindu"
+
+#: views/SlideshowSEPluginPostType/slides.php:73
+#: views/SlideshowSEPluginPostType/slides.php:160
+#: views/SlideshowSEPluginPostType/slides.php:210
+#: views/SlideshowSEPluginPostType/slides.php:280
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:156
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:65
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:186
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:127
+msgid "New window"
+msgstr "Nytt vindu"
+
+#: views/SlideshowSEPluginPostType/slides.php:90
+#: views/SlideshowSEPluginPostType/slides.php:230
+#: views/SlideshowSEPluginSlideInserter/insert-video-button.php:2
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:94
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:26
+msgid "Video slide"
+msgstr "Videolysbilde"
+
+#: views/SlideshowSEPluginPostType/slides.php:95
+#: views/SlideshowSEPluginPostType/slides.php:235
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:103
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:35
+msgid "Youtube Video ID"
+msgstr "Youtube Video ID"
+
+#: views/SlideshowSEPluginPostType/slides.php:133
+#: views/SlideshowSEPluginPostType/slides.php:255
+#: views/SlideshowSEPluginSlideInserter/insert-image-button.php:2
+#: views/SlideshowSEPluginSlideInserter/insert-image-button.php:4
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:101
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:135
+msgid "Image slide"
+msgstr "Bildelysbilde"
+
+#: views/SlideshowSEPluginPostType/slides.php:171
+msgid ""
+"An error occurred while loading this slide, and it will not be present in "
+"the slideshow"
+msgstr ""
+"En feil oppsto ved innlasting av dette lysbildet, og det vil ikke vises i "
+"lysbildeshowet"
+
+#: views/SlideshowSEPluginPostType/slides.php:177
+#: views/SlideshowSEPluginPostType/slides.php:218
+#: views/SlideshowSEPluginPostType/slides.php:243
+#: views/SlideshowSEPluginPostType/slides.php:289
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:174
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:76
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:117
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:203
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:138
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:49
+msgid "Delete slide"
+msgstr "Slett lysbilde"
+
+#: views/SlideshowSEPluginPostType/style-settings.php:22
+#, php-format
+msgid "Custom styles can be created and customized %shere%s."
+msgstr "Tilpassede stiler kan opprettes og tilpasses %sher%s."
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:4
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:9
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:18
+msgid "Insert a Slideshow"
+msgstr "Sett inn et lysbildeshow"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:12
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:51
+msgid "Insert Slideshow"
+msgstr "Sett inn lysbildeshow"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:27
+msgid "Select a slideshow"
+msgstr "Velg lysbildeshow"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:36
+#: views/SlideshowSEPluginWidget/form.php:12
+msgid "Untitled slideshow"
+msgstr "Lysbildeshow uten navn"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:56
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:67
+#, php-format
+msgid ""
+"It seems you haven't created any slideshows yet. %sYou can create a "
+"slideshow here!%s"
+msgstr ""
+"Det ser ut til at du ikke har laget noe lysbildeshow ennå. %sDu kan lage et "
+"lysbildeshow her!%s"
+
+#: views/SlideshowSEPluginSlideInserter/search-popup.php:6
+msgid "Search"
+msgstr "Søk"
+
+#: views/SlideshowSEPluginSlideInserter/search-popup.php:7
+msgid "Search images by title or ID"
+msgstr "Søk bilder etter tittel eller ID"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:90
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:4
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:89
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:130
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:58
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:21
+msgid "Click to toggle"
+msgstr "Klikk for å skifte"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:160
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:69
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:190
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:131
+msgid "Don't let search engines follow link"
+msgstr "Ikke la søkemotorer følge linken"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:168
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:197
+msgid "Alternative text"
+msgstr "Alternativ tekst"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:48
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:110
+msgid "Text color"
+msgstr "Tekst farge"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:53
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:115
+msgid "(Leave empty for a transparent background)"
+msgstr "(La stå tom for gjennomsiktig bakgrunn)"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:110
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:42
+msgid "Show related videos"
+msgstr "Vis beslektede videoer"
+
+#: views/SlideshowSEPluginUpload/upload-button.php:1
+msgid "Upload/Manage Images"
+msgstr "Last opp/Håndtér bilder"
+
+#: views/SlideshowSEPluginWidget/form.php:9
+msgid "Random Slideshow"
+msgstr "Tilfeldig lysbildeshow"
+
+#~ msgid "Leave any field open to use default value."
+#~ msgstr "Een veld dat open wordt gelaten neemt de standaardwaarde aan."

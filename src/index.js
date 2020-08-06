@@ -21,24 +21,29 @@ import { __ } from '@wordpress/i18n';
  */
 import './style.scss';
 
+/**
+ * Internal dependencies
+ */
+import Edit from './edit';
+
 
 /**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
-registerBlockType('boonstra/slideshow', {
+registerBlockType('f1rehead/slideshow', {
 	/**
 	 * This is the display title for your block, which can be translated with `i18n` functions.
 	 * The block inserter will show this name.
 	 */
-	title: __('Slideshow', 'boonstra'),
+	title: __('Slideshow', 'f1rehead'),
 
 	/**
 	 * This is a short description for your block, can be translated with `i18n` functions.
 	 * It will be shown in the Block Tab in the Settings Sidebar.
 	 */
-	description: __('A slideshow block', 'boonstra'),
+	description: __('A slideshow block', 'f1rehead'),
 
 	/**
 	 * Blocks are grouped into categories to help users browse and discover them.
@@ -70,39 +75,9 @@ registerBlockType('boonstra/slideshow', {
 	},
 
 	/**
-	 * The edit function describes the structure of your block in the context of the editor.
-	 * This represents what the editor will render when the block is used.
-	 *
-	 * The "edit" property must be a valid function.
-	 *
-	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-	 *
-	 * @param {Object} props Props.
-	 * @returns {Mixed} JSX Component.
+	 * @see ./edit.js
 	 */
-	edit: (props) => {
-		// Creates a <p class='wp-block-cgb-block-f1reslider'></p>.
-
-		function updateSlideshow(ev) {
-			props.setAttributes({
-				selectedSlideshow: ev.target.value,
-			});
-		}
-
-		return (
-			<div>
-				<label>Slideshow: </label> <select onChange={updateSlideshow} value={props.attributes.selectedSlideshow}>
-					{
-						Object.values(globals.slideshows).map(slideshow => {
-							return (
-								<option value={slideshow.ID} key={slideshow.ID}>{slideshow.post_title}</option>
-							);
-						})
-					}
-				</select>
-			</div>
-		);
-	},
+	edit: Edit,
 
 	/**
 	 * The "save" property must be specified and must be a valid function. This is a dynamic block,

@@ -1,0 +1,849 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Slideshow Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-19 11:56+0100\n"
+"PO-Revision-Date: 2014-08-19 11:56+0100\n"
+"Last-Translator: HOTTA Michihide <hotta@net-newbie.com>\n"
+"Language-Team: Stefan Boonstra <wordpress@stefanboonstra.com>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:82
+#: classes/SlideshowSEPluginGeneralSettings.php:83
+#: views/SlideshowSEPluginGeneralSettings/general-settings.php:14
+msgid "General Settings"
+msgstr "一般設定"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:150
+msgid "New"
+msgstr "New"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:151
+msgid "Are you sure you want to delete this custom style?"
+msgstr "このカスタムスタイルを削除してよろしいですか？"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:196
+#: classes/SlideshowSEPluginInstaller.php:803
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:6
+msgid "Light"
+msgstr "Light"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:197
+#: classes/SlideshowSEPluginInstaller.php:803
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:7
+msgid "Dark"
+msgstr "Dark"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:353
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:57
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:143
+msgid "Untitled"
+msgstr "タイトルなし"
+
+#: classes/SlideshowSEPluginInstaller.php:800
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:472
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:111
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:43
+msgid "Yes"
+msgstr "はい"
+
+#: classes/SlideshowSEPluginInstaller.php:801
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:473
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:112
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:44
+msgid "No"
+msgstr "いいえ"
+
+#: classes/SlideshowSEPluginInstaller.php:803
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:610
+msgid "The style used for this slideshow"
+msgstr "このスライドショーで使用するスタイル"
+
+#: classes/SlideshowSEPluginInstaller.php:803
+msgid "Custom"
+msgstr "カスタム"
+
+#: classes/SlideshowSEPluginInstaller.php:804
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:126
+msgid "Custom style editor"
+msgstr "カスタムスタイルエディタ"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:518
+msgid "Animation used for transition between slides"
+msgstr "スライド遷移の際に使用するアニメーション"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+msgid "Slide"
+msgstr "スライド"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Fade"
+msgstr "フェード"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+#: classes/SlideshowSEPluginInstaller.php:806
+#: classes/SlideshowSEPluginInstaller.php:807
+#: classes/SlideshowSEPluginInstaller.php:808
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:548
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:549
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:550
+msgid "Animation"
+msgstr "アニメーション"
+
+#: classes/SlideshowSEPluginInstaller.php:806
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:519
+msgid "Number of seconds the slide takes to slide in"
+msgstr "スライドがスライド・インするために要する秒数"
+
+#: classes/SlideshowSEPluginInstaller.php:807
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:520
+msgid "Number of seconds the description takes to slide in"
+msgstr "説明文がスライド・インするために要する秒数"
+
+#: classes/SlideshowSEPluginInstaller.php:808
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:521
+msgid "Seconds between changing slides"
+msgstr "スライドを切り替える間の秒数"
+
+#: classes/SlideshowSEPluginInstaller.php:809
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:522
+msgid "Number of slides to fit into one slide"
+msgstr "同時に表示するスライドの枠（分割数）"
+
+#: classes/SlideshowSEPluginInstaller.php:809
+#: classes/SlideshowSEPluginInstaller.php:810
+#: classes/SlideshowSEPluginInstaller.php:811
+#: classes/SlideshowSEPluginInstaller.php:812
+#: classes/SlideshowSEPluginInstaller.php:813
+#: classes/SlideshowSEPluginInstaller.php:814
+#: classes/SlideshowSEPluginInstaller.php:815
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:551
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:552
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:553
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:554
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:556
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:557
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:558
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:559
+msgid "Display"
+msgstr "画面"
+
+#: classes/SlideshowSEPluginInstaller.php:810
+msgid "Width of the slideshow, set to parent&#39;s width on 0"
+msgstr "スライドショーの幅。親の幅を 0 にします。"
+
+#: classes/SlideshowSEPluginInstaller.php:811
+msgid "Height of the slideshow"
+msgstr "スライドショーの高さ"
+
+#: classes/SlideshowSEPluginInstaller.php:812
+msgid "Height of the description boxes"
+msgstr "説明文ボックスの高さ"
+
+#: classes/SlideshowSEPluginInstaller.php:813
+msgid "Fit image into slide (stretching it)"
+msgstr "画像をスライドの大きさに合わせる（拡大する）"
+
+#: classes/SlideshowSEPluginInstaller.php:814
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:529
+msgid "Show title and description"
+msgstr "タイトルと説明文を表示する"
+
+#: classes/SlideshowSEPluginInstaller.php:815
+msgid "Hide description box, it will pop up when a mouse hovers over the slide"
+msgstr ""
+"説明文ボックスを隠しておき、スライド上でマウスオーバーしたらポップアップする"
+
+#: classes/SlideshowSEPluginInstaller.php:816
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:531
+msgid "Automatically slide to the next slide"
+msgstr "自動的に次のスライドを表示する"
+
+#: classes/SlideshowSEPluginInstaller.php:816
+#: classes/SlideshowSEPluginInstaller.php:817
+#: classes/SlideshowSEPluginInstaller.php:818
+#: classes/SlideshowSEPluginInstaller.php:819
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:560
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:561
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:562
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:563
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:564
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:565
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:566
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:567
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:568
+msgid "Control"
+msgstr "コントロール"
+
+#: classes/SlideshowSEPluginInstaller.php:817
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:532
+msgid "Return to the beginning of the slideshow after last slide"
+msgstr "最終スライドの次は先頭に戻る"
+
+#: classes/SlideshowSEPluginInstaller.php:818
+msgid "Activate buttons (so the user can scroll through the slides)"
+msgstr "ボタンを有効にする（ユーザはスライドを通してスクロールできます）"
+
+#: classes/SlideshowSEPluginInstaller.php:819
+msgid "Show control panel (play and pause button)"
+msgstr "コントロールパネル（再生／停止ボタン）を表示する"
+
+#: classes/SlideshowSEPluginPostType.php:45
+msgid "Slideshows"
+msgstr "スライドショー"
+
+#: classes/SlideshowSEPluginPostType.php:46
+#: views/SlideshowSEPluginWidget/form.php:7
+msgid "Slideshow"
+msgstr "スライドショー"
+
+#: classes/SlideshowSEPluginPostType.php:47
+msgid "Add New Slideshow"
+msgstr "新しいスライドショーを追加する"
+
+#: classes/SlideshowSEPluginPostType.php:48
+msgid "Edit slideshow"
+msgstr "スライドショーの編集"
+
+#: classes/SlideshowSEPluginPostType.php:49
+msgid "New slideshow"
+msgstr "新しいスライドショー"
+
+#: classes/SlideshowSEPluginPostType.php:50
+msgid "View slideshow"
+msgstr "スライドショーを見る"
+
+#: classes/SlideshowSEPluginPostType.php:51
+msgid "Search slideshows"
+msgstr "スライドショーを検索"
+
+#: classes/SlideshowSEPluginPostType.php:52
+#: classes/SlideshowSEPluginPostType.php:53
+msgid "No slideshows found"
+msgstr "スライドショーがありません"
+
+#: classes/SlideshowSEPluginPostType.php:98
+msgid "Information"
+msgstr "参考情報"
+
+#: classes/SlideshowSEPluginPostType.php:107
+msgid "Slides List"
+msgstr ""
+
+#: classes/SlideshowSEPluginPostType.php:116
+msgid "Slideshow Style"
+msgstr "スライドショーのスタイル"
+
+#: classes/SlideshowSEPluginPostType.php:125
+msgid "Slideshow Settings"
+msgstr "スライドショー設定"
+
+#: classes/SlideshowSEPluginPostType.php:173
+msgid "Slideshow created"
+msgstr ""
+
+#: classes/SlideshowSEPluginPostType.php:177
+msgid "Slideshow updated"
+msgstr ""
+
+#: classes/SlideshowSEPluginPostType.php:224
+#: classes/SlideshowSEPluginSlideInserter.php:238
+#: views/SlideshowSEPluginPostType/slides.php:2
+msgid "Insert"
+msgstr "挿入"
+
+#: classes/SlideshowSEPluginPostType.php:232
+msgid "Open all"
+msgstr ""
+
+#: classes/SlideshowSEPluginPostType.php:234
+msgid "Close all"
+msgstr ""
+
+#: classes/SlideshowSEPluginPostType.php:240
+#: views/SlideshowSEPluginPostType/slides.php:10
+msgid "Add slides to this slideshow by using one of the buttons above."
+msgstr "上のボタンのいずれかを使ってこのスライドショーにスライドを追加します"
+
+#: classes/SlideshowSEPluginPostType.php:320
+msgid "Duplicate"
+msgstr ""
+
+#: classes/SlideshowSEPluginPostType.php:371
+msgid "Copy"
+msgstr ""
+
+#: classes/SlideshowSEPluginShortcode.php:148
+msgid "No slideshow selected."
+msgstr "スライドショーが選択されていません"
+
+#: classes/SlideshowSEPluginSlideInserter.php:194
+msgid "More results loaded"
+msgstr "次の画像をロードしました"
+
+#: classes/SlideshowSEPluginSlideInserter.php:249
+msgid "Load more results"
+msgstr "より多くの画像をロードする"
+
+#: classes/SlideshowSEPluginSlideInserter.php:260
+msgid "No images were found, click here to upload some."
+msgstr "画像が見つかりませんでした。ここをクリックしてアップロードできます。"
+
+#: classes/SlideshowSEPluginSlideInserter.php:332
+msgid "Are you sure you want to delete this slide?"
+msgstr "このスライドを削除してよろしいですか？"
+
+#: classes/SlideshowSEPluginSlideInserter.php:333
+msgid "Insert image slide"
+msgstr ""
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:523
+msgid "Maximum width. When maximum width is 0, maximum width is ignored"
+msgstr "最大幅。0 の場合は無視されます。"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:524
+msgid "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
+msgstr ""
+"http://ja.wikipedia.org/wiki/%E7%94%BB%E9%9D%A2%E3%82%A2%E3%82%B9%E3%83%9A"
+"%E3%82%AF%E3%83%88%E6%AF%94"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:524
+msgid "More info"
+msgstr "詳細情報"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:524
+#, php-format
+msgid ""
+"Proportional relationship%s between slideshow's width and height (width:"
+"height)"
+msgstr "スライドショーの幅と高さの間のアスペクト比%s(幅:高さ)"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:525
+msgid "Slideshow's height"
+msgstr "スライドショーの高さ"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:526
+msgid "Image behaviour"
+msgstr ""
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:527
+msgid "Shrink slideshow's height when width shrinks"
+msgstr "スライドショーの幅を縮めたら高さも縮める"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:528
+msgid ""
+"Enable responsiveness (Shrink slideshow's width when page's width shrinks)"
+msgstr ""
+"レスポンシブを有効にする（ページ幅を縮めたらスライドショーの幅も縮める）"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:530
+msgid "Hide description box, pop up when mouse hovers over"
+msgstr "説明文ボックスを隠しておき、マウスオーバーしたらポップアップする"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:533
+msgid "Pause slideshow when mouse hovers over"
+msgstr "マウスオーバーしたらスライドショーを一時停止する"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:534
+msgid "Activate navigation buttons"
+msgstr "ナビゲーションボタンを表示する"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:535
+msgid "Hide navigation buttons, show when mouse hovers over"
+msgstr "ナビゲーションボタンは隠しておき、マウスオーバーしたら表示する"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:536
+msgid "Activate pagination"
+msgstr "ページ制御を有効にする"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:537
+msgid "Hide pagination, show when mouse hovers over"
+msgstr "ページ制御は隠しておき、マウスオーバーしたら表示する"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:538
+msgid "Activate control panel (play and pause button)"
+msgstr "コントロールパネル（再生／停止ボタン）を有効にする"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:539
+msgid "Hide control panel, show when mouse hovers over"
+msgstr "コントロールパネルは隠しておき、マウスオーバーしたら表示する"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:540
+msgid "Wait until the next slide has loaded before showing it"
+msgstr ""
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:541
+msgid "Show a loading icon until the first slide appears"
+msgstr ""
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:542
+msgid "Randomize slides"
+msgstr "スライドをランダムに表示する"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:543
+#, php-format
+msgid "Avoid content filter (disable if '%s' is shown)"
+msgstr "コンテントフィルターを回避する('%s'が表示されたら無効にする)"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Left"
+msgstr "左へスライド"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Right"
+msgstr "右へスライド"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Up"
+msgstr "上へスライド"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Down"
+msgstr "下へスライド"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Cross Fade"
+msgstr ""
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Direct Fade"
+msgstr "ダイレクト・フェード"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Random Animation"
+msgstr "ランダムなアニメーション"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+msgid "Natural and centered"
+msgstr ""
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+msgid "Crop to fit"
+msgstr ""
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+msgid "Stretch to fit"
+msgstr ""
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:569
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:570
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:571
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:572
+msgid "Miscellaneous"
+msgstr "その他"
+
+#: classes/SlideshowSEPluginWidget.php:23
+msgid "Enables you to show your slideshows in the widget area of your website."
+msgstr "あなたのWebサイト上のウィジェット領域でスライドショーを表示する"
+
+#: classes/SlideshowSEPluginWidget.php:29
+msgid "Slideshow Widget"
+msgstr "スライドショー・ウィジェット"
+
+#: views/SlideshowSEPlugin/slideshow.php:23
+msgid "Play"
+msgstr ""
+
+#: views/SlideshowSEPlugin/slideshow.php:23
+msgid "Pause"
+msgstr ""
+
+#: views/SlideshowSEPlugin/slideshow.php:25
+msgid "Previous"
+msgstr ""
+
+#: views/SlideshowSEPlugin/slideshow.php:26
+msgid "Next"
+msgstr ""
+
+#: views/SlideshowSEPlugin/slideshow.php:28
+msgid "Go to slide"
+msgstr ""
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:46
+msgid "Default stylesheets"
+msgstr "デフォルトのスタイルシート"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:60
+msgid "Create a new custom style from this style"
+msgstr "このスタイルから新しいカスタムスタイルを作成する"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:62
+msgid "Customize"
+msgstr "カスタマイズ"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:76
+msgid "Custom stylesheets"
+msgstr "カスタマイズされたスタイルシート"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:89
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:172
+msgid "Edit this style"
+msgstr "このスタイルを編集する"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:91
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:174
+#: views/SlideshowSEPluginPostType/slides.php:138
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:112
+msgid "Edit"
+msgstr "編集"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:98
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:181
+msgid "Delete this style"
+msgstr "このスタイルを削除する"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:100
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:183
+msgid "Delete"
+msgstr "削除"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:110
+msgid "Click 'Customize' to create a new custom stylesheet."
+msgstr "'カスタマイズ'をクリックして新しくカスタムスタイルシートを作成する"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:130
+msgid "Select a stylesheet to start customizing it."
+msgstr ""
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:139
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:192
+#: views/SlideshowSEPluginPostType/slides.php:59
+#: views/SlideshowSEPluginPostType/slides.php:144
+#: views/SlideshowSEPluginPostType/slides.php:196
+#: views/SlideshowSEPluginPostType/slides.php:264
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:120
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:18
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:150
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:80
+#: views/SlideshowSEPluginWidget/form.php:2
+msgid "Title"
+msgstr "タイトル"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:148
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:200
+msgid "Style"
+msgstr "スタイル"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:11
+msgid "Note"
+msgstr "注意"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:18
+#, php-format
+msgid ""
+"The settings set on this page apply only to newly created slideshows and "
+"therefore do not alter any existing ones. To adapt a slideshow's settings, "
+"%sclick here.%s"
+msgstr ""
+"このページの設定内容は、今後新しく作成されるスライドショーに対してのみ適用さ"
+"れます。このため既存のものについては変更しないでください。%sここをクリック%s"
+"して変更を適用します。"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:29
+#: views/SlideshowSEPluginGeneralSettings/general-settings.php:15
+msgid "Default Slideshow Settings"
+msgstr "デフォルトのスライドショー設定"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:41
+#: views/SlideshowSEPluginPostType/settings.php:12
+msgid "settings"
+msgstr "設定"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:77
+msgid "Default Slideshow Stylesheet"
+msgstr "デフォルトのスライドショー用スタイルシート"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:11
+msgid "Add slideshows"
+msgstr "スライドショーの追加"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:12
+msgid "Edit slideshows"
+msgstr "スライドショーの編集"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:13
+msgid "Delete slideshows"
+msgstr "スライドショーの削除"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:20
+msgid "User Capabilities"
+msgstr "利用可能なユーザ"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:22
+msgid "Select the user roles that will able to perform certain actions."
+msgstr "特定の操作を実行可能なユーザロールを選択します。"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:38
+msgid "Untitled role"
+msgstr "名前のつけられていないロール"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:65
+msgid "Settings"
+msgstr "設定"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:69
+msgid "Stylesheet location"
+msgstr ""
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:72
+msgid "top"
+msgstr ""
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:73
+msgid "bottom"
+msgstr ""
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings.php:16
+msgid "Custom Styles"
+msgstr "スタイルのカスタマイズ"
+
+#: views/SlideshowSEPluginPostType/information.php:1
+msgid ""
+"To use this slideshow in your website either add this piece of shortcode to "
+"your posts or pages"
+msgstr ""
+"あなたのWebサイトでこのスライドショーを使用するには、このショートコード"
+
+#: views/SlideshowSEPluginPostType/information.php:5
+msgid ""
+"Or add this piece of code to where ever in your website you want to place "
+"the slideshow"
+msgstr ""
+"をあなたの投稿または固定ページに記載するか、または、あなたのWebサイトの中でス"
+"ライドショーを設置したい所に以下のコードを記載します。"
+
+#: views/SlideshowSEPluginPostType/information.php:9
+#, php-format
+msgid "Or go to the %swidgets page%s and show the slideshow as a widget."
+msgstr ""
+"または%sウィジェットページ%s に行き、スライドショーをウィジェットとして表示し"
+"ます。"
+
+#: views/SlideshowSEPluginPostType/settings.php:26
+#: views/SlideshowSEPluginPostType/style-settings.php:11
+msgid "Default"
+msgstr "デフォルト"
+
+#: views/SlideshowSEPluginPostType/slides.php:54
+#: views/SlideshowSEPluginPostType/slides.php:191
+#: views/SlideshowSEPluginSlideInserter/insert-text-button.php:2
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:9
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:69
+msgid "Text slide"
+msgstr "テキストスライド"
+
+#: views/SlideshowSEPluginPostType/slides.php:61
+#: views/SlideshowSEPluginPostType/slides.php:150
+#: views/SlideshowSEPluginPostType/slides.php:198
+#: views/SlideshowSEPluginPostType/slides.php:270
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:135
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:33
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:165
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:95
+msgid "Description"
+msgstr "説明文"
+
+#: views/SlideshowSEPluginPostType/slides.php:63
+#: views/SlideshowSEPluginPostType/slides.php:200
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:51
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:113
+msgid "Background color"
+msgstr "背景色"
+
+#: views/SlideshowSEPluginPostType/slides.php:68
+#: views/SlideshowSEPluginPostType/slides.php:155
+#: views/SlideshowSEPluginPostType/slides.php:205
+#: views/SlideshowSEPluginPostType/slides.php:275
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:150
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:59
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:180
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:121
+msgid "URL"
+msgstr "URL"
+
+#: views/SlideshowSEPluginPostType/slides.php:70
+#: views/SlideshowSEPluginPostType/slides.php:157
+#: views/SlideshowSEPluginPostType/slides.php:207
+#: views/SlideshowSEPluginPostType/slides.php:277
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:153
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:62
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:183
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:124
+msgid "Open URL in"
+msgstr "URL を開く"
+
+#: views/SlideshowSEPluginPostType/slides.php:72
+#: views/SlideshowSEPluginPostType/slides.php:159
+#: views/SlideshowSEPluginPostType/slides.php:209
+#: views/SlideshowSEPluginPostType/slides.php:279
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:155
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:64
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:185
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:126
+msgid "Same window"
+msgstr "同じウィンドウ"
+
+#: views/SlideshowSEPluginPostType/slides.php:73
+#: views/SlideshowSEPluginPostType/slides.php:160
+#: views/SlideshowSEPluginPostType/slides.php:210
+#: views/SlideshowSEPluginPostType/slides.php:280
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:156
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:65
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:186
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:127
+msgid "New window"
+msgstr "新しいウィンドウ"
+
+#: views/SlideshowSEPluginPostType/slides.php:90
+#: views/SlideshowSEPluginPostType/slides.php:230
+#: views/SlideshowSEPluginSlideInserter/insert-video-button.php:2
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:94
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:26
+msgid "Video slide"
+msgstr "ビデオスライド"
+
+#: views/SlideshowSEPluginPostType/slides.php:95
+#: views/SlideshowSEPluginPostType/slides.php:235
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:103
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:35
+msgid "Youtube Video ID"
+msgstr "ユーチューブビデオID"
+
+#: views/SlideshowSEPluginPostType/slides.php:133
+#: views/SlideshowSEPluginPostType/slides.php:255
+#: views/SlideshowSEPluginSlideInserter/insert-image-button.php:2
+#: views/SlideshowSEPluginSlideInserter/insert-image-button.php:4
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:101
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:135
+msgid "Image slide"
+msgstr "画像スライド"
+
+#: views/SlideshowSEPluginPostType/slides.php:171
+msgid ""
+"An error occurred while loading this slide, and it will not be present in "
+"the slideshow"
+msgstr ""
+"このスライドを読み込む際にエラーが起こりました。これはスライドショーには存在"
+"しません。"
+
+#: views/SlideshowSEPluginPostType/slides.php:177
+#: views/SlideshowSEPluginPostType/slides.php:218
+#: views/SlideshowSEPluginPostType/slides.php:243
+#: views/SlideshowSEPluginPostType/slides.php:289
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:174
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:76
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:117
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:203
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:138
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:49
+msgid "Delete slide"
+msgstr "スライドを削除"
+
+#: views/SlideshowSEPluginPostType/style-settings.php:22
+#, php-format
+msgid "Custom styles can be created and customized %shere%s."
+msgstr "%sここ%sでカスタムスライドを作ったりカスタマイズしたりできます。"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:4
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:9
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:18
+msgid "Insert a Slideshow"
+msgstr "スライドショーを挿入する"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:12
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:51
+msgid "Insert Slideshow"
+msgstr "スライドショーを挿入する"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:27
+msgid "Select a slideshow"
+msgstr "スライドショーを選択する"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:36
+#: views/SlideshowSEPluginWidget/form.php:12
+msgid "Untitled slideshow"
+msgstr "タイトルがついていないスライドショー"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:56
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:67
+#, php-format
+msgid ""
+"It seems you haven't created any slideshows yet. %sYou can create a "
+"slideshow here!%s"
+msgstr ""
+"まだスライドショーのを１つも作成していないようです。%sここでスライドショーを"
+"作成できます!%s"
+
+#: views/SlideshowSEPluginSlideInserter/search-popup.php:6
+msgid "Search"
+msgstr "検索"
+
+#: views/SlideshowSEPluginSlideInserter/search-popup.php:7
+msgid "Search images by title or ID"
+msgstr "タイトルまたは IS で画像を検索"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:90
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:4
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:89
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:130
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:58
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:21
+msgid "Click to toggle"
+msgstr ""
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:160
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:69
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:190
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:131
+msgid "Don't let search engines follow link"
+msgstr ""
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:168
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:197
+msgid "Alternative text"
+msgstr ""
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:48
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:110
+msgid "Text color"
+msgstr "テキストカラー"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:53
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:115
+msgid "(Leave empty for a transparent background)"
+msgstr "（背景を透明にするには空のままにしておきます）"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:110
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:42
+msgid "Show related videos"
+msgstr ""
+
+#: views/SlideshowSEPluginUpload/upload-button.php:1
+msgid "Upload/Manage Images"
+msgstr "画像をアップロード／管理する"
+
+#: views/SlideshowSEPluginWidget/form.php:9
+msgid "Random Slideshow"
+msgstr "ランダムなスライドショー"
+
+#~ msgid "Fit image into slide (Stretch image)"
+#~ msgstr "スライドに画像サイズを合わせる（画像の伸長）"
+
+#~ msgid "Leave any field open to use default value."
+#~ msgstr "Een veld dat open wordt gelaten neemt de standaardwaarde aan."

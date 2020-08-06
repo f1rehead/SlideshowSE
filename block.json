@@ -1,10 +1,10 @@
 {
-	"name": "boonstra/slideshow",
-	"title": "Slideshow",
+	"name": "f1rehead/slideshow",
+	"title": "Slideshow SE",
 	"category": "common",
 	"icon": "format-gallery",
-	"description": "A slideshow bock",
-	"textdomain": "boonstra",
+	"description": "A slideshow block",
+	"textdomain": "f1rehead",
 	"supports": {
 		"html": false
 	},

@@ -1,20 +1,20 @@
-# Slideshow
+# Slideshow SE
 `
 Contributors: f1rehead, stefanboonstra
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Stable tag: 2.5.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 `
 
-Free, easy plugin to integrate slideshows into you WordPress site. A fork of the original project from Stefan Boonstra.
+Free, easy plugin to integrate slideshows into your WordPress site. Slideshow SE is a fork of the original Slideshow project by Stefan Boonstra.
 
 
 ## Description
 
-Slideshow provides an easy way to integrate a slideshow for any WordPress installation.
+Slideshow SE provides an easy way to integrate a slideshow for any WordPress installation.
 
 Any image can be loaded into the slideshow by picking it from the WordPress media page, even images you've already
 uploaded can be inserted into your slideshow right away!
@@ -24,10 +24,11 @@ different images, settings and styles for each one of them.
 
 ## Features
 
+ - First (rough) stab at a Gutenberg block 
  - Create as many slideshows with as many slides as you like
  - Image slides
  - Text slides
- - YouTube Video slides
+ - YouTube video slides
  - Responsive
  - Place it anywhere on your website
  - Run multiple slideshows on the same page
@@ -68,14 +69,14 @@ The original project's source code is also in a [GitHub](https://github.com/Boon
 
 ## Installation
 
-1. Install Slideshow either via the WordPress.org plugin directory, or by uploading the files to your server.
+1. Install Slideshow SE either via the WordPress.org plugin directory, or by uploading the files to your server.
 
-2. After activating Slideshow, click on 'Slideshows' in the admin interface left navigation and create a new slideshow.
+2. After activating Slideshow SE, click on 'Slideshows' in the admin interface left navigation and create a new slideshow.
 
 3. Click on 'Insert Image Slide' to insert an image slide, a popup will appear where you can search for the desired
 image. Insert the image by clicking 'Insert'. The same goes for text and video slides, don't forget to save!
 
-4. Add the Slideshow to your post. 
+4. Add the slideshow to your post. 
     If you are using the Classic editor, go to a post or a page and click the 'Insert Slideshow' button above the editor. A popup appears where you can select
 your newly created slideshow to insert. You can also use the shortcode or code snippet visible in your slideshow admin
 panel to deploy your slideshow anywhere on your website. Use the widget to show any of your slideshows in the sidebar
@@ -149,14 +150,23 @@ an anchor tag (`<a></a>`) or paragraph tag (`<p></p>`), while you can only place
 ### Why are you forking this plugin?
 
 Good question! There are a couple reasons I, f1rehead, am forking this plugin. First, I maintain a site that has hundreds
-of Slideshows and, to be honest, it's less work to update the plugin that it is to find a new one and manually convert all
+of slideshows and, to be honest, it's more rewarding for me to update the plugin than it is to find a new one and manually convert all
 the slideshows to whatever the new one is. Secondly, there is a real dearth of good quality, FREE slideshow plugins for 
-Wordpress. I'm not saying this one is the best, but it's really good and more or less honors Wordpress UI. 
-There's nothing worse than installing a new slideshow plugin only to find that either your admin interface is now an ungodly
+Wordpress. I'm not saying this one is the best, but it's pretty good and more or less honors Wordpress UI. 
+There's nothing worse than installing a new slideshow plugin only to find that your admin interface is now an ungodly
 color with giant, weird fonts and icons and your slideshows are now being stored in the cloud for a monthly
-fee. Ugh. So, I'll be maintaining this fork to suit my needs but I'm completely willing to entertain suggestions or pull
-requests. I'm not going to rewrite it or anything, but I will work to keep it functioning in the up-to-date versions of 
+fee. Ugh. So, primarily I'll be maintaining this fork to suit my needs but I will entertain suggestions or pull
+requests. I'm (probably) not going to rewrite this plugin, but I will work to keep it functioning in the up-to-date versions of 
 Wordpress and I'll implement new features as I need them (i.e. the Gutenberg block, which I hope to improve).
+
+### OK, what's on the roadmap for this plugin?
+
+Well, first up is to improve the Gutenberg block. I want to add a preview so that you can see what your post will look like on the
+backend. I have some good ideas on that front. Also, I want to beef up the video slide option. Just having YouTube doesn't cut it. That will probably mean a new slide type and deprecation of the YouTube slide (but I won't drop support for the current YouTube slides). After all that, I'm thinking about supporting either Bootstrap carousel or Slick carousel in addition to the original version. Or maybe both. I need to do some analysis to see if one is easier or if both are possible.
+
+### Can I help?
+
+Absolutely! I will look at all pull requests on the Github repo. If you have any feedback or suggestions or want to volunteer, please post over on Github. While I will monitor the Wordpress Support forums, I spent a lot of my day on Github so I'm more likely to see your post over there. Thanks in advance for your help in make this the best slideshow plugin available for Wordpress, free or not!
 
 ## Screenshots
 
@@ -186,8 +196,11 @@ personal taste.
 ### 2.5.0
 * Removed "Support this plugin" code and translations.
 * Edits to Read Me due to forking the code.
-* Minor bugfixes
-* First (limited) version of Gutenberg block
+* Minor bugfixes.
+* First (limited) version of Gutenberg block.
+* Forking the code, rename plugin to Slideshow SE,renaming classes, namespace, etc.
+* Revamped the build system to use webpack.
+* Support for "wide" and "full" width in Gutenberg
 
 ### 2.3.2
 *   Fixed: Setting the "Stylesheet location" setting to "Footer" no longer causes HTML5 validations errors.
@@ -224,11 +237,11 @@ personal taste.
 ### 2.2.22
 *   Compatible with WordPress 4.2.
 *	Default stylesheets are no longer dynamically loaded through admin-ajax.php.
-*	Fixed: Security vulnerability in the SlideshowPluginSlideshowStylesheet class.
+*	Fixed: Security vulnerability in the SlideshowSEPluginSlideshowStylesheet class.
 *	Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)
 *	Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on "Cross Fade" setting.
 *   Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.
-*	Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.
+*	Fixed: Separated assignment of $sessionID and increment of SlideshowSEPlugin::$sessionCounter.
 *   Added Norwegian translation by A. Nonymous.
 *   Updated Persian translation by W3Design.
 *   Updated German translation by A. Nonymous.
@@ -289,7 +302,7 @@ personal taste.
 *   Fixed: Slideshow didn't show because of a JavaScript error when calculating an unstretched image's dimension.
 
 ### 2.2.13
-*   The SlideshowPluginAjax.php has been re-added to SVN.
+*   The SlideshowSEPluginAJAX.php has been re-added to SVN.
 
 ### 2.2.12
 *   Compatible with WordPress 3.6.
@@ -422,7 +435,7 @@ personal taste.
 *   Widget title's HTML tags are now discarded when no widget title is set.
 
 ### 2.1.17
-*   Fixed: Invalid argument being supplied for the foreach loop in SlideshowPluginPostType on line 352.
+*   Fixed: Invalid argument being supplied for the foreach loop in SlideshowSEPluginPostType on line 352.
 *   Fixed: Undefined index being thrown by URL target setting on slideshow creation.
 *   Video slide now accepts YouTube URLs as well.
 

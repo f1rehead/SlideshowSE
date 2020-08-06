@@ -1,0 +1,848 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Slideshow Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-19 11:53+0100\n"
+"PO-Revision-Date: 2014-08-19 11:54+0100\n"
+"Last-Translator: Maziar Moradpour <info@w3design.ir>\n"
+"Language-Team: Stefan Boonstra <wordpress@stefanboonstra.com>\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:82
+#: classes/SlideshowSEPluginGeneralSettings.php:83
+#: views/SlideshowSEPluginGeneralSettings/general-settings.php:14
+msgid "General Settings"
+msgstr "تنظیمات عمومی"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:150
+msgid "New"
+msgstr "جدید"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:151
+msgid "Are you sure you want to delete this custom style?"
+msgstr "آیا شما مطمئن هستید که میخواهید این استایل را حذف کنید"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:196
+#: classes/SlideshowSEPluginInstaller.php:803
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:6
+msgid "Light"
+msgstr "روشن"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:197
+#: classes/SlideshowSEPluginInstaller.php:803
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:7
+msgid "Dark"
+msgstr "تیره"
+
+#: classes/SlideshowSEPluginGeneralSettings.php:353
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:57
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:143
+msgid "Untitled"
+msgstr "بدون عنوان"
+
+#: classes/SlideshowSEPluginInstaller.php:800
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:472
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:111
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:43
+msgid "Yes"
+msgstr "بله"
+
+#: classes/SlideshowSEPluginInstaller.php:801
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:473
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:112
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:44
+msgid "No"
+msgstr "نه"
+
+#: classes/SlideshowSEPluginInstaller.php:803
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:610
+msgid "The style used for this slideshow"
+msgstr "استایل استفاده شده برای این نمایشگر اسلاید"
+
+#: classes/SlideshowSEPluginInstaller.php:803
+msgid "Custom"
+msgstr "سفارشی"
+
+#: classes/SlideshowSEPluginInstaller.php:804
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:126
+msgid "Custom style editor"
+msgstr "ویرایشگر استایل سفارشی"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:518
+msgid "Animation used for transition between slides"
+msgstr "انیمیشن برای حرکت اسلایدها"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+msgid "Slide"
+msgstr "اسلاید"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Fade"
+msgstr "محو شدن"
+
+#: classes/SlideshowSEPluginInstaller.php:805
+#: classes/SlideshowSEPluginInstaller.php:806
+#: classes/SlideshowSEPluginInstaller.php:807
+#: classes/SlideshowSEPluginInstaller.php:808
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:548
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:549
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:550
+msgid "Animation"
+msgstr "انیمیشن"
+
+#: classes/SlideshowSEPluginInstaller.php:806
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:519
+msgid "Number of seconds the slide takes to slide in"
+msgstr "مدت زمان حرکت به اسلاید بعدی"
+
+#: classes/SlideshowSEPluginInstaller.php:807
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:520
+msgid "Number of seconds the description takes to slide in"
+msgstr "مدت زمان نمایش توضیحات اساید"
+
+#: classes/SlideshowSEPluginInstaller.php:808
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:521
+msgid "Seconds between changing slides"
+msgstr "مدت زمان وقفه برای هر اسلاید"
+
+#: classes/SlideshowSEPluginInstaller.php:809
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:522
+msgid "Number of slides to fit into one slide"
+msgstr "تعداد اسلایدها برای جا دادن داخل یک اسلاید"
+
+#: classes/SlideshowSEPluginInstaller.php:809
+#: classes/SlideshowSEPluginInstaller.php:810
+#: classes/SlideshowSEPluginInstaller.php:811
+#: classes/SlideshowSEPluginInstaller.php:812
+#: classes/SlideshowSEPluginInstaller.php:813
+#: classes/SlideshowSEPluginInstaller.php:814
+#: classes/SlideshowSEPluginInstaller.php:815
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:551
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:552
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:553
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:554
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:556
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:557
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:558
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:559
+msgid "Display"
+msgstr "نمایش"
+
+#: classes/SlideshowSEPluginInstaller.php:810
+msgid "Width of the slideshow, set to parent&#39;s width on 0"
+msgstr "عرض نمایشگر اسلاید با تگ اصلی وقتی که روی 0 تنظیم کنید، ست می شود."
+
+#: classes/SlideshowSEPluginInstaller.php:811
+msgid "Height of the slideshow"
+msgstr "ارتفاع نمایشگر اسلاید"
+
+#: classes/SlideshowSEPluginInstaller.php:812
+msgid "Height of the description boxes"
+msgstr "ارتفاع جعبه توضیحات"
+
+#: classes/SlideshowSEPluginInstaller.php:813
+msgid "Fit image into slide (stretching it)"
+msgstr "متناسب با تصویر به اسلاید (کشش)"
+
+#: classes/SlideshowSEPluginInstaller.php:814
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:529
+msgid "Show title and description"
+msgstr "نمایش عنوان و توضیحات"
+
+#: classes/SlideshowSEPluginInstaller.php:815
+msgid "Hide description box, it will pop up when a mouse hovers over the slide"
+msgstr ""
+"پنهان کردن جعبه توضیحات تا زمانی که موشواره ماوس بر روی اسلاید حرکت کند"
+
+#: classes/SlideshowSEPluginInstaller.php:816
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:531
+msgid "Automatically slide to the next slide"
+msgstr "حرکت خودکار اسلاید به اسلاید بعدی"
+
+#: classes/SlideshowSEPluginInstaller.php:816
+#: classes/SlideshowSEPluginInstaller.php:817
+#: classes/SlideshowSEPluginInstaller.php:818
+#: classes/SlideshowSEPluginInstaller.php:819
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:560
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:561
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:562
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:563
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:564
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:565
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:566
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:567
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:568
+msgid "Control"
+msgstr "کنترل"
+
+#: classes/SlideshowSEPluginInstaller.php:817
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:532
+msgid "Return to the beginning of the slideshow after last slide"
+msgstr "بازگشت خودکار به ابتدا پس از نمایش آخرین اسلاید"
+
+#: classes/SlideshowSEPluginInstaller.php:818
+msgid "Activate buttons (so the user can scroll through the slides)"
+msgstr "فعال کردن دکمه ها (به طوری که کاربر می تواند اسلایدها را حرکت دهد)"
+
+#: classes/SlideshowSEPluginInstaller.php:819
+msgid "Show control panel (play and pause button)"
+msgstr "نمایش دکمه های حرکت خودکار و مکث"
+
+#: classes/SlideshowSEPluginPostType.php:45
+msgid "Slideshows"
+msgstr "نمایشگرها"
+
+#: classes/SlideshowSEPluginPostType.php:46
+#: views/SlideshowSEPluginWidget/form.php:7
+msgid "Slideshow"
+msgstr "نمایشگر"
+
+#: classes/SlideshowSEPluginPostType.php:47
+msgid "Add New Slideshow"
+msgstr "اضافه کردن نمایشگر جدید"
+
+#: classes/SlideshowSEPluginPostType.php:48
+msgid "Edit slideshow"
+msgstr "ویرایش نمایشگر"
+
+#: classes/SlideshowSEPluginPostType.php:49
+msgid "New slideshow"
+msgstr "نمایشگر جدید"
+
+#: classes/SlideshowSEPluginPostType.php:50
+msgid "View slideshow"
+msgstr "مشاهده نمایشگر"
+
+#: classes/SlideshowSEPluginPostType.php:51
+msgid "Search slideshows"
+msgstr "جستجوی نمایشگر"
+
+#: classes/SlideshowSEPluginPostType.php:52
+#: classes/SlideshowSEPluginPostType.php:53
+msgid "No slideshows found"
+msgstr "نمایشگری یافت نشد"
+
+#: classes/SlideshowSEPluginPostType.php:98
+msgid "Information"
+msgstr "اطلاعات"
+
+#: classes/SlideshowSEPluginPostType.php:107
+msgid "Slides List"
+msgstr "فهرست اسلایدها"
+
+#: classes/SlideshowSEPluginPostType.php:116
+msgid "Slideshow Style"
+msgstr "سبک نمایشگر"
+
+#: classes/SlideshowSEPluginPostType.php:125
+msgid "Slideshow Settings"
+msgstr "تنظیمات نمایشگر"
+
+#: classes/SlideshowSEPluginPostType.php:173
+msgid "Slideshow created"
+msgstr "نمایشگر اسلایدی ایجاد شد"
+
+#: classes/SlideshowSEPluginPostType.php:177
+msgid "Slideshow updated"
+msgstr "نمایشگر اسلایدی بروز شد"
+
+#: classes/SlideshowSEPluginPostType.php:224
+#: classes/SlideshowSEPluginSlideInserter.php:238
+#: views/SlideshowSEPluginPostType/slides.php:2
+msgid "Insert"
+msgstr "درج"
+
+#: classes/SlideshowSEPluginPostType.php:232
+msgid "Open all"
+msgstr "گشودن همه"
+
+#: classes/SlideshowSEPluginPostType.php:234
+msgid "Close all"
+msgstr "بستن همه"
+
+#: classes/SlideshowSEPluginPostType.php:240
+#: views/SlideshowSEPluginPostType/slides.php:10
+msgid "Add slides to this slideshow by using one of the buttons above."
+msgstr "افزودن اسلاید به این نمایشگر با استفاده از یکی از دکمه های بالا."
+
+#: classes/SlideshowSEPluginPostType.php:320
+msgid "Duplicate"
+msgstr "تکثیر"
+
+#: classes/SlideshowSEPluginPostType.php:371
+msgid "Copy"
+msgstr "کپی"
+
+#: classes/SlideshowSEPluginShortcode.php:148
+msgid "No slideshow selected."
+msgstr "نمایشگری انتخاب نشده"
+
+#: classes/SlideshowSEPluginSlideInserter.php:194
+msgid "More results loaded"
+msgstr "نتایج بیشتر لود شده"
+
+#: classes/SlideshowSEPluginSlideInserter.php:249
+msgid "Load more results"
+msgstr "بارگیری نتایج بیشتر"
+
+#: classes/SlideshowSEPluginSlideInserter.php:260
+msgid "No images were found, click here to upload some."
+msgstr "تصویری یافت نشد، برای آپلود تصاویر جدید اینجا را کلیک کنید."
+
+#: classes/SlideshowSEPluginSlideInserter.php:332
+msgid "Are you sure you want to delete this slide?"
+msgstr "آیا شما مطمئن هستید که میخواهید این اسلاید را حذف کنید؟"
+
+#: classes/SlideshowSEPluginSlideInserter.php:333
+msgid "Insert image slide"
+msgstr "درج تصویر اسلاید"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:523
+msgid "Maximum width. When maximum width is 0, maximum width is ignored"
+msgstr "حداکثر عرض. با تنظیم حداکثر عرض روی 0 حداکثر عرض نادیده گرفته می شود"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:524
+msgid "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
+msgstr "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:524
+msgid "More info"
+msgstr "اطلاعات بیشتر"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:524
+#, php-format
+msgid ""
+"Proportional relationship%s between slideshow's width and height (width:"
+"height)"
+msgstr "رابطه متناسب %s بین طول و عرض نمایشگر اسلاید  (width:height)"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:525
+msgid "Slideshow's height"
+msgstr "ارتفاع نمایشگر"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:526
+msgid "Image behaviour"
+msgstr "نحوه نمایش تصویر"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:527
+msgid "Shrink slideshow's height when width shrinks"
+msgstr "کوچک کردن ارتفاع نمایشگر وقتی که عرض آن کم می شود"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:528
+msgid ""
+"Enable responsiveness (Shrink slideshow's width when page's width shrinks)"
+msgstr "فعال کردن واکنش (کوچک کردن عرض نمایشگر وقتی عرض صفحه کم می شود)"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:530
+msgid "Hide description box, pop up when mouse hovers over"
+msgstr "پنهان بودن توضیحات تا زمانی که موشواره موس بر روی آن حرکت کند"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:533
+msgid "Pause slideshow when mouse hovers over"
+msgstr "توقف نمایشگر هنگامی که موشواره موس بر روی آن حرکت کرد"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:534
+msgid "Activate navigation buttons"
+msgstr "دکمه های هدایتگر چپ و راست فعال"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:535
+msgid "Hide navigation buttons, show when mouse hovers over"
+msgstr ""
+"پنهان بودن دکمه های هدایتگر تا وقتی که موشواره ماوس بر روی آن حرکت کرد."
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:536
+msgid "Activate pagination"
+msgstr "فعال کردن صفحه بندی"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:537
+msgid "Hide pagination, show when mouse hovers over"
+msgstr "پنهان بودن صفحه بندی تا وقتی که موشواره ماوس بر روی آن حرکت کرد."
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:538
+msgid "Activate control panel (play and pause button)"
+msgstr "فعال شدن دکمه های حرکت خودکار و مکث"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:539
+msgid "Hide control panel, show when mouse hovers over"
+msgstr "پنهان بودن صفحه کنترل تا وقتی که موشواره موس بر روی آن حرکت کرد."
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:540
+msgid "Wait until the next slide has loaded before showing it"
+msgstr "مکث کوتاه برای بارگذاری و نمایش تصویر بعدی"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:541
+msgid "Show a loading icon until the first slide appears"
+msgstr "نمایش آیکون بارگذاری قبل از نمایش اولین اسلاید"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:542
+msgid "Randomize slides"
+msgstr "اسلاید تصادفی"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:543
+#, php-format
+msgid "Avoid content filter (disable if '%s' is shown)"
+msgstr "اجتناب از فیلتر محتوا (غیر فعال کرد '%s' نشان داده شده است)"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Left"
+msgstr "کشویی به چپ"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Right"
+msgstr "کشویی به راست"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Up"
+msgstr "کشویی به بالا"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Slide Down"
+msgstr "کشویی به پائین"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Cross Fade"
+msgstr "محو شدن کروز"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Direct Fade"
+msgstr "محو شدن مستقیم"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:547
+msgid "Random Animation"
+msgstr "انیمیشن تصادفی"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+msgid "Natural and centered"
+msgstr "طبیعی در وسط کادر"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+msgid "Crop to fit"
+msgstr "حذف بخش های خارج از کادر"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:555
+msgid "Stretch to fit"
+msgstr "کشش به اندازه کادر"
+
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:569
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:570
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:571
+#: classes/SlideshowSEPluginSlideshowSettingsHandler.php:572
+msgid "Miscellaneous"
+msgstr "متفرقه"
+
+#: classes/SlideshowSEPluginWidget.php:23
+msgid "Enables you to show your slideshows in the widget area of your website."
+msgstr ""
+"شما قادر خواهید بود نمایشگر اسلاید خود را در منطقه ابزارک وب سایت خود را "
+"نشان دهید."
+
+#: classes/SlideshowSEPluginWidget.php:29
+msgid "Slideshow Widget"
+msgstr "ابزارک نمایشگر اسلاید"
+
+#: views/SlideshowSEPlugin/slideshow.php:23
+msgid "Play"
+msgstr "حرکت"
+
+#: views/SlideshowSEPlugin/slideshow.php:23
+msgid "Pause"
+msgstr "توقف"
+
+#: views/SlideshowSEPlugin/slideshow.php:25
+msgid "Previous"
+msgstr "پیشین"
+
+#: views/SlideshowSEPlugin/slideshow.php:26
+msgid "Next"
+msgstr "پسین"
+
+#: views/SlideshowSEPlugin/slideshow.php:28
+msgid "Go to slide"
+msgstr "برو به اسلاید"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:46
+msgid "Default stylesheets"
+msgstr "شیوه نامه پیش فرض"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:60
+msgid "Create a new custom style from this style"
+msgstr "ایجاد استایل جدید از روی این"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:62
+msgid "Customize"
+msgstr "سفارشی"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:76
+msgid "Custom stylesheets"
+msgstr "شیوه نامه سفارشی"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:89
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:172
+msgid "Edit this style"
+msgstr "ویرایش این استایل"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:91
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:174
+#: views/SlideshowSEPluginPostType/slides.php:138
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:112
+msgid "Edit"
+msgstr "ویرایش"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:98
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:181
+msgid "Delete this style"
+msgstr "حذف این استایل"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:100
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:183
+msgid "Delete"
+msgstr "حذف"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:110
+msgid "Click 'Customize' to create a new custom stylesheet."
+msgstr "برای ایجاد یک شیوه نامه جدید بر روی 'سفارشی' کلیک کنید."
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:130
+msgid "Select a stylesheet to start customizing it."
+msgstr "شیوه نامه ای را جهت شروع سفارشی سازی انتخاب کنید"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:139
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:192
+#: views/SlideshowSEPluginPostType/slides.php:59
+#: views/SlideshowSEPluginPostType/slides.php:144
+#: views/SlideshowSEPluginPostType/slides.php:196
+#: views/SlideshowSEPluginPostType/slides.php:264
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:120
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:18
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:150
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:80
+#: views/SlideshowSEPluginWidget/form.php:2
+msgid "Title"
+msgstr "عنوان"
+
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:148
+#: views/SlideshowSEPluginGeneralSettings/custom-styles-tab.php:200
+msgid "Style"
+msgstr "استایل"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:11
+msgid "Note"
+msgstr "یادداشت"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:18
+#, php-format
+msgid ""
+"The settings set on this page apply only to newly created slideshows and "
+"therefore do not alter any existing ones. To adapt a slideshow's settings, "
+"%sclick here.%s"
+msgstr ""
+"تنظیمات در این صفحه فقط روی  به نمایشگر اسلایدهایی که از این پس ایجاد می شود "
+"اعمال خواهد شد و هیچ کدام از نمایشگرهای موجود را تغییر نخواهد داد. برای "
+"انطباق تنظیمات روی همه نمایشگرها %sاینجا کلیک کنید%s."
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:29
+#: views/SlideshowSEPluginGeneralSettings/general-settings.php:15
+msgid "Default Slideshow Settings"
+msgstr "تنظیمات پیش فرض نمایشگر اسلاید"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:41
+#: views/SlideshowSEPluginPostType/settings.php:12
+msgid "settings"
+msgstr "تنظیمات"
+
+#: views/SlideshowSEPluginGeneralSettings/default-slideshow-settings-tab.php:77
+msgid "Default Slideshow Stylesheet"
+msgstr "پیش فرض سبک نمایشگر"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:11
+msgid "Add slideshows"
+msgstr "افزودن نمایشگر"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:12
+msgid "Edit slideshows"
+msgstr "ویرایش نمایشگر"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:13
+msgid "Delete slideshows"
+msgstr "حذف نمایشگر"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:20
+msgid "User Capabilities"
+msgstr "قابلیت این کاربر"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:22
+msgid "Select the user roles that will able to perform certain actions."
+msgstr "با تعیین نقش کاربران، آنها قادر به انجام اقدامات خاص خواهند بود."
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:38
+msgid "Untitled role"
+msgstr "نقش بدون عنوان"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:65
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:69
+msgid "Stylesheet location"
+msgstr "محل شیوه نامه"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:72
+msgid "top"
+msgstr "بالا"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings-tab.php:73
+msgid "bottom"
+msgstr "پائین"
+
+#: views/SlideshowSEPluginGeneralSettings/general-settings.php:16
+msgid "Custom Styles"
+msgstr "استایل سفارشی"
+
+#: views/SlideshowSEPluginPostType/information.php:1
+msgid ""
+"To use this slideshow in your website either add this piece of shortcode to "
+"your posts or pages"
+msgstr ""
+"برای استفاده از این نمایشگر، می توانید این کد کوتاه شده را در برگه یا نوشته "
+"های خود اضافه کنید"
+
+#: views/SlideshowSEPluginPostType/information.php:5
+msgid ""
+"Or add this piece of code to where ever in your website you want to place "
+"the slideshow"
+msgstr ""
+"و یا با اضافه کردن این کد، می توانید این نمایشگر را در هرکجای سایت خود قرار "
+"دهید"
+
+#: views/SlideshowSEPluginPostType/information.php:9
+#, php-format
+msgid "Or go to the %swidgets page%s and show the slideshow as a widget."
+msgstr "یا  در %sبخش ابزارک%s و استفاده از نمایشگر در ابزارک"
+
+#: views/SlideshowSEPluginPostType/settings.php:26
+#: views/SlideshowSEPluginPostType/style-settings.php:11
+msgid "Default"
+msgstr "پیش فرض"
+
+#: views/SlideshowSEPluginPostType/slides.php:54
+#: views/SlideshowSEPluginPostType/slides.php:191
+#: views/SlideshowSEPluginSlideInserter/insert-text-button.php:2
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:9
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:69
+msgid "Text slide"
+msgstr "اسلاید متن"
+
+#: views/SlideshowSEPluginPostType/slides.php:61
+#: views/SlideshowSEPluginPostType/slides.php:150
+#: views/SlideshowSEPluginPostType/slides.php:198
+#: views/SlideshowSEPluginPostType/slides.php:270
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:135
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:33
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:165
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:95
+msgid "Description"
+msgstr "توضیحات"
+
+#: views/SlideshowSEPluginPostType/slides.php:63
+#: views/SlideshowSEPluginPostType/slides.php:200
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:51
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:113
+msgid "Background color"
+msgstr "رنگ پس زمینه"
+
+#: views/SlideshowSEPluginPostType/slides.php:68
+#: views/SlideshowSEPluginPostType/slides.php:155
+#: views/SlideshowSEPluginPostType/slides.php:205
+#: views/SlideshowSEPluginPostType/slides.php:275
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:150
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:59
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:180
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:121
+msgid "URL"
+msgstr "آدرس وب"
+
+#: views/SlideshowSEPluginPostType/slides.php:70
+#: views/SlideshowSEPluginPostType/slides.php:157
+#: views/SlideshowSEPluginPostType/slides.php:207
+#: views/SlideshowSEPluginPostType/slides.php:277
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:153
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:62
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:183
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:124
+msgid "Open URL in"
+msgstr "باز کردن آدرس وب در"
+
+#: views/SlideshowSEPluginPostType/slides.php:72
+#: views/SlideshowSEPluginPostType/slides.php:159
+#: views/SlideshowSEPluginPostType/slides.php:209
+#: views/SlideshowSEPluginPostType/slides.php:279
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:155
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:64
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:185
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:126
+msgid "Same window"
+msgstr "پنجره جاری"
+
+#: views/SlideshowSEPluginPostType/slides.php:73
+#: views/SlideshowSEPluginPostType/slides.php:160
+#: views/SlideshowSEPluginPostType/slides.php:210
+#: views/SlideshowSEPluginPostType/slides.php:280
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:156
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:65
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:186
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:127
+msgid "New window"
+msgstr "پنجره جدید"
+
+#: views/SlideshowSEPluginPostType/slides.php:90
+#: views/SlideshowSEPluginPostType/slides.php:230
+#: views/SlideshowSEPluginSlideInserter/insert-video-button.php:2
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:94
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:26
+msgid "Video slide"
+msgstr "اسلاید ویدیو"
+
+#: views/SlideshowSEPluginPostType/slides.php:95
+#: views/SlideshowSEPluginPostType/slides.php:235
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:103
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:35
+msgid "Youtube Video ID"
+msgstr "شناسه ویدیو در یوتوب"
+
+#: views/SlideshowSEPluginPostType/slides.php:133
+#: views/SlideshowSEPluginPostType/slides.php:255
+#: views/SlideshowSEPluginSlideInserter/insert-image-button.php:2
+#: views/SlideshowSEPluginSlideInserter/insert-image-button.php:4
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:101
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:135
+msgid "Image slide"
+msgstr "اسلاید تصویر"
+
+#: views/SlideshowSEPluginPostType/slides.php:171
+msgid ""
+"An error occurred while loading this slide, and it will not be present in "
+"the slideshow"
+msgstr "هنگام بارگذاری این اسلاید خطا رخ داد و در نمایشگر اضافه نشد."
+
+#: views/SlideshowSEPluginPostType/slides.php:177
+#: views/SlideshowSEPluginPostType/slides.php:218
+#: views/SlideshowSEPluginPostType/slides.php:243
+#: views/SlideshowSEPluginPostType/slides.php:289
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:174
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:76
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:117
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:203
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:138
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:49
+msgid "Delete slide"
+msgstr "حذف اسلاید"
+
+#: views/SlideshowSEPluginPostType/style-settings.php:22
+#, php-format
+msgid "Custom styles can be created and customized %shere%s."
+msgstr ""
+"استایل سفارشی را در %s اینجا %s می توان ایجاد و در آن تغییرات اعمال کرد"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:4
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:9
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:18
+msgid "Insert a Slideshow"
+msgstr "قراردادن یک نمایشگر"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:12
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:51
+msgid "Insert Slideshow"
+msgstr "قراردادن نمایشگر"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:27
+msgid "Select a slideshow"
+msgstr "انتخاب یک نمایشگر"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:36
+#: views/SlideshowSEPluginWidget/form.php:12
+msgid "Untitled slideshow"
+msgstr "نمایشگر بدون عنوان"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:56
+msgid "Cancel"
+msgstr "انصراف"
+
+#: views/SlideshowSEPluginShortcode/shortcode-inserter.php:67
+#, php-format
+msgid ""
+"It seems you haven't created any slideshows yet. %sYou can create a "
+"slideshow here!%s"
+msgstr ""
+"به نظر می رسد هنوز هیچ نمایشگری ایجاد نکرده اید. %sشما می توانید یک نمایشگر "
+"ایجاد کنید.%s"
+
+#: views/SlideshowSEPluginSlideInserter/search-popup.php:6
+msgid "Search"
+msgstr "جستجو"
+
+#: views/SlideshowSEPluginSlideInserter/search-popup.php:7
+msgid "Search images by title or ID"
+msgstr "تصاویر جستجو صورت اساس عنوان یا شناسه"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:90
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:4
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:89
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:130
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:58
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:21
+msgid "Click to toggle"
+msgstr "برای جابجایی کلیک کنید"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:160
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:69
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:190
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:131
+msgid "Don't let search engines follow link"
+msgstr "موتورهای جستجو اجازه ندارند این لینک را دنبال کنند"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_attachment.php:168
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:197
+msgid "Alternative text"
+msgstr "متن جایگزین"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:48
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:110
+msgid "Text color"
+msgstr "رنگ متن"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:53
+#: views/SlideshowSEPluginSlideshowSlide/backend_text.php:115
+msgid "(Leave empty for a transparent background)"
+msgstr "(خالی به عنوان یک پس زمینه شفاف)"
+
+#: views/SlideshowSEPluginSlideshowSlide/backend_templates.php:110
+#: views/SlideshowSEPluginSlideshowSlide/backend_video.php:42
+msgid "Show related videos"
+msgstr "نمایش ویدیوهای مرتبط"
+
+#: views/SlideshowSEPluginUpload/upload-button.php:1
+msgid "Upload/Manage Images"
+msgstr "آپلود / مدیریت تصاویر"
+
+#: views/SlideshowSEPluginWidget/form.php:9
+msgid "Random Slideshow"
+msgstr "نمایشگر اسلاید تصادفی"
+
+#~ msgid "Fit image into slide (Stretch image)"
+#~ msgstr "متناسب با تصویر به اسلاید (تصویر کشش)"
+
+#~ msgid "Leave any field open to use default value."
+#~ msgstr ""
+#~ "ترک هر آیتم  تغییر دادن نشده با استفاده از مقدار پیش فرض تکمیل می شود."
