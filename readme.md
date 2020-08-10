@@ -198,7 +198,7 @@ personal taste.
 * Edits to Read Me due to forking the code.
 * Minor bugfixes.
 * First (limited) version of Gutenberg block.
-* Forking the code, rename plugin to Slideshow SE,renaming classes, namespace, etc.
+* Forking the code; rename plugin to Slideshow SE; rename classes, namespace, etc.
 * Revamped the build system to use webpack.
 * Support for "wide" and "full" width in Gutenberg
 
