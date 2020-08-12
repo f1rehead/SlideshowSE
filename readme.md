@@ -200,7 +200,6 @@ personal taste.
 * First (limited) version of Gutenberg block.
 * Forking the code; rename plugin to Slideshow SE; rename classes, namespace, etc.
 * Revamped the build system to use webpack.
-* Support for "wide" and "full" width in Gutenberg
 
 ### 2.3.2
 *   Fixed: Setting the "Stylesheet location" setting to "Footer" no longer causes HTML5 validations errors.
