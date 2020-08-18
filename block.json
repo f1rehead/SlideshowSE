@@ -8,7 +8,7 @@
 	"supports": {
 		"html": false
 	},
-	"editorScript": "file:./build/index.js",
-	"editorStyle": "file:./build/index.css",
-	"style": "file:./build/style-index.css"
+	"editorScript": "file:./block/index.js",
+	"editorStyle": "file:./block/index.css",
+	"style": "file:./block/style-index.css"
 }
