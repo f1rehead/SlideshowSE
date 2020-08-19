@@ -4,7 +4,8 @@
  Plugin URI: http://wordpress.org/extend/plugins/slideshow-se/
  Description: The slideshow plugin is easily deployable on your website. Add any image that has already been uploaded to add to your slideshow, add text slides, or even add a video. Options and styles are customizable for every single slideshow on your website.
  Version: 2.5.0
- Requires at least: 3.5
+ Requires at least: 5.0
+ Tested up to: 5.5
  Author: John West, StefanBoonstra
  Author URI: http://stefanboonstra.com/
  License: GPLv2
@@ -295,7 +296,7 @@ function f1rehead_slideshow_block_init() {
 			'pluginDirPath' => plugin_dir_path( __DIR__ ),
 			'pluginDirUrl'  => plugin_dir_url( __DIR__ ),
 			// Add data here to access from `globals` object.
-			'slideshows' => get_posts(['post_type' => 'slideshow']),
+			'slideshows' => get_posts(['posts_per_page' => -1, 'post_type' => 'slideshow']),
 		]
 	);	
 	
