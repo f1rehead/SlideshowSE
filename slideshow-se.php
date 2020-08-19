@@ -6,6 +6,7 @@
  Version: 2.5.0
  Requires at least: 5.0
  Tested up to: 5.5
+ Requires PHP: 5.0
  Author: John West, StefanBoonstra
  Author URI: http://stefanboonstra.com/
  License: GPLv2

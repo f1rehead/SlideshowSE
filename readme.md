@@ -199,7 +199,6 @@ personal taste.
 * Minor bugfixes.
 * First (limited) version of Gutenberg block.
 * Forking the code; rename plugin to Slideshow SE; rename classes, namespace, etc.
-* Revamped the build system to use webpack.
 
 ### 2.3.2
 *   Fixed: Setting the "Stylesheet location" setting to "Footer" no longer causes HTML5 validations errors.
@@ -576,7 +575,7 @@ personal taste.
 
 ## Links
 
-*	[Stefan Boonstra](http://stefanboonstra.com/)
+*   [Stefan Boonstra](http://stefanboonstra.com/)
 *   [Original Project GitHub](https://github.com/Boonstra/Slideshow)
-*   [Forked Project GitHub](https://github.com/f1rehead/Slideshow)
+*   [Forked Project GitHub](https://github.com/f1rehead/SlideshowSE)
 
