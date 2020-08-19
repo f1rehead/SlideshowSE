@@ -24,6 +24,11 @@ build/
 # block directory is created with npm build
 block/
 
+# Ignore Wordpress directory stuff
+assets/
+readme.txt
+slideshow-se.zip
+
 # Mac desktop directory
 .DS_Store
 
