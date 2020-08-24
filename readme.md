@@ -193,6 +193,9 @@ personal taste.
 
 ## Changelog
 
+### 2.5.1
+* Fixed issue with saving slideshow settings
+
 ### 2.5.0
 * Removed "Support this plugin" code and translations.
 * Edits to Read Me due to forking the code.
