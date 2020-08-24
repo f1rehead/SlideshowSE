@@ -4,7 +4,7 @@ Contributors: f1rehead, stefanboonstra
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 5.0
 Tested up to: 5.5
-Stable tag: 2.5.0
+Stable tag: 2.5.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 `
@@ -192,6 +192,9 @@ personal taste.
 
 
 ## Changelog
+
+### 2.5.2
+* Update version numbers
 
 ### 2.5.1
 * Fixed issue with saving slideshow settings
