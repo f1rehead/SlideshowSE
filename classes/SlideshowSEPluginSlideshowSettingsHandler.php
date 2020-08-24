@@ -324,19 +324,19 @@ class SlideshowSEPluginSlideshowSettingsHandler
 		if (isset($_POST[self::$settingsKey]) &&
 			is_array($_POST[self::$settingsKey]))
 		{
-			$newPostSettings = sanitize_text_field($_POST[self::$settingsKey]);
+			$newPostSettings = sanitize_post($_POST[self::$settingsKey]);
 		}
 
 		if (isset($_POST[self::$styleSettingsKey]) &&
 			is_array($_POST[self::$styleSettingsKey]))
 		{
-			$newPostStyleSettings = sanitize_text_field($_POST[self::$styleSettingsKey]);
+			$newPostStyleSettings = sanitize_post($_POST[self::$styleSettingsKey]);
 		}
 
 		if (isset($_POST[self::$slidesKey]) &&
 			is_array($_POST[self::$slidesKey]))
 		{
-			$newPostSlides = sanitize_text_field($_POST[self::$slidesKey]);
+			$newPostSlides = sanitize_post($_POST[self::$slidesKey]);
 		}
 
 		// Merge new settings with its old values
