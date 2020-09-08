@@ -193,6 +193,9 @@ personal taste.
 
 ## Changelog
 
+### 2.5.3
+* Fix issue with blank slides
+
 ### 2.5.2
 * Update version numbers
 
