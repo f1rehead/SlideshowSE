@@ -6,7 +6,7 @@ slideshow_jquery_image_gallery_backend_script_scriptsloadedFlag = false;
  * @author Stefan Boonstra
  * @version 4
  */
-slideshow_jquery_image_gallery_script = ( function () {
+slideshow_jquery_image_gallery_script = (function () {
 	var $ = jQuery,
 		self = {};
 
@@ -16,12 +16,12 @@ slideshow_jquery_image_gallery_script = ( function () {
 	self.sessionIDCounter = 0;
 
 	/**
-	 * Called by either $(document).ready() or $(window).load() to initialize the slideshow's script.
+	 * Called by either $(document).ready() or $(window).on('load',{}) to initialize the slideshow's script.
 	 */
 	self.init = function () {
 		if (
 			slideshow_jquery_image_gallery_backend_script_scriptsloadedFlag !==
-				true ||
+			true ||
 			self.initialized
 		) {
 			return;
@@ -29,14 +29,14 @@ slideshow_jquery_image_gallery_script = ( function () {
 
 		self.initialized = true;
 
-		$( document ).trigger( 'slideshow_jquery_image_gallery_script_ready' );
+		$(document).trigger('slideshow_jquery_image_gallery_script_ready');
 
 		//self.loadYouTubeAPI();
 		self.repairStylesheetURLs();
 		self.activateSlideshows();
 		self.enableLazyLoading();
 
-		$( document ).trigger(
+		$(document).trigger(
 			'slideshow_jquery_image_gallery_slideshows_ready'
 		);
 	};
@@ -46,24 +46,24 @@ slideshow_jquery_image_gallery_script = ( function () {
 	 *
 	 * @return self.Slideshow
 	 */
-	self.getSlideshowInstance = function ( searchKey ) {
-		if ( ! isNaN( parseInt( searchKey, 10 ) ) ) {
+	self.getSlideshowInstance = function (searchKey) {
+		if (!isNaN(parseInt(searchKey, 10))) {
 			if (
-				self.slideshowInstances[ searchKey ] instanceof self.Slideshow
+				self.slideshowInstances[searchKey] instanceof self.Slideshow
 			) {
-				return self.slideshowInstances[ searchKey ];
+				return self.slideshowInstances[searchKey];
 			}
-		} else if ( searchKey instanceof $ && searchKey.length > 0 ) {
-			for ( var ID in self.slideshowInstances ) {
-				if ( ! self.slideshowInstances.hasOwnProperty( ID ) ) {
+		} else if (searchKey instanceof $ && searchKey.length > 0) {
+			for (var ID in self.slideshowInstances) {
+				if (!self.slideshowInstances.hasOwnProperty(ID)) {
 					continue;
 				}
 
-				var slideshowInstance = self.slideshowInstances[ ID ];
+				var slideshowInstance = self.slideshowInstances[ID];
 
 				if (
 					slideshowInstance instanceof self.Slideshow &&
-					slideshowInstance.$container.get( 0 ) === searchKey.get( 0 )
+					slideshowInstance.$container.get(0) === searchKey.get(0)
 				) {
 					return slideshowInstance;
 				}
@@ -77,12 +77,12 @@ slideshow_jquery_image_gallery_script = ( function () {
 	 * Calls the activateSlideshow method on all slideshows on the page.
 	 */
 	self.activateSlideshows = function () {
-		$.each( $( '.slideshow_container' ), function (
+		$.each($('.slideshow_container'), function (
 			key,
 			slideshowElement
 		) {
-			self.activateSlideshow( $( slideshowElement ) );
-		} );
+			self.activateSlideshow($(slideshowElement));
+		});
 	};
 
 	/**
@@ -90,16 +90,16 @@ slideshow_jquery_image_gallery_script = ( function () {
 	 *
 	 * @param $slideshowElement (jQuery)
 	 */
-	self.activateSlideshow = function ( $slideshowElement ) {
+	self.activateSlideshow = function ($slideshowElement) {
 		if (
-			$slideshowElement.hasClass( 'slideshow_container' ) &&
-			$slideshowElement.attr( 'data-slideshow-active' ) != '1'
+			$slideshowElement.hasClass('slideshow_container') &&
+			$slideshowElement.attr('data-slideshow-active') != '1'
 		) {
-			$slideshowElement.attr( 'data-slideshow-active', '1' );
+			$slideshowElement.attr('data-slideshow-active', '1');
 
 			self.slideshowInstances[
 				self.sessionIDCounter
-			] = new self.Slideshow( $slideshowElement );
+			] = new self.Slideshow($slideshowElement);
 
 			self.sessionIDCounter++;
 		}
@@ -113,46 +113,46 @@ slideshow_jquery_image_gallery_script = ( function () {
 		var observer;
 
 		// Test if there's browser support for finding DOM mutations (most lightweight)
-		if ( typeof MutationObserver == 'function' ) {
-			observer = new MutationObserver( function ( mutations ) {
-				mutations.forEach( function ( mutation ) {
+		if (typeof MutationObserver == 'function') {
+			observer = new MutationObserver(function (mutations) {
+				mutations.forEach(function (mutation) {
 					var i;
 
-					if ( ! mutation.addedNodes ) {
+					if (!mutation.addedNodes) {
 						return;
 					}
 
-					for ( i = 0; i < mutation.addedNodes.length; i++ ) {
+					for (i = 0; i < mutation.addedNodes.length; i++) {
 						// Try to find and activate all slideshows in the current node, including the node itself
 						$.each(
-							$( mutation.addedNodes[ i ] )
-								.find( '.slideshow_container' )
-								.addBack( '.slideshow_container' ),
-							function ( key, slideshowElement ) {
-								self.activateSlideshow( $( slideshowElement ) );
+							$(mutation.addedNodes[i])
+								.find('.slideshow_container')
+								.addBack('.slideshow_container'),
+							function (key, slideshowElement) {
+								self.activateSlideshow($(slideshowElement));
 							}
 						);
 					}
-				} );
-			} );
+				});
+			});
 
-			observer.observe( document.body, {
+			observer.observe(document.body, {
 				childList: true,
 				subtree: true,
 				attributes: false,
 				characterData: false,
-			} );
+			});
 		}
 		// Fallback on polling, more resource intensive
 		else {
-			setInterval( function () {
+			setInterval(function () {
 				$.each(
-					$( '.slideshow_container:not([data-slideshow-active])' ),
-					function ( key, slideshowElement ) {
-						self.activateSlideshow( $( slideshowElement ) );
+					$('.slideshow_container:not([data-slideshow-active])'),
+					function (key, slideshowElement) {
+						self.activateSlideshow($(slideshowElement));
 					}
 				);
-			}, 2000 );
+			}, 2000);
 		}
 	};
 
@@ -160,18 +160,18 @@ slideshow_jquery_image_gallery_script = ( function () {
 	 * Loads the YouTube API.
 	 */
 	self.loadYouTubeAPI = function () {
-		if ( self.loadYouTubeAPICalled ) {
+		if (self.loadYouTubeAPICalled) {
 			return;
 		}
 
 		self.loadYouTubeAPICalled = true;
 
-		var tag = document.createElement( 'script' ),
-			firstScriptTag = document.getElementsByTagName( 'script' )[ 0 ];
+		var tag = document.createElement('script'),
+			firstScriptTag = document.getElementsByTagName('script')[0];
 
 		tag.src = '//www.youtube.com/iframe_api';
 
-		firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 	};
 
 	/**
@@ -183,48 +183,48 @@ slideshow_jquery_image_gallery_script = ( function () {
 		);
 
 		// Some website disable URL variables, impairing the AJAX loaded stylesheets. Check and fix all slideshow stylesheet related URLs
-		$.each( ajaxStylesheets, function (
+		$.each(ajaxStylesheets, function (
 			ajaxStylesheetKey,
 			ajaxStylesheet
 		) {
-			var $ajaxStylesheet = $( ajaxStylesheet ),
-				URL = $( ajaxStylesheet ).attr( 'href' ),
+			var $ajaxStylesheet = $(ajaxStylesheet),
+				URL = $(ajaxStylesheet).attr('href'),
 				styleNameParts,
 				styleName,
 				URLData;
 
-			if ( URL === undefined || URL === '' ) {
+			if (URL === undefined || URL === '') {
 				return;
 			}
 
 			// Get the style name from the element's ID. Splits at the first underscore and removes WordPress' stylesheet suffix: '-css'
-			styleNameParts = $ajaxStylesheet.attr( 'id' ).split( '_' );
+			styleNameParts = $ajaxStylesheet.attr('id').split('_');
 			styleName = styleNameParts
-				.splice( 1, styleNameParts.length - 1 )
-				.join( '_' )
-				.slice( 0, -4 );
+				.splice(1, styleNameParts.length - 1)
+				.join('_')
+				.slice(0, -4);
 
-			URLData = URL.split( '?' );
+			URLData = URL.split('?');
 
 			if (
-				URLData[ 1 ] === undefined ||
-				URLData[ 1 ] === '' ||
-				URLData[ 1 ].toLowerCase().indexOf( 'style=' ) < 0
+				URLData[1] === undefined ||
+				URLData[1] === '' ||
+				URLData[1].toLowerCase().indexOf('style=') < 0
 			) {
-				URLData[ 1 ] =
+				URLData[1] =
 					'action=slideshow_jquery_image_gallery_load_stylesheet' +
 					'&style=' +
 					styleName +
 					'&ver=' +
-					Math.round( new Date().getTime() / 1000 );
+					Math.round(new Date().getTime() / 1000);
 			} else {
 				return;
 			}
 
-			URL = URLData.join( '?' );
+			URL = URLData.join('?');
 
-			$ajaxStylesheet.attr( 'href', URL );
-		} );
+			$ajaxStylesheet.attr('href', URL);
+		});
 	};
 
 	/**
@@ -232,26 +232,24 @@ slideshow_jquery_image_gallery_script = ( function () {
 	 *
 	 * @param message (String)
 	 */
-	self.log = function ( message ) {
-		if ( typeof console == 'object' ) {
-			console.log( 'slideshow-jquery-image-gallery', message );
+	self.log = function (message) {
+		if (typeof console == 'object') {
+			console.log('slideshow-jquery-image-gallery', message);
 		}
 	};
 
-	$( document ).ready( function () {
+	$(document).ready(function () {
 		self.init();
-	} );
+	});
 
-	$( window ).load( function () {
-		self.init();
-	} );
+	$(window).on('load', self.init());
 
 	$.fn.getSlideshowInstance = function () {
-		return self.getSlideshowInstance( this );
+		return self.getSlideshowInstance(this);
 	};
 
 	return self;
-} )();
+})();
 
 /**
  * This function must be named "onYouTubeIframeAPIReady", as it is needed to check whether or not the YouTube IFrame API

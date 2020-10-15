@@ -222,11 +222,11 @@
 		);
 
 		// Recalculate visible views when window is loaded
-		$(window).load(
+		$(window).on('load', (
 			$.proxy(function () {
 				this.recalculate(true);
 			}, this)
-		);
+		));
 
 		// Check if intervalSpeed is greater than slideSpeed
 		if (
