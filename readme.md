@@ -193,6 +193,9 @@ personal taste.
 
 ## Changelog
 
+### 2.5.4
+* Update jQuery load() usage 
+
 ### 2.5.3
 * Fix issue with blank slides
 
