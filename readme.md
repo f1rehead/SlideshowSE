@@ -3,8 +3,8 @@
 Contributors: f1rehead, stefanboonstra
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 5.0
-Tested up to: 5.5
-Stable tag: 2.5.4
+Tested up to: 5.7
+Stable tag: 2.5.5
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 `
@@ -14,13 +14,13 @@ Free, easy plugin to integrate slideshows into your WordPress site. Slideshow SE
 
 ## Description
 
-Slideshow SE provides an easy way to integrate a slideshow for any WordPress installation.
+Slideshow SE provides an easy way to add a slideshow to any WordPress installation.
 
 Any image can be loaded into the slideshow by picking it from the WordPress media page, even images you've already
 uploaded can be inserted into your slideshow right away!
 
 Fancy doing something crazy? You can create and use as many slideshows as you'd like, with
-different images, settings and styles for each one of them.
+different images, settings, and styles for each one of them.
 
 ## Features
 
@@ -33,15 +33,14 @@ different images, settings and styles for each one of them.
  - Place it anywhere on your website
  - Run multiple slideshows on the same page
  - Change animations and handling
- - Customize to taste
- - Show that visitor who's boss
+ - Customizable stylesheets
 
 ## Languages
 
  - Bulgarian	  (87%  - bg_BG - Translated by [Ilko Ivanov](http://software.avalonbg.com/en/index.php))
  - Chinese        (65%  - zh_CN - Translated by [Kevin Tell](http://www.ivygg.com/) and [Leo Newbiesup](http://smallseotips.com/))
  - Czech          (81%  - cs_CZ - Translated by Edhel)
- - Dutch          (100% - nl_NL - Translated by [Stefan Boonstra](http://stefanboonstra.com/) (That's me!))
+ - Dutch          (100% - nl_NL - Translated by [Stefan Boonstra](http://stefanboonstra.com/)
  - English        (100%)
  - Finnish        (83%  - fi    - Translated by A. Nonymous)
  - French         (91%  - fr_FR - Translated by [Romain Sandri](http://www.onidesign.fr/))
@@ -69,7 +68,7 @@ The original project's source code is also in a [GitHub](https://github.com/Boon
 
 ## Installation
 
-1. Install Slideshow SE either via the WordPress.org plugin directory, or by uploading the files to your server.
+1. Install Slideshow SE either via the WordPress.org plugin directory or by uploading the files to your server.
 
 2. After activating Slideshow SE, click on 'Slideshows' in the admin interface left navigation and create a new slideshow.
 
@@ -149,7 +148,7 @@ an anchor tag (`<a></a>`) or paragraph tag (`<p></p>`), while you can only place
 
 ### Why are you forking this plugin?
 
-Good question! There are a couple reasons I, f1rehead, am forking this plugin. First, I maintain a site that has hundreds
+Good question! There are a couple reasons I am forking this plugin. First, I maintain a site that has hundreds
 of slideshows and, to be honest, it's more rewarding for me to update the plugin than it is to find a new one and manually convert all
 the slideshows to whatever the new one is. Secondly, there is a real dearth of good quality, FREE slideshow plugins for 
 Wordpress. I'm not saying this one is the best, but it's pretty good and more or less honors Wordpress UI. 
@@ -170,7 +169,7 @@ Absolutely! I will look at all pull requests on the Github repo. If you have any
 
 ## Screenshots
 
-1. Here's what a default slideshow can look like. Sit back, grab a beer, enjoy.
+1. Here's what a slideshow can look like. This one uses a custom stylesheet.
 
 2. Create a new slideshow. Slides and settings specific to this slideshow can be set here.
 
@@ -187,11 +186,15 @@ to add, edit or delete slideshows.
 
 7. Default slideshow settings can be edited here. Slideshows that are newly created, will start out with these options.
 
-8. Custom styles can be added and customized here. Custom styles can be used to style one or more slideshows to your own
+8. Custom styles can be added and modified here. Custom styles can be used to style one or more slideshows to your own
 personal taste.
 
 
 ## Changelog
+
+### 2.5.5
+* Tested to Wordpress 5.7
+* Edits to ReadMe
 
 ### 2.5.4
 * Update jQuery load() usage 
