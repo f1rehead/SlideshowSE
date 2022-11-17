@@ -58,6 +58,7 @@ class SlideshowSEPluginGeneralSettings
 
 		// Register settings
 		add_action('admin_init', array(__CLASS__, 'registerSettings'));
+		add_action('rest_api_init', 'registerSettings');
 
 		// Add sub menu
 		add_action('admin_menu', array(__CLASS__, 'addSubMenuPage'));
@@ -126,7 +127,7 @@ class SlideshowSEPluginGeneralSettings
 		register_setting(self::$settingsGroup, self::$capabilities['deleteSlideshows'], array(__CLASS__, 'saveCapabilities'));
 
 		// Register default slideshow settings
-		register_setting(self::$settingsGroup, self::$defaultSettings);
+		register_setting(self::$settingsGroup, self::$defaultSettings, array(__CLASS__, 'saveDefaultSettings'));
 		register_setting(self::$settingsGroup, self::$defaultStyleSettings);
 
 		// Register custom style settings
@@ -325,6 +326,76 @@ class SlideshowSEPluginGeneralSettings
 	}
 
 	/**
+	 * Validate the changed settings, called by a callback from a registered setting.
+	 *
+	 * @since 2.5.6
+	 * @param array $defaultStyles
+	 * @return array $newDefaultStyles
+	 */
+	function saveDefaultSettings( $defaultStyles )
+	{
+
+		$animations = array(
+			'slide',
+			'slideRight',
+			'slideUp',
+			'slideDown',
+			'crossFade',
+			'directFade',
+			'fade',
+			'random'
+		);
+
+		$behaviours = array(
+			'natural',
+			'crop',
+			'stretch'
+		);
+
+		// Verify nonce
+		$nonce = isset($_POST['_wpnonce']) ? $_POST['_wpnonce'] : '';
+
+		if (!wp_verify_nonce($nonce, self::$settingsGroup . '-options'))
+		{
+			return $defaultStyles;
+		}
+
+		//animation
+		(in_array($defaultStyles['animation'], $animations)) ? $newDefaultStyles['animation'] = $defaultStyles['animation'] : $newDefaultStyles['animation'] = "slide"; 
+
+		$newDefaultStyles['slideSpeed'] = filter_var($defaultStyles['slideSpeed'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$newDefaultStyles['descriptionSpeed'] = filter_var($defaultStyles['descriptionSpeed'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$newDefaultStyles['intervalSpeed'] = filter_var($defaultStyles['intervalSpeed'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$newDefaultStyles['slidesPerView'] = filter_var($defaultStyles['slidesPerView'], FILTER_SANITIZE_NUMBER_INT);
+		$newDefaultStyles['maxWidth'] = filter_var($defaultStyles['maxWidth'], FILTER_SANITIZE_NUMBER_INT);
+		$newDefaultStyles['aspectRatio'] = preg_replace("/[^0-9\:]+/i", "", $defaultStyles['aspectRatio']);
+		$newDefaultStyles['height'] = filter_var($defaultStyles['height'], FILTER_SANITIZE_NUMBER_INT);
+
+		//imageBehaviour
+		(in_array($defaultStyles['imageBehaviour'], $behaviours)) ? $newDefaultStyles['imageBehaviour'] = $defaultStyles['imageBehaviour'] : $newDefaultStyles['imageBehaviour'] = "natural"; 
+
+		(filter_var($defaultStyles['preserveSlideshowDimensions'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['preserveSlideshowDimensions'] = TRUE : $newDefaultStyles['preserveSlideshowDimensions'] = $defaultStyles['preserveSlideshowDimensions']; 
+		(filter_var($defaultStyles['enableResponsiveness'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['enableResponsiveness'] = TRUE : $newDefaultStyles['enableResponsiveness'] = $defaultStyles['enableResponsiveness']; 
+		(filter_var($defaultStyles['showDescription'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['showDescription'] = TRUE : $newDefaultStyles['showDescription'] = $defaultStyles['showDescription']; 
+		(filter_var($defaultStyles['hideDescription'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['hideDescription'] = TRUE : $newDefaultStyles['hideDescription'] = $defaultStyles['hideDescription']; 
+		(filter_var($defaultStyles['play'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['play'] = TRUE : $newDefaultStyles['play'] = $defaultStyles['play']; 
+		(filter_var($defaultStyles['loop'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['loop'] = TRUE : $newDefaultStyles['loop'] = $defaultStyles['loop']; 
+		(filter_var($defaultStyles['pauseOnHover'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['pauseOnHover'] = TRUE : $newDefaultStyles['pauseOnHover'] = $defaultStyles['pauseOnHover']; 
+		(filter_var($defaultStyles['controllable'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['controllable'] = TRUE : $newDefaultStyles['controllable'] = $defaultStyles['controllable']; 
+		(filter_var($defaultStyles['hideNavigationButtons'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['hideNavigationButtons'] = TRUE : $newDefaultStyles['hideNavigationButtons'] = $defaultStyles['hideNavigationButtons']; 
+		(filter_var($defaultStyles['showPagination'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['showPagination'] = TRUE : $newDefaultStyles['showPagination'] = $defaultStyles['showPagination']; 
+		(filter_var($defaultStyles['hidePagination'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['hidePagination'] = TRUE : $newDefaultStyles['hidePagination'] = $defaultStyles['hidePagination']; 
+		(filter_var($defaultStyles['controlPanel'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['controlPanel'] = TRUE : $newDefaultStyles['controlPanel'] = $defaultStyles['controlPanel']; 
+		(filter_var($defaultStyles['hideControlPanel'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['hideControlPanel'] = TRUE : $newDefaultStyles['hideControlPanel'] = $defaultStyles['hideControlPanel']; 
+		(filter_var($defaultStyles['waitUntilLoaded'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['waitUntilLoaded'] = TRUE : $newDefaultStyles['waitUntilLoaded'] = $defaultStyles['waitUntilLoaded']; 
+		(filter_var($defaultStyles['showLoadingIcon'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['showLoadingIcon'] = TRUE : $newDefaultStyles['showLoadingIcon'] = $defaultStyles['showLoadingIcon']; 
+		(filter_var($defaultStyles['random'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['random'] = TRUE : $newDefaultStyles['random'] = $defaultStyles['random']; 
+		(filter_var($defaultStyles['avoidFilter'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['avoidFilter'] = TRUE : $newDefaultStyles['avoidFilter'] = $defaultStyles['avoidFilter']; 
+
+		return $newDefaultStyles;
+	}
+
+	/**
 	 * Saves custom styles, called by a callback from a registered custom styles setting
 	 *
 	 * @since 2.1.23
@@ -393,4 +464,5 @@ class SlideshowSEPluginGeneralSettings
 		// Return
 		return $newCustomStyles;
 	}
+
 }

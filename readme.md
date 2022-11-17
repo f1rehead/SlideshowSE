@@ -1,12 +1,11 @@
 # Slideshow SE
 `
-Contributors: f1rehead, stefanboonstra
+Contributors: f1rehead
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 5.0
-Tested up to: 5.7
-Stable tag: 2.5.5
-License: GPL-2.0-or-later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tested up to: 6.0.3
+Stable tag: 2.5.6
+License: GPLv2
 `
 
 Free, easy plugin to integrate slideshows into your WordPress site. Slideshow SE is a fork of the original Slideshow project by Stefan Boonstra.
@@ -34,31 +33,6 @@ different images, settings, and styles for each one of them.
  - Run multiple slideshows on the same page
  - Change animations and handling
  - Customizable stylesheets
-
-## Languages
-
- - Bulgarian	  (87%  - bg_BG - Translated by [Ilko Ivanov](http://software.avalonbg.com/en/index.php))
- - Chinese        (65%  - zh_CN - Translated by [Kevin Tell](http://www.ivygg.com/) and [Leo Newbiesup](http://smallseotips.com/))
- - Czech          (81%  - cs_CZ - Translated by Edhel)
- - Dutch          (100% - nl_NL - Translated by [Stefan Boonstra](http://stefanboonstra.com/)
- - English        (100%)
- - Finnish        (83%  - fi    - Translated by A. Nonymous)
- - French         (91%  - fr_FR - Translated by [Romain Sandri](http://www.onidesign.fr/))
- - German         (99%  - de_DE - Translated by [Markus Amann](http://www.dema-itsupport.com/) and others)
- - Hebrew         (53%  - he_IL - Translated by Eli Segev)
- - Italian        (83%  - it_IT - Translated by [Tecnikgeek](http://tecnikgeek.com/))
- - Japanese       (82%  - ja    - Translated by [Michihide Hotta](http://net-newbie.com/))
- - Norwegian      (99%  - nb_NO - Translated by A. Nonymous)
- - Persian        (100% - fa_IR - Translated by [W3Design](http://w3design.ir/))
- - Polish         (83%  - pl_PL - Translated by Wicher Wiater)
- - Portuguese     (92%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/) and others)
- - Portuguese     (83%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
- - Russian        (100% - ru_RU - Translated by [Coupofy](http://www.coupofy.com/) and Dmitry Fatakov)
- - Serbo-Croatian (91%  - sr_RS - Translated by [Webhosting Hub](http://www.webhostinghub.com/))
- - Spanish        (51%  - es_ES - Translated by [Violeta Rosales](https://twitter.com/violetisha))
- - Swedish        (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/) and Wilhelm Svenselius)
- - Turkish        (83%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
- - Ukrainian      (100% - uk_UK - Translated by [Coupofy](http://www.coupofy.com/))
 
 ## Need the (uncompressed) source code?
 
@@ -146,17 +120,9 @@ contain some invalid HTML. Most times invalid HTML is caused by placing the slid
 an anchor tag (`<a></a>`) or paragraph tag (`<p></p>`), while you can only place a slideshow within a 'div' element
 (`<div></div>`).
 
-### Why are you forking this plugin?
+### Why did you fork this plugin?
 
-Good question! There are a couple reasons I am forking this plugin. First, I maintain a site that has hundreds
-of slideshows and, to be honest, it's more rewarding for me to update the plugin than it is to find a new one and manually convert all
-the slideshows to whatever the new one is. Secondly, there is a real dearth of good quality, FREE slideshow plugins for 
-Wordpress. I'm not saying this one is the best, but it's pretty good and more or less honors Wordpress UI. 
-There's nothing worse than installing a new slideshow plugin only to find that your admin interface is now an ungodly
-color with giant, weird fonts and icons and your slideshows are now being stored in the cloud for a monthly
-fee. Ugh. So, primarily I'll be maintaining this fork to suit my needs but I will entertain suggestions or pull
-requests. I'm (probably) not going to rewrite this plugin, but I will work to keep it functioning in the up-to-date versions of 
-Wordpress and I'll implement new features as I need them (i.e. the Gutenberg block, which I hope to improve).
+Good question! There are a couple reasons: First, I maintain a site that has hundreds of slideshows and, to be honest, it's more rewarding for me to update the plugin than it is to find a new one and manually convert all the slideshows to whatever the new one is. Secondly, there is a real dearth of good quality, FREE slideshow plugins for Wordpress. I'm not saying this one is the best, but it's pretty good and more or less honors Wordpress UI. There's nothing worse than installing a new slideshow plugin only to find that your admin interface is now an ungodly color with giant, weird fonts and icons and your slideshows are now being stored in the cloud for a monthly fee. Ugh. So, primarily I'll be maintaining this fork to suit my needs but I will entertain suggestions or pull requests. I'm (probably) not going to rewrite this plugin, but I will work to keep it functioning in the up-to-date versions of Wordpress and I'll implement new features as I need them (i.e. the Gutenberg block, which I hope to improve).
 
 ### OK, what's on the roadmap for this plugin?
 
@@ -192,8 +158,12 @@ personal taste.
 
 ## Changelog
 
+### 2.5.6
+* Fix XSS issue. Thanks to Ngo Van Thien (Patchstack Alliance).
+* Update banner image.
+
 ### 2.5.5
-* Tested to Wordpress 5.7
+* Tested to Wordpress 6.0
 * Edits to ReadMe
 
 ### 2.5.4
@@ -590,7 +560,6 @@ personal taste.
 
 ## Links
 
-*   [Stefan Boonstra](http://stefanboonstra.com/)
 *   [Original Project GitHub](https://github.com/Boonstra/Slideshow)
 *   [Forked Project GitHub](https://github.com/f1rehead/SlideshowSE)
 
