@@ -10,7 +10,7 @@
 		<tr>
 			<td colspan="3" style="border-bottom: 1px solid #e5e5e5; text-align: center;">
 				<span style="display: inline-block; position: relative; top: 14px; padding: 0 12px; background: #fff;">
-					<?php echo $value['group']; ?> <?php _e('settings', 'slideshow-se'); ?>
+					<?php echo esc_textarea($value['group']); ?> <?php _e('settings', 'slideshow-se'); ?>
 				</span>
 			</td>
 		</tr>
@@ -19,11 +19,11 @@
 		</tr>
 		<?php endif; ?>
 		<tr
-			<?php echo !empty($value['group'])? 'class="group-' . strtolower(str_replace(' ', '-', $value['group'])) . '"': ''; ?>
+			<?php echo !empty($value['group'])? esc_attr('class="group-' . strtolower(str_replace(' ', '-', $value['group'])) . '"'): ''; ?>
 			<?php echo !empty($value['dependsOn'])? 'style="display:none;"': ''; ?>
 		>
-			<td><?php echo $value['description']; ?></td>
-			<td><?php echo SlideshowSEPluginSlideshowSettingsHandler::getInputField(SlideshowSEPluginSlideshowSettingsHandler::$settingsKey, htmlspecialchars($key), $value); ?></td>
+			<td><?php echo esc_textarea($value['description']); ?></td>
+			<td><?php echo SlideshowSEPluginSlideshowSettingsHandler::getInputField(SlideshowSEPluginSlideshowSettingsHandler::$settingsKey, $key, $value); ?></td>
 			<td><?php _e('Default', 'slideshow-se'); ?>: &#39;<?php echo (isset($value['options']))? $value['options'][$value['default']]: $value['default']; ?>&#39;</td>
 		</tr>
 

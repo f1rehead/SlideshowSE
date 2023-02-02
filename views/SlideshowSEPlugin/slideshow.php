@@ -1,6 +1,6 @@
 <?php if ($data instanceof stdClass) : ?>
 
-	<div class="slideshow_container slideshow_container_<?php echo htmlspecialchars($data->styleName); ?>" data-slideshow-id="<?php echo htmlspecialchars($data->post->ID); ?>" data-style-name="<?php echo htmlspecialchars($data->styleName); ?>" data-style-version="<?php echo htmlspecialchars($data->styleVersion); ?>" <?php if (SlideshowSEPluginGeneralSettings::getEnableLazyLoading()) : ?>data-settings="<?php echo htmlspecialchars(json_encode($data->settings)); ?>"<?php endif; ?>>
+	<div class="slideshow_container slideshow_container_<?php echo esc_attr($data->styleName); ?>" data-slideshow-id="<?php echo esc_attr($data->post->ID); ?>" data-style-name="<?php echo esc_attr($data->styleName); ?>" data-style-version="<?php echo esc_attr($data->styleVersion); ?>" <?php if (SlideshowSEPluginGeneralSettings::getEnableLazyLoading()) : ?>data-settings="<?php echo esc_attr(json_encode($data->settings)); ?>"<?php endif; ?>>
 <?php if(isset($data->settings['showLoadingIcon']) && $data->settings['showLoadingIcon'] === 'true'): ?>
 		<div class="slideshow_loading_icon"></div>
 <?php endif; ?>
@@ -20,7 +20,7 @@
 						$slideData             = new stdClass();
 						$slideData->properties = $data->slides[$i];
 
-						SlideshowSEPluginMain::outputView('SlideshowSEPluginSlideshowSlide' . DIRECTORY_SEPARATOR . 'frontend_' . $data->slides[$i]['type'] . '.php', $slideData);
+						SlideshowSEPluginMain::outputView('SlideshowSEPluginSlideshowSlide' . DIRECTORY_SEPARATOR . 'frontend_' . esc_attr($data->slides[$i]['type']) . '.php', $slideData);
 
 						if (($i + 1) % $data->settings['slidesPerView'] == 0)
 						{
@@ -41,7 +41,7 @@
 <?php if(is_array($data->log) && count($data->log) > 0): ?>
 		<!-- Error log
 <?php foreach($data->log as $logMessage): ?>
-			- <?php echo htmlspecialchars($logMessage); ?>
+			- <?php echo esc_textarea($logMessage); ?>
 <?php endforeach; ?>
 		-->
 <?php endif; ?>

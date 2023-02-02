@@ -1,6 +1,6 @@
 {
 	"name": "slideshow",
-	"version": "2.5.0",
+	"version": "2.5.6",
 	"description": "A Guternberg block for Slideshow SE. Use 'npm build' to create a simple build. 'npm start' creates a build and watch the source for file changes and rebuilds when necessary. 'npm dist' creates a plug zipfile with all CSS and JS minified. 'npm release' creates a source release suitable for updating in the Wordpress SVN repo.",
 	"author": "John West",
 	"license": "GPL-2.0-or-later",
@@ -10,6 +10,6 @@
 		"start": "wp-scripts start src/index.js --output-path=block"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^12.1.1"
+		"@wordpress/scripts": "^24.6.0"
 	}
 }

@@ -18,7 +18,7 @@ if ($data instanceof stdClass) :
 
 			echo sprintf(__(
 				'The settings set on this page apply only to newly created slideshows and therefore do not alter any existing ones. To adapt a slideshow\'s settings, %1$sclick here.%2$s', 'slideshow-se'),
-				'<a href="' . get_admin_url(null, 'edit.php?post_type=' . SlideshowSEPluginPostType::$postType) . '">',
+				'<a href="' . get_admin_url(null, 'edit.php?post_type=' . esc_attr(SlideshowSEPluginPostType::$postType)) . '">',
 				'</a>'
 			);
 
@@ -40,7 +40,7 @@ if ($data instanceof stdClass) :
 			<tr>
 				<td colspan="3" style="border-bottom: 1px solid #dfdfdf; text-align: center;">
 					<span style="display: inline-block; position: relative; top: 14px; padding: 0 12px; background: #fff;">
-						<?php echo $defaultSettingValue['group']; ?> <?php _e('settings', 'slideshow-se'); ?>
+						<?php echo esc_textarea($defaultSettingValue['group']); ?> <?php _e('settings', 'slideshow-se'); ?>
 					</span>
 				</td>
 			</tr>
@@ -52,7 +52,7 @@ if ($data instanceof stdClass) :
 
 			<tr>
 				<td>
-					<?php echo $defaultSettingValue['description']; ?>
+					<?php echo wp_kses_post($defaultSettingValue['description']); ?>
 				</td>
 				<td>
 					<?php
@@ -84,12 +84,12 @@ if ($data instanceof stdClass) :
 
 			<tr>
 				<td>
-					<?php echo $defaultStyleSettingValue['description']; ?>
+					<?php echo esc_textarea($defaultStyleSettingValue['description']); ?>
 				</td>
 				<td>
 					<?php
 
-					echo SlideshowSEPluginSlideshowSettingsHandler::getInputField(
+					SlideshowSEPluginSlideshowSettingsHandler::getInputField(
 						SlideshowSEPluginGeneralSettings::$defaultStyleSettings,
 						$defaultStyleSettingKey,
 						$defaultStyleSettingValue,

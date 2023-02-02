@@ -591,9 +591,9 @@ class SlideshowSEPluginSlideshowSettingsHandler
 
 				$inputField .= '<input
 					type="text"
-					name="' . $name . '"
-					class="' . $class . '"
-					value="' . $displayValue . '"
+					name="' . esc_attr($name) . '"
+					class="' . esc_attr($class) . '"
+					value="' . esc_attr($displayValue) . '"
 				/>';
 
 				break;
@@ -601,22 +601,22 @@ class SlideshowSEPluginSlideshowSettingsHandler
 			case 'textarea':
 
 				$inputField .= '<textarea
-					name="' . $name . '"
-					class="' . $class . '"
+					name="' . esc_attr($name) . '"
+					class="' . esc_attr($class) . '"
 					rows="20"
 					cols="60"
-				>' . $displayValue . '</textarea>';
+				>' . esc_attr($displayValue) . '</textarea>';
 
 				break;
 
 			case 'select':
 
-				$inputField .= '<select name="' . $name . '" class="' . $class . '">';
+				$inputField .= '<select name="' . esc_attr($name) . '" class="' . esc_attr($class) . '">';
 
 				foreach ($settings['options'] as $optionKey => $optionValue)
 				{
-					$inputField .= '<option value="' . $optionKey . '" ' . selected($displayValue, $optionKey, false) . '>
-						' . $optionValue . '
+					$inputField .= '<option value="' . esc_attr($optionKey) . '" ' . selected($displayValue, $optionKey, false) . '>
+						' . esc_attr($optionValue) . '
 					</option>';
 				}
 
@@ -630,11 +630,11 @@ class SlideshowSEPluginSlideshowSettingsHandler
 				{
 					$inputField .= '<label style="padding-right: 10px;"><input
 						type="radio"
-						name="' . $name . '"
-						class="' . $class . '"
-						value="' . $radioKey . '" ' .
+						name="' . esc_attr($name) . '"
+						class="' . esc_attr($class) . '"
+						value="' . esc_attr($radioKey) . '" ' .
 						checked($displayValue, $radioKey, false) .
-						' />' . $radioValue . '</label>';
+						' />' . esc_attr($radioValue) . '</label>';
 				}
 
 				break;

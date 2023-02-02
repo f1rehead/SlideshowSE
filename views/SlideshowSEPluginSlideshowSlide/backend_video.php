@@ -39,15 +39,15 @@ if ($data instanceof stdClass) :
 			<div class="slideshow-group">
 
 				<div class="slideshow-label"><?php _e('Youtube Video ID', 'slideshow-se'); ?></div>
-				<input type="text" name="<?php echo $name; ?>[videoId]" value="<?php echo $videoId; ?>" style="width: 100%;" />
+				<input type="text" name="<?php echo esc_attr($name); ?>[videoId]" value="<?php echo esc_attr($videoId); ?>" style="width: 100%;" />
 
 			</div>
 
 			<div class="slideshow-group">
 
 				<div class="slideshow-label"><?php _e('Show related videos', 'slideshow-se'); ?></div>
-				<label><input type="radio" name="<?php echo $name; ?>[showRelatedVideos]" value="true" <?php checked('true', $showRelatedVideos); ?>><?php _e('Yes', 'slideshow-se'); ?></label>
-				<label><input type="radio" name="<?php echo $name; ?>[showRelatedVideos]" value="false" <?php checked('false', $showRelatedVideos); ?>><?php _e('No', 'slideshow-se'); ?></label>
+				<label><input type="radio" name="<?php echo esc_attr($name); ?>[showRelatedVideos]" value="true" <?php checked('true', $showRelatedVideos); ?>><?php _e('Yes', 'slideshow-se'); ?></label>
+				<label><input type="radio" name="<?php echo esc_attr($name); ?>[showRelatedVideos]" value="false" <?php checked('false', $showRelatedVideos); ?>><?php _e('No', 'slideshow-se'); ?></label>
 
 			</div>
 
@@ -55,7 +55,7 @@ if ($data instanceof stdClass) :
 				<span><?php _e('Delete slide', 'slideshow-se'); ?></span>
 			</div>
 
-			<input type="hidden" name="<?php echo $name; ?>[type]" value="video" />
+			<input type="hidden" name="<?php echo esc_attr($name); ?>[type]" value="video" />
 
 		</div>
 

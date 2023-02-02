@@ -38,6 +38,6 @@ if ($data instanceof stdClass) :
 	?>
 
 	<div class="slideshow_slide slideshow_slide_video">
-		<div class="slideshow_slide_video_id" style="display: none;" data-show-related-videos="<?php echo $showRelatedVideos; ?>"><?php echo $videoId; ?></div>
+		<div class="slideshow_slide_video_id" style="display: none;" data-show-related-videos="<?php echo esc_attr($showRelatedVideos); ?>"><?php echo esc_textarea($videoId); ?></div>
 	</div>
 <?php endif; ?>

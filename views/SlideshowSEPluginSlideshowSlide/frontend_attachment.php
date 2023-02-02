@@ -124,12 +124,12 @@ if ($data instanceof stdClass):
 			if ($imageAvailable): ?>
 
 				<div class="slideshow_slide slideshow_slide_image">
-					<?php echo $anchorTag; ?>
-						<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $alternativeText; ?>" <?php echo ($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''; ?> />
-					<?php echo $endAnchorTag; ?>
+					<?php echo esc_textarea($anchorTag); ?>
+						<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo esc_textarea($alternativeText); ?>" <?php echo esc_textarea(($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''); ?> <?php echo esc_textarea(($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''); ?> />
+					<?php echo esc_textarea($endAnchorTag); ?>
 					<div class="slideshow_description_box slideshow_transparent">
-						<?php echo !empty($title) ? '<' . $titleElementTag . ' class="slideshow_title">' . $anchorTag . $title . $endAnchorTag . '</' . $titleElementTag . '>' : ''; ?>
-						<?php echo !empty($description) ? '<' . $descriptionElementTag . ' class="slideshow_description">' . $anchorTag . $description . $endAnchorTag . '</' . $descriptionElementTag . '>' : ''; ?>
+						<?php echo !empty(esc_textarea($title)) ? '<' . $titleElementTag . ' class="slideshow_title">' . $anchorTag . $title . $endAnchorTag . '</' . $titleElementTag . '>' : ''; ?>
+						<?php echo !empty(esc_textarea($description)) ? '<' . $descriptionElementTag . ' class="slideshow_description">' . $anchorTag . $description . $endAnchorTag . '</' . $descriptionElementTag . '>' : ''; ?>
 					</div>
 				</div>
 

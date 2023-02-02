@@ -175,7 +175,7 @@ class SlideshowSEPluginSlideshowStylesheet
 		header('Pragma: cache');
 		header("Cache-Control: public, max-age=31556926");
 
-		echo $stylesheet;
+		echo strip_tags($stylesheet);
 
 		die;
 	}

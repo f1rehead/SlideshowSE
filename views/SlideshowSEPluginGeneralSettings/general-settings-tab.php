@@ -29,7 +29,7 @@ if ($data instanceof stdClass) :
 			<?php foreach($capabilities as $capability => $capabilityName): ?>
 
 			<tr valign="top">
-				<th><?php echo $capabilityName; ?></th>
+				<th><?php echo esc_textarea($capabilityName); ?></th>
 				<td>
 					<?php
 
@@ -38,18 +38,18 @@ if ($data instanceof stdClass) :
 
 							$disabled = ($roleSlug == 'administrator') ? 'disabled="disabled"' : '';
 							$checked = ((isset($values['capabilities']) && array_key_exists($capability, $values['capabilities']) && $values['capabilities'][$capability] == true) || $roleSlug == 'administrator') ? 'checked="checked"' : '';
-							$name = (isset($values['name'])) ? htmlspecialchars($values['name']) : __('Untitled role', 'slideshow-se');
+							$name = (isset($values['name'])) ? $values['name'] : __('Untitled role', 'slideshow-se');
 
 							?>
 
 							<input
 								type="checkbox"
-								name="<?php echo htmlspecialchars($capability); ?>[<?php echo htmlspecialchars($roleSlug); ?>]"
-								id="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"
-								<?php echo $disabled; ?>
-								<?php echo $checked; ?>
+								name="<?php echo esc_attr($capability); ?>[<?php echo esc_attr($roleSlug); ?>]"
+								id="<?php echo esc_attr($capability . '_' . $roleSlug); ?>"
+								<?php echo esc_attr($disabled); ?>
+								<?php echo esc_attr($checked); ?>
 							/>
-							<label for="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"><?php echo $name; ?></label>
+							<label for="<?php echo esc_attr($capability . '_' . $roleSlug); ?>"><?php echo esc_attr($name); ?></label>
 							<br />
 
 							<?php endforeach; ?>
@@ -71,7 +71,7 @@ if ($data instanceof stdClass) :
 			<tr>
 				<td><?php _e('Stylesheet location', 'slideshow-se'); ?></td>
 				<td>
-					<select name="<?php echo SlideshowSEPluginGeneralSettings::$stylesheetLocation; ?>">
+					<select name="<?php echo esc_attr(SlideshowSEPluginGeneralSettings::$stylesheetLocation); ?>">
 						<option value="head" <?php selected('head', $stylesheetLocation); ?>>Head (<?php _e('top', 'slideshow-se'); ?>)</option>
 						<option value="footer" <?php selected('footer', $stylesheetLocation); ?>>Footer (<?php _e('bottom', 'slideshow-se'); ?>)</option>
 					</select>
@@ -80,8 +80,8 @@ if ($data instanceof stdClass) :
 			<tr>
 				<td><?php _e('Enable lazy loading', 'slideshow-se'); ?></td>
 				<td>
-					<input type="radio" name="<?php echo SlideshowSEPluginGeneralSettings::$enableLazyLoading; ?>" <?php checked(true, $enableLazyLoading); ?> value="true" /> <?php _e('Yes', 'slideshow-se'); ?>
-					<input type="radio" name="<?php echo SlideshowSEPluginGeneralSettings::$enableLazyLoading; ?>" <?php checked(false, $enableLazyLoading); ?> value="false" /> <?php _e('No', 'slideshow-se'); ?>
+					<input type="radio" name="<?php echo esc_attr(SlideshowSEPluginGeneralSettings::$enableLazyLoading); ?>" <?php checked(true, $enableLazyLoading); ?> value="true" /> <?php _e('Yes', 'slideshow-se'); ?>
+					<input type="radio" name="<?php echo esc_attr(SlideshowSEPluginGeneralSettings::$enableLazyLoading); ?>" <?php checked(false, $enableLazyLoading); ?> value="false" /> <?php _e('No', 'slideshow-se'); ?>
 				</td>
 			</tr>
 		</table>

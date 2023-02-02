@@ -7,9 +7,9 @@
 		<?php if( !isset($value, $value['type'], $value['default'], $value['description']) || !is_array($value)) continue; ?>
 
 		<tr <?php if(isset($value['dependsOn'])) echo 'style="display:none;"'; ?>>
-			<td><?php echo $value['description']; ?></td>
-			<td><?php echo SlideshowSEPluginSlideshowSettingsHandler::getInputField(htmlspecialchars(SlideshowSEPluginSlideshowSettingsHandler::$styleSettingsKey), $key, $value); ?></td>
-			<td><?php _e('Default', 'slideshow-se'); ?>: &#39;<?php echo (isset($value['options']))? $value['options'][$value['default']]: $value['default']; ?>&#39;</td>
+			<td><?php echo esc_textarea($value['description']); ?></td>
+			<td><?php echo wp_kses_post(SlideshowSEPluginSlideshowSettingsHandler::getInputField(SlideshowSEPluginSlideshowSettingsHandler::$styleSettingsKey, $key, $value)); ?></td>
+			<td><?php _e('Default', 'slideshow-se'); ?>: &#39;<?php echo (isset($value['options']))? esc_attr($value['options'][$value['default']]): esc_attr($value['default']); ?>&#39;</td>
 		</tr>
 
 		<?php endforeach; ?>

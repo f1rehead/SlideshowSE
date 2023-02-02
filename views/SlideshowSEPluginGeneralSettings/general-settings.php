@@ -10,7 +10,7 @@ if ($data instanceof stdClass) :
 		<form method="post" action="options.php">
 			<?php settings_fields(SlideshowSEPluginGeneralSettings::$settingsGroup); ?>
 
-			<div class="icon32" style="background: url('<?php echo SlideshowSEPluginMain::getPluginUrl() . '/images/SlideshowSEPluginPostType/adminIcon32.png'; ?>');"></div>
+			<div class="icon32" style="background: url('<?php echo esc_url(SlideshowSEPluginMain::getPluginUrl() . '/images/SlideshowSEPluginPostType/adminIcon32.png'); ?>');"></div>
 			<h2 class="nav-tab-wrapper">
 				<a href="#general-settings-tab" class="nav-tab nav-tab-active"><?php _e('General Settings', 'slideshow-se'); ?></a>
 				<a href="#default-slideshow-settings-tab" class="nav-tab"><?php _e('Default Slideshow Settings', 'slideshow-se'); ?></a>

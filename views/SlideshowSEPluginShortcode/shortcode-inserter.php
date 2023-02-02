@@ -7,7 +7,7 @@
 	    style="padding-left: .4em;"
 	>
 		<img
-			src="<?php echo SlideshowSEPluginMain::getPluginUrl() . '/images/SlideshowSEPluginPostType/adminIcon.png'; ?>"
+			src="<?php echo esc_url(SlideshowSEPluginMain::getPluginUrl() . '/images/SlideshowSEPluginPostType/adminIcon.png'); ?>"
 			alt="<?php _e('Insert a Slideshow', 'slideshow-se'); ?>"
 		    style="vertical-align: text-top;"
 		/>
@@ -34,8 +34,8 @@
 
 							<?php if(!is_numeric($slideshow->ID)) continue; ?>
 
-							<option value="<?php echo $slideshow->ID; ?>">
-								<?php echo (!empty($slideshow->post_title)) ? htmlspecialchars($slideshow->post_title) : __('Untitled slideshow', 'slideshow-se'); ?>
+							<option value="<?php echo esc_textarea($slideshow->ID); ?>">
+								<?php echo (!empty($slideshow->post_title)) ? esc_attr($slideshow->post_title) : __('Untitled slideshow', 'slideshow-se'); ?>
 							</option>
 
 							<?php endforeach; ?>
@@ -65,11 +65,11 @@
 			<?php else: ?>
 
 			<p>
-				<?php echo sprintf(
+				<?php echo esc_url(sprintf(
 					__('It seems you haven\'t created any slideshows yet. %1$sYou can create a slideshow here!%2$s', 'slideshow-se'),
 					'<a href="' . admin_url('post-new.php?post_type=' . SlideshowSEPluginPostType::$postType) . '" target="_blank">',
 					'</a>'
-				); ?>
+				)); ?>
 			</p>
 
 			<?php endif; ?>

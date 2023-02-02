@@ -56,7 +56,7 @@ if ($data instanceof stdClass) :
 					<?php if(!isset($defaultStyleValues['style']) || empty($defaultStyleValues['style'])) continue; // Continue if style is not set or empty ?>
 
 					<li>
-						<span class="style-title"><?php echo (isset($defaultStyleValues['name'])) ? htmlspecialchars($defaultStyleValues['name']) : __('Untitled'); ?></span>
+						<span class="style-title"><?php echo (isset($defaultStyleValues['name'])) ? esc_attr($defaultStyleValues['name']) : esc_textarea(__('Untitled')); ?></span>
 							<span
 								class="style-action style-default <?php htmlspecialchars($defaultStyleKey); ?>"
 								title="<?php _e('Create a new custom style from this style', 'slideshow-se'); ?>"
@@ -66,7 +66,7 @@ if ($data instanceof stdClass) :
 
 						<p style="clear: both;"></p>
 
-						<span class="style-content" style="display: none;"><?php echo htmlspecialchars($defaultStyleValues['style']); ?></span>
+						<span class="style-content" style="display: none;"><?php echo esc_attr($defaultStyleValues['style']); ?></span>
 					</li>
 
 					<?php endforeach; ?>
@@ -84,10 +84,10 @@ if ($data instanceof stdClass) :
 				<?php foreach($customStyleKeys as $customStyleKey => $customStyleKeyName): ?>
 
 					<li>
-						<span class="style-title"><?php echo htmlspecialchars($customStyleKeyName); ?></span>
+						<span class="style-title"><?php echo esc_attr($customStyleKeyName); ?></span>
 
 							<span
-								class="style-action <?php echo htmlspecialchars($customStyleKey); ?>"
+								class="style-action <?php echo esc_attr($customStyleKey); ?>"
 								title="<?php _e('Edit this style', 'slideshow-se'); ?>"
 								>
 								<?php _e('Edit', 'slideshow-se'); ?> &raquo;
@@ -96,7 +96,7 @@ if ($data instanceof stdClass) :
 						<span style="float: right;">&#124;</span>
 
 							<span
-								class="style-delete <?php echo htmlspecialchars($customStyleKey); ?>"
+								class="style-delete <?php echo esc_attr($customStyleKey); ?>"
 								title="<?php _e('Delete this style', 'slideshow-se'); ?>"
 								>
 								<?php _e('Delete', 'slideshow-se'); ?>
@@ -135,24 +135,24 @@ if ($data instanceof stdClass) :
 			<?php if(is_array($customStyleValues)): ?>
 			<?php foreach($customStyleValues as $customStyleKey => $customStyleValue): ?>
 
-				<div class="style-editor <?php echo htmlspecialchars($customStyleKey); ?>" style="display: none;">
+				<div class="style-editor <?php echo esc_attr($customStyleKey); ?>" style="display: none;">
 
 					<p>
 						<i><?php _e('Title', 'slideshow-se'); ?></i><br />
 						<input
 							type="text"
-							name="<?php echo SlideshowSEPluginGeneralSettings::$customStyles; ?>[<?php echo htmlspecialchars($customStyleKey); ?>][title]"
-							value="<?php echo (isset($customStyleKeys[$customStyleKey]) && !empty($customStyleKeys[$customStyleKey])) ? $customStyleKeys[$customStyleKey] : __('Untitled', 'slideshow-se'); ?>"
+							name="<?php echo esc_attr(SlideshowSEPluginGeneralSettings::$customStyles); ?>[<?php echo esc_attr($customStyleKey); ?>][title]"
+							value="<?php echo (isset($customStyleKeys[$customStyleKey]) && !empty($customStyleKeys[$customStyleKey])) ? esc_attr($customStyleKeys[$customStyleKey]) : __('Untitled', 'slideshow-se'); ?>"
 						/>
 					</p>
 
 					<p>
 						<i><?php _e('Style', 'slideshow-se'); ?></i><br />
 						<textarea
-							name="<?php echo SlideshowSEPluginGeneralSettings::$customStyles; ?>[<?php echo htmlspecialchars($customStyleKey); ?>][style]"
+							name="<?php echo esc_attr(SlideshowSEPluginGeneralSettings::$customStyles); ?>[<?php echo esc_attr($customStyleKey); ?>][style]"
 							rows="25"
 							cols=""
-						><?php echo isset($customStyleValue) ? htmlspecialchars($customStyleValue) : ''; ?></textarea>
+						><?php echo isset($customStyleValue) ? esc_attr($customStyleValue) : ''; ?></textarea>
 					</p>
 
 				</div>

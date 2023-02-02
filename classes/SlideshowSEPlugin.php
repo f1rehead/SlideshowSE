@@ -16,7 +16,7 @@ class SlideshowSEPlugin
 	 */
 	static function deploy($postId = null)
 	{
-		echo self::prepare($postId);
+		echo wp_kses_post(self::prepare($postId));
 	}
 
 	/**

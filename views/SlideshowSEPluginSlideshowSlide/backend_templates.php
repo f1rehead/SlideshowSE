@@ -20,7 +20,7 @@
 					<div class="slideshow-right">
 						<select class="titleElementTagID">
 							<?php foreach (SlideshowSEPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
-								<option value="<?php echo $elementTagID; ?>"><?php echo $elementTag; ?></option>
+								<option value="<?php echo esc_attr($elementTagID); ?>"><?php echo esc_textarea($elementTag); ?></option>
 							<?php endforeach; ?>
 						</select>
 					</div>
@@ -35,7 +35,7 @@
 					<div class="slideshow-right">
 						<select class="descriptionElementTagID">
 							<?php foreach (SlideshowSEPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
-								<option value="<?php echo $elementTagID; ?>"><?php echo $elementTag; ?></option>
+								<option value="<?php echo esc_attr($elementTagID); ?>"><?php echo esc_textarea($elementTag); ?></option>
 							<?php endforeach; ?>
 						</select>
 					</div>
@@ -189,7 +189,7 @@
 					<div class="slideshow-right">
 						<select class="titleElementTagID">
 							<?php foreach (SlideshowSEPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
-								<option value="<?php echo $elementTagID; ?>"><?php echo $elementTag; ?></option>
+								<option value="<?php echo esc_attr($elementTagID); ?>"><?php echo esc_textarea($elementTag); ?></option>
 							<?php endforeach; ?>
 						</select>
 					</div>
@@ -204,7 +204,7 @@
 					<div class="slideshow-right">
 						<select class="descriptionElementTagID">
 							<?php foreach (SlideshowSEPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
-								<option value="<?php echo $elementTagID; ?>"><?php echo $elementTag; ?></option>
+								<option value="<?php echo esc_attr($elementTagID); ?>"><?php echo esc_textarea($elementTag); ?></option>
 							<?php endforeach; ?>
 						</select>
 					</div>
