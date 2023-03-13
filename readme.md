@@ -158,6 +158,9 @@ personal taste.
 
 ## Changelog
 
+### 2.5.7
+* Fix crashing bug.
+
 ### 2.5.6
 * Fix XSS issue. Thanks to Ngo Van Thien (Patchstack Alliance).
 * Update banner image.
