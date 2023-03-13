@@ -4,7 +4,7 @@ Contributors: f1rehead
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 5.0
 Tested up to: 6.1.1
-Stable tag: 2.5.6
+Stable tag: 2.5.7
 License: GPLv2
 `
 
