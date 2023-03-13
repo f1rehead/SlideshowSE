@@ -58,7 +58,7 @@ class SlideshowSEPluginGeneralSettings
 
 		// Register settings
 		add_action('admin_init', array(__CLASS__, 'registerSettings'));
-		add_action('rest_api_init', 'registerSettings');
+		//add_action('rest_api_init', 'registerSettings');
 
 		// Add sub menu
 		add_action('admin_menu', array(__CLASS__, 'addSubMenuPage'));
@@ -110,7 +110,7 @@ class SlideshowSEPluginGeneralSettings
 	static function registerSettings()
 	{
 		// Register settings only when the user is going through the options.php page
-		$urlParts = explode('/', sanitize_url($_SERVER['PHP_SELF']));
+		$urlParts = explode('/', $_SERVER['PHP_SELF']);
 
 		if (array_pop($urlParts) != 'options.php')
 		{
@@ -127,7 +127,8 @@ class SlideshowSEPluginGeneralSettings
 		register_setting(self::$settingsGroup, self::$capabilities['deleteSlideshows'], array(__CLASS__, 'saveCapabilities'));
 
 		// Register default slideshow settings
-		register_setting(self::$settingsGroup, self::$defaultSettings, array(__CLASS__, 'saveDefaultSettings'));
+		//register_setting(self::$settingsGroup, self::$defaultSettings, array(__CLASS__, 'saveDefaultSettings'));
+		register_setting(self::$settingsGroup, self::$defaultSettings);
 		register_setting(self::$settingsGroup, self::$defaultStyleSettings);
 
 		// Register custom style settings
