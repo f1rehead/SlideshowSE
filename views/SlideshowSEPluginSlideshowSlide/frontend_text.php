@@ -37,7 +37,7 @@ if ($data instanceof stdClass) :
 			$textColor = '#' . $textColor;
 		}
 
-		$textColor = htmlspecialchars($textColor);
+		$textColor = esc_attr($textColor);
 	}
 
 	if (isset($properties['color']))
@@ -49,17 +49,17 @@ if ($data instanceof stdClass) :
 			$color = '#' . $color;
 		}
 
-		$color = htmlspecialchars($color);
+		$color = esc_attr($color);
 	}
 
 	if (isset($properties['url']))
 	{
-		$url = htmlspecialchars($properties['url']);
+		$url = esc_attr($properties['url']);
 	}
 
 	if (isset($properties['urlTarget']))
 	{
-		$urlTarget = htmlspecialchars($properties['urlTarget']);
+		$urlTarget = esc_attr($properties['urlTarget']);
 	}
 
 	if (isset($properties['noFollow']))
@@ -72,7 +72,7 @@ if ($data instanceof stdClass) :
 	if (strlen($url) > 0)
 	{
 		$anchorTagAttributes =
-			'href="' . $url . '" ' .
+			'href=' . $url . ' ' .
 			(strlen($urlTarget) > 0 ? 'target="' . $urlTarget . '" ' : '') .
 			(strlen($textColor) > 0 ? 'style="color: ' . $textColor . '" ' : '') .
 			$noFollow;

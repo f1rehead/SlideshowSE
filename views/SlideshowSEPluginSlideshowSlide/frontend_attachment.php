@@ -30,17 +30,18 @@ if ($data instanceof stdClass):
 
 	if (isset($properties['url']))
 	{
-		$url = htmlspecialchars($properties['url']);
+		$url = esc_attr($properties['url']);
+		error_log($url);
 	}
 
 	if (isset($properties['urlTarget']))
 	{
-		$urlTarget = htmlspecialchars($properties['urlTarget']);
+		$urlTarget = esc_attr($properties['urlTarget']);
 	}
 
 	if (isset($properties['alternativeText']))
 	{
-		$alternativeText = htmlspecialchars($properties['alternativeText']);
+		$alternativeText = esc_attr($properties['alternativeText']);
 	}
 
 	if (isset($properties['noFollow']))
@@ -61,7 +62,7 @@ if ($data instanceof stdClass):
 		if (strlen($url) > 0)
 		{
 			$anchorTagAttributes =
-				'href="' . $url . '" ' .
+				'href=' . $url . ' ' .
 				(strlen($urlTarget) > 0 ? 'target="' . $urlTarget . '" ' : '') .
 				$noFollow;
 
