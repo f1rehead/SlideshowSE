@@ -77,7 +77,7 @@ if ($data instanceof stdClass) :
 			(strlen($textColor) > 0 ? 'style="color: ' . $textColor . '" ' : '') .
 			$noFollow;
 
-		$anchorTag    = '<a ' . $anchorTagAttributes . '>';
+		$anchorTag    = '<a ' . esc_attr($anchorTagAttributes) . '>';
 		$endAnchorTag = '</a>';
 	}
 
@@ -86,17 +86,17 @@ if ($data instanceof stdClass) :
 	<div class="slideshow_slide slideshow_slide_text" style="<?php echo esc_attr(strlen($color)) > 0 ? 'background-color: ' . esc_attr($color) . ';' : '' ?>">
 		<?php if(strlen($title) > 0): ?>
 		<<?php echo esc_textarea($titleElementTag); ?> class="slideshow_title" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
-			<?php echo esc_textarea($anchorTag); ?>
+			<?php echo $anchorTag; ?>
 				<?php echo esc_textarea($title); ?>
-			<?php echo esc_textarea($endAnchorTag); ?>
+			<?php echo $endAnchorTag; ?>
 		</<?php echo esc_textarea($titleElementTag); ?>>
 		<?php endif; ?>
 
 		<?php if(strlen($description) > 0): ?>
 		<<?php echo esc_textarea($descriptionElementTag); ?> class="slideshow_description" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
-			<?php echo esc_textarea($anchorTag); ?>
+			<?php $anchorTag; ?>
 				<?php echo esc_textarea($description); ?>
-			<?php echo esc_textarea($endAnchorTag); ?>
+			<?php echo $endAnchorTag; ?>
 		</<?php echo esc_textarea($descriptionElementTag); ?>>
 		<?php endif; ?>
 
