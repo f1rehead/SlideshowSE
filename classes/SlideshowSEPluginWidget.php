@@ -79,7 +79,7 @@ class SlideshowSEPluginWidget extends WP_Widget
 		}
 
 		// Output widget
-		echo $beforeWidget . (!empty($title) ? $beforeTitle . $title . $afterTitle : '' . wp_kses_post($output) . $afterWidget);
+		echo $beforeWidget . (!empty($title) ? $beforeTitle . $title . $afterTitle : '') . $output . $afterWidget;
 	}
 
 	/**
