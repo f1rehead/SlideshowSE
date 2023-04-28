@@ -3,8 +3,8 @@
 Contributors: f1rehead
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 5.0
-Tested up to: 6.1.1
-Stable tag: 2.5.9
+Tested up to: 6.2
+Stable tag: 2.5.10
 License: GPLv2
 `
 
@@ -157,6 +157,9 @@ personal taste.
 
 
 ## Changelog
+
+### 2.5.10
+* Fix widget display.
 
 ### 2.5.9
 * Fix double quote bug.
