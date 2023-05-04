@@ -79,7 +79,6 @@ if ($data instanceof stdClass) :
 		<h4><?php _e('Default Slideshow Stylesheet', 'slideshow-se'); ?></h4>
 
 		<table>
-
 			<?php foreach($defaultStyleSettings as $defaultStyleSettingKey => $defaultStyleSettingValue): ?>
 
 			<tr>
@@ -89,7 +88,7 @@ if ($data instanceof stdClass) :
 				<td>
 					<?php
 
-					SlideshowSEPluginSlideshowSettingsHandler::getInputField(
+					echo SlideshowSEPluginSlideshowSettingsHandler::getInputField(
 						SlideshowSEPluginGeneralSettings::$defaultStyleSettings,
 						$defaultStyleSettingKey,
 						$defaultStyleSettingValue,
