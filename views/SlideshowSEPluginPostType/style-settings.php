@@ -8,7 +8,7 @@
 
 		<tr <?php if(isset($value['dependsOn'])) echo 'style="display:none;"'; ?>>
 			<td><?php echo esc_textarea($value['description']); ?></td>
-			<td><?php echo wp_kses_post(SlideshowSEPluginSlideshowSettingsHandler::getInputField(SlideshowSEPluginSlideshowSettingsHandler::$styleSettingsKey, $key, $value)); ?></td>
+			<td><?php echo SlideshowSEPluginSlideshowSettingsHandler::getInputField(SlideshowSEPluginSlideshowSettingsHandler::$styleSettingsKey, $key, $value); ?></td>
 			<td><?php _e('Default', 'slideshow-se'); ?>: &#39;<?php echo (isset($value['options']))? esc_attr($value['options'][$value['default']]): esc_attr($value['default']); ?>&#39;</td>
 		</tr>
 
