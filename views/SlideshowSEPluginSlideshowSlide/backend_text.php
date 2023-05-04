@@ -85,7 +85,7 @@ if ($data instanceof stdClass) :
 				<div class="slideshow-right">
 					<select name="<?php echo esc_attr($name); ?>[titleElementTagID]">
 						<?php foreach (SlideshowSEPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
-							<option value="<?php echo esc_attr(elementTagID); ?>" <?php selected($titleElementTagID, $elementTagID); ?>><?php echo esc_textarea($elementTag); ?></option>
+							<option value="<?php echo esc_attr($elementTagID); ?>" <?php selected($titleElementTagID, $elementTagID); ?>><?php echo esc_textarea($elementTag); ?></option>
 						<?php endforeach; ?>
 					</select>
 				</div>
