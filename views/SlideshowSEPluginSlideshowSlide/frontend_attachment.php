@@ -31,7 +31,6 @@ if ($data instanceof stdClass):
 	if (isset($properties['url']))
 	{
 		$url = esc_attr($properties['url']);
-		error_log($url);
 	}
 
 	if (isset($properties['urlTarget']))

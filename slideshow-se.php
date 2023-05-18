@@ -93,11 +93,13 @@ class SlideshowSEPluginMain
 				self::$version
 			);
 
-			wp_localize_script(
-				'slideshow-jquery-image-gallery-script',
-				'slideshow_jquery_image_gallery_script_adminURL',
-				admin_url()
-			);
+			// adminURL string was removed in 6bc7f538425a2d399a747746500f363bd786331a
+			// not sure why this wasn't removed back then...
+			//wp_localize_script(
+			//	'slideshow-jquery-image-gallery-script',
+			//	'slideshow_jquery_image_gallery_script_adminURL',
+			//	admin_url()
+			//);
 		}
 	}
 

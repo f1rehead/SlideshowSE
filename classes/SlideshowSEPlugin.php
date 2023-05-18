@@ -163,7 +163,7 @@ class SlideshowSEPlugin
 		}
 
 		if (!SlideshowSEPluginGeneralSettings::getEnableLazyLoading())
-		{
+		{ error_log("settings: ".$post->ID);
 			// Include slideshow settings by localizing them
 			wp_localize_script(
 				'slideshow-jquery-image-gallery-script',
@@ -171,12 +171,14 @@ class SlideshowSEPlugin
 				$settings
 			);
 
+			// adminURL string was removed in 6bc7f538425a2d399a747746500f363bd786331a
+			// not sure why this wasn't removed back then...
 			// Include the location of the admin-ajax.php file
-			wp_localize_script(
-				'slideshow-jquery-image-gallery-script',
-				'slideshow_jquery_image_gallery_script_adminURL',
-				admin_url()
-			);
+			//wp_localize_script(
+			//	'slideshow-jquery-image-gallery-script',
+			//	'slideshow_jquery_image_gallery_script_adminURL',
+			//	admin_url()
+			//);
 		}
 
 		// Return output
