@@ -9,6 +9,10 @@
 */
 function f1rehead_slideshow_render_slideshow_block ( $attributes ) {
 	ob_start(); // start buffering to avoid the already-sent-headers error
-	SlideshowSEPlugin::deploy($attributes['selectedSlideshow']);
+	$slideshow = null;
+	if (isset($attributes['selectedSlideshow'])) {
+		$slideshow = $attributes['selectedSlideshow'];
+	}
+	SlideshowSEPlugin::deploy($slideshow);
 	return ob_get_clean();
 }

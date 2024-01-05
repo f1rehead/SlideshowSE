@@ -4,7 +4,7 @@ Contributors: f1rehead
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 5.0
 Tested up to: 6.3
-Stable tag: 2.5.12
+Stable tag: 2.5.13
 License: GPLv2
 `
 
@@ -157,6 +157,9 @@ personal taste.
 
 
 ## Changelog
+
+### 2.5.13
+* Fix error with PHP 8
 
 ### 2.5.12
 * Remove output of messages to error_log.
