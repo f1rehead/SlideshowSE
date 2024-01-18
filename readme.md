@@ -3,8 +3,8 @@
 Contributors: f1rehead
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 5.0
-Tested up to: 6.3
-Stable tag: 2.5.13
+Tested up to: 6.4.2
+Stable tag: 2.5.14
 License: GPLv2
 `
 
@@ -157,6 +157,9 @@ personal taste.
 
 
 ## Changelog
+
+### 2.5.14
+* Fix double escaping on text slides.
 
 ### 2.5.13
 * Fix error with PHP 8

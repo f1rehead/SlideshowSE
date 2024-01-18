@@ -87,7 +87,7 @@ if ($data instanceof stdClass) :
 		<?php if(strlen($title) > 0): ?>
 		<<?php echo esc_textarea($titleElementTag); ?> class="slideshow_title" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
 			<?php echo $anchorTag; ?>
-				<?php echo esc_textarea($title); ?>
+				<?php echo $title; ?>
 			<?php echo $endAnchorTag; ?>
 		</<?php echo esc_textarea($titleElementTag); ?>>
 		<?php endif; ?>
@@ -95,7 +95,7 @@ if ($data instanceof stdClass) :
 		<?php if(strlen($description) > 0): ?>
 		<<?php echo esc_textarea($descriptionElementTag); ?> class="slideshow_description" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
 			<?php $anchorTag; ?>
-				<?php echo esc_textarea($description); ?>
+				<?php echo $description; ?>
 			<?php echo $endAnchorTag; ?>
 		</<?php echo esc_textarea($descriptionElementTag); ?>>
 		<?php endif; ?>
