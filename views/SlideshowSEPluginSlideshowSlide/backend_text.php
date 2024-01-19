@@ -66,7 +66,7 @@ if ($data instanceof stdClass) :
 			<div class="slide-title">
 				<?php if (strlen($title) > 0) : ?>
 
-					<?php echo esc_textarea($title); ?>
+					<?php echo $title; ?>
 
 				<?php else : ?>
 
@@ -90,7 +90,7 @@ if ($data instanceof stdClass) :
 					</select>
 				</div>
 				<div class="clear"></div>
-				<input type="text" name="<?php echo esc_attr($name); ?>[title]" value="<?php echo esc_textarea($title); ?>" style="width: 100%;" /><br />
+				<input type="text" name="<?php echo esc_attr($name); ?>[title]" value="<?php echo $title; ?>" style="width: 100%;" /><br />
 
 			</div>
 
@@ -105,7 +105,7 @@ if ($data instanceof stdClass) :
 					</select>
 				</div>
 				<div clear="clear"></div>
-				<textarea name="<?php echo esc_attr($name); ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo esc_textarea($description); ?></textarea><br />
+				<textarea name="<?php echo esc_attr($name); ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
 
 			</div>
 
