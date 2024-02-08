@@ -158,6 +158,9 @@ personal taste.
 
 ## Changelog
 
+### 2.5.16
+* Fix XSS issue.
+
 ### 2.5.15
 * Fix double escaping on text slides in backend.
 

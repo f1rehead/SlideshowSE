@@ -66,7 +66,7 @@ if ($data instanceof stdClass) :
 			<div class="slide-title">
 				<?php if (strlen($title) > 0) : ?>
 
-					<?php echo $title; ?>
+					<?php echo esc_attr($title); ?>
 
 				<?php else : ?>
 
@@ -85,12 +85,12 @@ if ($data instanceof stdClass) :
 				<div class="slideshow-right">
 					<select name="<?php echo esc_attr($name); ?>[titleElementTagID]">
 						<?php foreach (SlideshowSEPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
-							<option value="<?php echo esc_attr($elementTagID); ?>" <?php selected($titleElementTagID, $elementTagID); ?>><?php echo esc_textarea($elementTag); ?></option>
+							<option value="<?php echo esc_attr($elementTagID); ?>" <?php selected($titleElementTagID, $elementTagID); ?>><?php echo esc_attr($elementTag); ?></option>
 						<?php endforeach; ?>
 					</select>
 				</div>
 				<div class="clear"></div>
-				<input type="text" name="<?php echo esc_attr($name); ?>[title]" value="<?php echo $title; ?>" style="width: 100%;" /><br />
+				<input type="text" name="<?php echo esc_attr($name); ?>[title]" value="<?php echo esc_attr($title); ?>" style="width: 100%;" /><br />
 
 			</div>
 
@@ -100,22 +100,21 @@ if ($data instanceof stdClass) :
 				<div class="slideshow-right">
 					<select name="<?php echo esc_attr($name); ?>[descriptionElementTagID]">
 						<?php foreach (SlideshowSEPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
-							<option value="<?php echo esc_attr($elementTagID); ?>" <?php selected($descriptionElementTagID, $elementTagID); ?>><?php echo esc_textarea($elementTag); ?></option>
+							<option value="<?php echo esc_attr($elementTagID); ?>" <?php selected($descriptionElementTagID, $elementTagID); ?>><?php echo esc_attr($elementTag); ?></option>
 						<?php endforeach; ?>
 					</select>
 				</div>
 				<div clear="clear"></div>
 				<textarea name="<?php echo esc_attr($name); ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
-
 			</div>
 
 			<div class="slideshow-group">
 
 				<div class="slideshow-label"><?php _e('Text color', 'slideshow-se'); ?></div>
-				<input type="text" name="<?php echo esc_attr($name); ?>[textColor]" value="<?php echo esc_textarea($textColor); ?>" class="wp-color-picker-field" />
+				<input type="text" name="<?php echo esc_attr($name); ?>[textColor]" value="<?php echo esc_attr($textColor); ?>" class="wp-color-picker-field" />
 
 				<div class="slideshow-label"><?php _e('Background color', 'slideshow-se'); ?></div>
-				<input type="text" name="<?php echo esc_attr($name); ?>[color]" value="<?php echo esc_textarea($color); ?>" class="wp-color-picker-field" />
+				<input type="text" name="<?php echo esc_attr($name); ?>[color]" value="<?php echo esc_attr($color); ?>" class="wp-color-picker-field" />
 				<div style="font-style: italic;"><?php _e('(Leave empty for a transparent background)', 'slideshow-se'); ?></div>
 
 			</div>
@@ -147,4 +146,5 @@ if ($data instanceof stdClass) :
 		</div>
 
 	</div>
+
 <?php endif; ?>

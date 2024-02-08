@@ -85,21 +85,22 @@ if ($data instanceof stdClass) :
 
 	<div class="slideshow_slide slideshow_slide_text" style="<?php echo esc_attr(strlen($color)) > 0 ? 'background-color: ' . esc_attr($color) . ';' : '' ?>">
 		<?php if(strlen($title) > 0): ?>
-		<<?php echo esc_textarea($titleElementTag); ?> class="slideshow_title" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
+		<<?php echo esc_attr($titleElementTag); ?> class="slideshow_title" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
 			<?php echo $anchorTag; ?>
 				<?php echo $title; ?>
 			<?php echo $endAnchorTag; ?>
-		</<?php echo esc_textarea($titleElementTag); ?>>
+		</<?php echo esc_attr($titleElementTag); ?>>
 		<?php endif; ?>
 
 		<?php if(strlen($description) > 0): ?>
-		<<?php echo esc_textarea($descriptionElementTag); ?> class="slideshow_description" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
+		<<?php echo esc_attr($descriptionElementTag); ?> class="slideshow_description" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
 			<?php $anchorTag; ?>
-				<?php echo $description; ?>
+			<?php echo $description; ?>
 			<?php echo $endAnchorTag; ?>
-		</<?php echo esc_textarea($descriptionElementTag); ?>>
+		</<?php echo esc_attr($descriptionElementTag); ?>>
 		<?php endif; ?>
 
 		<a <?php echo esc_attr($anchorTagAttributes) ?> class="slideshow_background_anchor"></a>
 	</div>
+
 <?php endif; ?>
