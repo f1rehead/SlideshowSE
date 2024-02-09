@@ -110,7 +110,7 @@
 
 					<div class="slideshow-label"><?php _e('Show related videos', 'slideshow-se'); ?></div>
 					<label><input type="radio" class="showRelatedVideos" value="true"><?php _e('Yes', 'slideshow-se'); ?></label>
-					<label><input type="radio" class="showRelatedVideos" value="false" checked="checked""><?php _e('No', 'slideshow-se'); ?></label>
+					<label><input type="radio" class="showRelatedVideos" value="false" checked="checked"><?php _e('No', 'slideshow-se'); ?></label>
 
 				</div>
 
