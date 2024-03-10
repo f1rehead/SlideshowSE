@@ -129,7 +129,7 @@ if ($data instanceof stdClass):
 					<?php echo $endAnchorTag; ?>
 					<div class="slideshow_description_box slideshow_transparent">
 						<?php echo !empty(esc_textarea($title)) ? '<' . $titleElementTag . ' class="slideshow_title">' . $anchorTag . wp_kses_post($title) . $endAnchorTag . '</' . $titleElementTag . '>' : ''; ?>
-						<?php echo !empty(esc_textarea($description)) ? '<' . $descriptionElementTag . ' class="slideshow_description">' . $anchorTag . wp_kses_post($description) . $endAnchorTag . '</' . $descriptionElementTag . '>' : ''; ?>
+						<?php echo !empty(esc_textarea($description)) ? '<' . $descriptionElementTag . ' class="slideshow_description">' . $anchorTag . $description . $endAnchorTag . '</' . $descriptionElementTag . '>' : ''; ?>
 					</div>
 				</div>
 
