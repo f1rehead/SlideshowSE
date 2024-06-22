@@ -3,9 +3,9 @@
  Plugin Name: Slideshow SE
  Plugin URI: http://wordpress.org/extend/plugins/slideshow-se/
  Description: The slideshow plugin is easily deployable on your website. Add any image that has already been uploaded to add to your slideshow, add text slides, or even add a video. Options and styles are customizable for every single slideshow on your website.
- Version: 2.5.17
+ Version: 2.5.18
  Requires at least: 5.0
- Tested up to: 6.4.2
+ Tested up to: 6.4.3
  Requires PHP: 5.0
  Author: John West
  License: GPLv2
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class SlideshowSEPluginMain
 {
 	/** @var string $version */
-	static $version = '2.5.17';
+	static $version = '2.5.18';
 
 	/**
 	 * Bootstraps the application by assigning the right functions to
@@ -90,7 +90,8 @@ class SlideshowSEPluginMain
 				'slideshow-jquery-image-gallery-script',
 				self::getPluginUrl() . '/js/min/all.frontend.min.js',
 				array('jquery'),
-				self::$version
+				self::$version,
+				false
 			);
 
 			// adminURL string was removed in 6bc7f538425a2d399a747746500f363bd786331a
@@ -135,7 +136,8 @@ class SlideshowSEPluginMain
 				'jquery-ui-sortable',
 				'wp-color-picker'
 			),
-			SlideshowSEPluginMain::$version
+			SlideshowSEPluginMain::$version,
+			false
 		);
 
 		wp_enqueue_style(
@@ -271,7 +273,8 @@ function f1rehead_slideshow_block_init() {
 		'f1rehead-slideshow-block-editor',
 		plugins_url( $index_js, __FILE__ ),
 		$script_asset['dependencies'],
-		$script_asset['version']
+		$script_asset['version'],
+		false
 	);
 
 	$editor_css = 'block/index.css';

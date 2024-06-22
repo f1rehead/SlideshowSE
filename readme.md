@@ -1,8 +1,12 @@
 # Slideshow SE
 
-`Contributors: f1rehead Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript Requires at least: 5.0 Tested up to: 6.4.2 Stable tag: 2.5.17 License: GPLv2`
-
-Free, easy plugin to integrate slideshows into your WordPress site. Slideshow SE is a fork of the original Slideshow project by Stefan Boonstra.
+Contributors: f1rehead
+Tags: slideshow, carousel, image, gallery, free
+Requires at least: 5.0
+Tested up to: 6.4.3
+Stable tag: 2.5.18
+License: GPLv2
+Completely free, open source plugin to easily add slideshows into your WordPress site.
 
 ## Description
 
@@ -11,8 +15,8 @@ Slideshow SE provides an easy way to add a slideshow to any WordPress installati
 Any image can be loaded into the slideshow by picking it from the WordPress media page, even images you've already
 uploaded can be inserted into your slideshow right away!
 
-Fancy doing something crazy? You can create and use as many slideshows as you'd like, with
-different images, settings, and styles for each one of them.
+Fancy doing something crazy? Create and use as many slideshows as you'd like, with
+different images, settings, and styles for each one.
 
 ## Features
 
@@ -26,6 +30,7 @@ different images, settings, and styles for each one of them.
 - Run multiple slideshows on the same page
 - Change animations and handling
 - Customizable stylesheets
+- COMPLETELY FREE AND OPEN SOURCE
 
 ## Need the (uncompressed) source code?
 
@@ -147,6 +152,10 @@ Absolutely! I will look at all pull requests on the Github repo. If you have any
    personal taste.
 
 ## Changelog
+
+### 2.5.18
+
+- Fix local file injection (LFI) issue.
 
 ### 2.5.17
 
