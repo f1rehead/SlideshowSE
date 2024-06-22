@@ -10,7 +10,7 @@ if ($data instanceof stdClass):
 
 	if (isset($properties['title']))
 	{
-		$title = trim(SlideshowSEPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']));
+		$title = $properties['title'];
 	}
 
 	if (isset($properties['titleElementTagID']))
@@ -30,17 +30,17 @@ if ($data instanceof stdClass):
 
 	if (isset($properties['url']))
 	{
-		$url = esc_attr($properties['url']);
+		$url = $properties['url'];
 	}
 
 	if (isset($properties['urlTarget']))
 	{
-		$urlTarget = esc_attr($properties['urlTarget']);
+		$urlTarget = $properties['urlTarget'];
 	}
 
 	if (isset($properties['alternativeText']))
 	{
-		$alternativeText = esc_attr($properties['alternativeText']);
+		$alternativeText = $properties['alternativeText'];
 	}
 
 	if (isset($properties['noFollow']))
@@ -65,7 +65,7 @@ if ($data instanceof stdClass):
 				(strlen($urlTarget) > 0 ? 'target="' . $urlTarget . '" ' : '') .
 				$noFollow;
 
-			$anchorTag    = '<a ' . esc_attr($anchorTagAttributes) . '>';
+			$anchorTag    = '<a ' . $anchorTagAttributes . '>';
 			$endAnchorTag = '</a>';
 		}
 
@@ -80,12 +80,12 @@ if ($data instanceof stdClass):
 
 				if (empty($alternativeText))
 				{
-					$alternativeText = htmlspecialchars($attachment->post_title);
+					$alternativeText = $attachment->post_title;
 				}
 
 				if (empty($alternativeText))
 				{
-					$alternativeText = htmlspecialchars($attachment->post_content);
+					$alternativeText = $attachment->post_content;
 				}
 			}
 
@@ -124,12 +124,12 @@ if ($data instanceof stdClass):
 			if ($imageAvailable): ?>
 
 				<div class="slideshow_slide slideshow_slide_image">
-					<?php echo $anchorTag; ?>
-						<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo esc_textarea($alternativeText); ?>" <?php echo esc_textarea(($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''); ?> <?php echo esc_textarea(($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''); ?> />
-					<?php echo $endAnchorTag; ?>
+					<?php echo esc_attr($anchorTag); ?>
+						<img src="<?php echo esc_attr($imageSrc); ?>" alt="<?php echo esc_attr($alternativeText); ?>" <?php echo ($imageWidth > 0) ? 'width="' . esc_attr($imageWidth) . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . esc_attr($imageHeight) . '"' : ''; ?> />
+					<?php echo esc_attr($endAnchorTag); ?>
 					<div class="slideshow_description_box slideshow_transparent">
-						<?php echo !empty(esc_textarea($title)) ? '<' . $titleElementTag . ' class="slideshow_title">' . $anchorTag . wp_kses_post($title) . $endAnchorTag . '</' . $titleElementTag . '>' : ''; ?>
-						<?php echo !empty(esc_textarea($description)) ? '<' . $descriptionElementTag . ' class="slideshow_description">' . $anchorTag . $description . $endAnchorTag . '</' . $descriptionElementTag . '>' : ''; ?>
+						<?php echo !empty($title) ? '<' . esc_attr($titleElementTag) . ' class="slideshow_title">' . esc_attr($anchorTag) . wp_kses_post($title) . esc_attr($endAnchorTag) . '</' . esc_attr($titleElementTag) . '>' : ''; ?>
+						<?php echo !empty($description) ? '<' . esc_attr($descriptionElementTag) . ' class="slideshow_description">' . esc_attr($anchorTag) . esc_attr($description) . esc_attr($endAnchorTag) . '</' . esc_attr($descriptionElementTag) . '>' : ''; ?>
 					</div>
 				</div>
 

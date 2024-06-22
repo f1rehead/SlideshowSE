@@ -3,21 +3,21 @@
 	<a
 		href="#TB_inline?width=450&inlineId=insertSlideshowShortcode"
 		class="button thickbox"
-		title="<?php _e('Insert a Slideshow', 'slideshow-se'); ?>"
+		title="<?php esc_attr_e('Insert a Slideshow', 'slideshow-se'); ?>"
 	    style="padding-left: .4em;"
 	>
 		<img
 			src="<?php echo esc_url(SlideshowSEPluginMain::getPluginUrl() . '/images/SlideshowSEPluginPostType/adminIcon.png'); ?>"
-			alt="<?php _e('Insert a Slideshow', 'slideshow-se'); ?>"
+			alt="<?php esc_attr_e('Insert a Slideshow', 'slideshow-se'); ?>"
 		    style="vertical-align: text-top;"
 		/>
-		<?php _e('Insert Slideshow', 'slideshow-se'); ?>
+		<?php esc_attr_e('Insert Slideshow', 'slideshow-se'); ?>
 	</a>
 
 	<div id="insertSlideshowShortcode" style="display: none;">
 
 		<h3 style="padding: 10px 0; color: #5a5a5a;">
-			<?php _e('Insert a Slideshow', 'slideshow-se'); ?>
+			<?php esc_attr_e('Insert a Slideshow', 'slideshow-se'); ?>
 		</h3>
 
 		<div style="border: 1px solid #ddd; padding: 10px; color: #5a5a5a;">
@@ -26,7 +26,7 @@
 			<table>
 				<tr>
 
-					<td><?php _e('Select a slideshow', 'slideshow-se'); ?></td>
+					<td><?php esc_attr_e('Select a slideshow', 'slideshow-se'); ?></td>
 					<td>
 						<select id="insertSlideshowShortcodeSlideshowSelect">
 
@@ -35,7 +35,7 @@
 							<?php if(!is_numeric($slideshow->ID)) continue; ?>
 
 							<option value="<?php echo esc_textarea($slideshow->ID); ?>">
-								<?php echo (!empty($slideshow->post_title)) ? esc_attr($slideshow->post_title) : __('Untitled slideshow', 'slideshow-se'); ?>
+								<?php echo (!empty($slideshow->post_title)) ? esc_attr($slideshow->post_title) : esc_attr_e('Untitled slideshow', 'slideshow-se'); ?>
 							</option>
 
 							<?php endforeach; ?>
@@ -50,12 +50,12 @@
 						<input
 							type="button"
 							class="button-primary insertSlideshowShortcodeSlideshowInsertButton"
-							value="<?php _e('Insert Slideshow', 'slideshow-se'); ?>"
+							value="<?php esc_attr_e('Insert Slideshow', 'slideshow-se'); ?>"
 						/>
 						<input
 							type="button"
 							class="button insertSlideshowShortcodeCancelButton"
-						    value="<?php _e('Cancel', 'slideshow-se'); ?>"
+						    value="<?php esc_attr_e('Cancel', 'slideshow-se'); ?>"
 						/>
 					</td>
 
@@ -66,6 +66,7 @@
 
 			<p>
 				<?php echo esc_url(sprintf(
+					/* translators: %s: URL to create a new slideshow */
 					__('It seems you haven\'t created any slideshows yet. %1$sYou can create a slideshow here!%2$s', 'slideshow-se'),
 					'<a href="' . admin_url('post-new.php?post_type=' . SlideshowSEPluginPostType::$postType) . '" target="_blank">',
 					'</a>'

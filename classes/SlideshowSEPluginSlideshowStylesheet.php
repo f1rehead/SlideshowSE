@@ -121,14 +121,16 @@ class SlideshowSEPluginSlideshowStylesheet
 					'slideshow-jquery-image-gallery-ajax-stylesheet_' . $name,
 					admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $name, 'admin'),
 					array(),
-					$version
+					$version,
+					false
 				);
 			} else {
 				wp_enqueue_style(
 					'slideshow-jquery-image-gallery-stylesheet_' . $name,
 					SlideshowSEPluginMain::getPluginUrl() . '/css/' . $name . '.css',
 					array(),
-					$version
+					$version,
+					false
 				);
 			}
 		}
@@ -175,7 +177,7 @@ class SlideshowSEPluginSlideshowStylesheet
 		header('Pragma: cache');
 		header("Cache-Control: public, max-age=31556926");
 
-		echo strip_tags($stylesheet);
+		echo wp_kses_post($stylesheet);
 
 		die;
 	}

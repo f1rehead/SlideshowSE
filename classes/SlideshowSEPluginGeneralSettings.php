@@ -277,9 +277,7 @@ class SlideshowSEPluginGeneralSettings
 	static function saveCapabilities($capability)
 	{
 		// Verify nonce
-		$nonce = isset($_POST['_wpnonce']) ? $_POST['_wpnonce'] : '';
-
-		if (!wp_verify_nonce($nonce, self::$settingsGroup . '-options'))
+		if (!wp_verify_nonce($_POST['_wpnonce'], self::$settingsGroup . '-options'))
 		{
 			return $capability;
 		}
@@ -354,9 +352,9 @@ class SlideshowSEPluginGeneralSettings
 		);
 
 		// Verify nonce
-		$nonce = isset($_POST['_wpnonce']) ? $_POST['_wpnonce'] : '';
+		//$nonce = isset($_POST['_wpnonce']) ? $_POST['_wpnonce'] : '';
 
-		if (!wp_verify_nonce($nonce, self::$settingsGroup . '-options'))
+		if (isset($_POST['_wpnonce']) && !wp_verify_nonce($nonce, self::$settingsGroup . '-options'))
 		{
 			return $defaultStyles;
 		}
@@ -406,9 +404,7 @@ class SlideshowSEPluginGeneralSettings
 	static function saveCustomStyles($customStyles)
 	{
 		// Verify nonce
-		$nonce = isset($_POST['_wpnonce']) ? $_POST['_wpnonce'] : '';
-
-		if (!wp_verify_nonce($nonce, self::$settingsGroup . '-options'))
+		if (!wp_verify_nonce($_POST['_wpnonce'], self::$settingsGroup . '-options'))
 		{
 			return $customStyles;
 		}

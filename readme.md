@@ -156,6 +156,7 @@ Absolutely! I will look at all pull requests on the Github repo. If you have any
 ### 2.5.18
 
 - Fix local file injection (LFI) issue.
+- Fix various security issues.
 
 ### 2.5.17
 

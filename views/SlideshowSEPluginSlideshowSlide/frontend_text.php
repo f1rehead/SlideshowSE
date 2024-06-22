@@ -10,7 +10,7 @@ if ($data instanceof stdClass) :
 
 	if (isset($properties['title']))
 	{
-		$title = trim(SlideshowSEPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']));
+		$title = $properties['title'];
 	}
 
 	if (isset($properties['titleElementTagID']))
@@ -20,7 +20,7 @@ if ($data instanceof stdClass) :
 
 	if (isset($properties['description']))
 	{
-		$description = trim(SlideshowSEPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']));
+		$description = $properties['description'];
 	}
 
 	if (isset($properties['descriptionElementTagID']))
@@ -37,7 +37,7 @@ if ($data instanceof stdClass) :
 			$textColor = '#' . $textColor;
 		}
 
-		$textColor = esc_attr($textColor);
+		$textColor = $textColor;
 	}
 
 	if (isset($properties['color']))
@@ -49,17 +49,17 @@ if ($data instanceof stdClass) :
 			$color = '#' . $color;
 		}
 
-		$color = esc_attr($color);
+		$color = $color;
 	}
 
 	if (isset($properties['url']))
 	{
-		$url = esc_attr($properties['url']);
+		$url = $properties['url'];
 	}
 
 	if (isset($properties['urlTarget']))
 	{
-		$urlTarget = esc_attr($properties['urlTarget']);
+		$urlTarget = $properties['urlTarget'];
 	}
 
 	if (isset($properties['noFollow']))
@@ -77,7 +77,7 @@ if ($data instanceof stdClass) :
 			(strlen($textColor) > 0 ? 'style="color: ' . $textColor . '" ' : '') .
 			$noFollow;
 
-		$anchorTag    = '<a ' . esc_attr($anchorTagAttributes) . '>';
+		$anchorTag    = '<a ' . $anchorTagAttributes . '>';
 		$endAnchorTag = '</a>';
 	}
 
@@ -86,17 +86,17 @@ if ($data instanceof stdClass) :
 	<div class="slideshow_slide slideshow_slide_text" style="<?php echo esc_attr(strlen($color)) > 0 ? 'background-color: ' . esc_attr($color) . ';' : '' ?>">
 		<?php if(strlen($title) > 0): ?>
 		<<?php echo esc_attr($titleElementTag); ?> class="slideshow_title" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
-			<?php echo $anchorTag; ?>
-				<?php echo $title; ?>
-			<?php echo $endAnchorTag; ?>
+			<?php echo esc_attr($anchorTag); ?>
+				<?php echo esc_attr($title); ?>
+			<?php echo esc_attr($endAnchorTag); ?>
 		</<?php echo esc_attr($titleElementTag); ?>>
 		<?php endif; ?>
 
 		<?php if(strlen($description) > 0): ?>
 		<<?php echo esc_attr($descriptionElementTag); ?> class="slideshow_description" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
-			<?php $anchorTag; ?>
-			<?php echo $description; ?>
-			<?php echo $endAnchorTag; ?>
+			<?php echo esc_attr($anchorTag); ?>
+			<?php echo wp_kses_post($description); ?>
+			<?php echo esc_attr($endAnchorTag); ?>
 		</<?php echo esc_attr($descriptionElementTag); ?>>
 		<?php endif; ?>
 

@@ -79,7 +79,8 @@ class SlideshowSEPluginWidget extends WP_Widget
 		}
 
 		// Output widget
-		echo $beforeWidget . (!empty($title) ? $beforeTitle . $title . $afterTitle : '') . $output . $afterWidget;
+		//echo esc_html($beforeWidget) . (!empty($title) ? esc_html($beforeTitle) . esc_html($title) . esc_html($afterTitle) : '') . esc_html($output) . esc_html($afterWidget);
+		echo wp_kses_post($beforeWidget . (!empty($title) ? $beforeTitle . $title . $afterTitle : '') . $output . $afterWidget);
 	}
 
 	/**
@@ -93,7 +94,7 @@ class SlideshowSEPluginWidget extends WP_Widget
 	{
 		// Defaults
 		$defaults = array(
-			'title'       => __(self::$widgetName, 'slideshow-se'),
+			'title'       => 'slideshow-se',
 			'slideshowId' => -1
 		);
 

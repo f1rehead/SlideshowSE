@@ -10,7 +10,7 @@
 		<tr>
 			<td colspan="3" style="border-bottom: 1px solid #e5e5e5; text-align: center;">
 				<span style="display: inline-block; position: relative; top: 14px; padding: 0 12px; background: #fff;">
-					<?php echo esc_textarea($value['group']); ?> <?php _e('settings', 'slideshow-se'); ?>
+					<?php echo esc_textarea($value['group']); ?> <?php esc_attr_e('settings', 'slideshow-se'); ?>
 				</span>
 			</td>
 		</tr>
@@ -23,8 +23,8 @@
 			<?php echo !empty($value['dependsOn'])? 'style="display:none;"': ''; ?>
 		>
 			<td><?php echo esc_textarea($value['description']); ?></td>
-			<td><?php echo SlideshowSEPluginSlideshowSettingsHandler::getInputField(SlideshowSEPluginSlideshowSettingsHandler::$settingsKey, $key, $value); ?></td>
-			<td><?php _e('Default', 'slideshow-se'); ?>: &#39;<?php echo (isset($value['options']))? $value['options'][$value['default']]: $value['default']; ?>&#39;</td>
+			<td><?php echo esc_attr(SlideshowSEPluginSlideshowSettingsHandler::getInputField(SlideshowSEPluginSlideshowSettingsHandler::$settingsKey), esc_attr($key), esc_attr($value)); ?></td>
+			<td><?php esc_attr_e('Default', 'slideshow-se'); ?>: &#39;<?php echo (isset($value['options']))? esc_attr($value['options'][$value['default']]): esc_attr($value['default']); ?>&#39;</td>
 		</tr>
 
 		<?php endforeach; ?>

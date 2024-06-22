@@ -26,6 +26,7 @@ class SlideshowSEPluginSecurity
 		'ol'     => array('endTag' => true, 'attributes' => 'default'),
 		'p'      => array('endTag' => true, 'attributes' => 'default'),
 		'span'   => array('endTag' => true, 'attributes' => 'default'),
+		'em'	 => array('endTag' => true, 'attributes' => 'default'),
 		'strong' => array('endTag' => true, 'attributes' => 'default'),
 		'sub'    => array('endTag' => true, 'attributes' => 'default'),
 		'sup'    => array('endTag' => true, 'attributes' => 'default'),

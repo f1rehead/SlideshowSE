@@ -12,7 +12,7 @@ if ($data instanceof stdClass) :
 
 	if (isset($properties['title']))
 	{
-		$title = SlideshowSEPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']);
+		$title = $properties['title'];
 	}
 
 	if (isset($properties['titleElementTagID']))
@@ -22,7 +22,7 @@ if ($data instanceof stdClass) :
 
 	if (isset($properties['description']))
 	{
-		$description = SlideshowSEPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']);
+		$description = $properties['description'];
 	}
 
 	if (isset($properties['descriptionElementTagID']))
@@ -32,17 +32,17 @@ if ($data instanceof stdClass) :
 
 	if (isset($properties['textColor']))
 	{
-		$textColor = htmlspecialchars($properties['textColor']);
+		$textColor = $properties['textColor'];
 	}
 
 	if (isset($properties['color']))
 	{
-		$color = htmlspecialchars($properties['color']);
+		$color = $properties['color'];
 	}
 
 	if (isset($properties['url']))
 	{
-		$url = htmlspecialchars($properties['url']);
+		$url = $properties['url'];
 	}
 
 	if (isset($properties['urlTarget']))
@@ -59,7 +59,7 @@ if ($data instanceof stdClass) :
 
 	<div class="widefat sortable-slides-list-item postbox">
 
-		<div class="handlediv" title="<?php _e('Click to toggle'); ?>"><br></div>
+		<div class="handlediv" title="<?php esc_attr_e('Click to toggle'); ?>"><br></div>
 
 		<div class="hndle">
 			<div class="slide-icon text-slide-icon"></div>
@@ -70,7 +70,7 @@ if ($data instanceof stdClass) :
 
 				<?php else : ?>
 
-					<?php _e('Text slide', 'slideshow-se'); ?>
+					<?php esc_attr_e('Text slide', 'slideshow-se'); ?>
 
 				<?php endif; ?>
 			</div>
@@ -81,7 +81,7 @@ if ($data instanceof stdClass) :
 
 			<div class="slideshow-group">
 
-				<div class="slideshow-left slideshow-label"><?php _e('Title', 'slideshow-se'); ?></div>
+				<div class="slideshow-left slideshow-label"><?php esc_attr_e('Title', 'slideshow-se'); ?></div>
 				<div class="slideshow-right">
 					<select name="<?php echo esc_attr($name); ?>[titleElementTagID]">
 						<?php foreach (SlideshowSEPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
@@ -96,7 +96,7 @@ if ($data instanceof stdClass) :
 
 			<div class="slideshow-group">
 
-				<div class="slideshow-left slideshow-label"><?php _e('Description', 'slideshow-se'); ?></div>
+				<div class="slideshow-left slideshow-label"><?php esc_attr_e('Description', 'slideshow-se'); ?></div>
 				<div class="slideshow-right">
 					<select name="<?php echo esc_attr($name); ?>[descriptionElementTagID]">
 						<?php foreach (SlideshowSEPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
@@ -105,40 +105,40 @@ if ($data instanceof stdClass) :
 					</select>
 				</div>
 				<div clear="clear"></div>
-				<textarea name="<?php echo esc_attr($name); ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
+				<textarea name="<?php echo esc_attr($name); ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo esc_textarea($description); ?></textarea><br />
 			</div>
 
 			<div class="slideshow-group">
 
-				<div class="slideshow-label"><?php _e('Text color', 'slideshow-se'); ?></div>
+				<div class="slideshow-label"><?php esc_attr_e('Text color', 'slideshow-se'); ?></div>
 				<input type="text" name="<?php echo esc_attr($name); ?>[textColor]" value="<?php echo esc_attr($textColor); ?>" class="wp-color-picker-field" />
 
-				<div class="slideshow-label"><?php _e('Background color', 'slideshow-se'); ?></div>
+				<div class="slideshow-label"><?php esc_attr_e('Background color', 'slideshow-se'); ?></div>
 				<input type="text" name="<?php echo esc_attr($name); ?>[color]" value="<?php echo esc_attr($color); ?>" class="wp-color-picker-field" />
-				<div style="font-style: italic;"><?php _e('(Leave empty for a transparent background)', 'slideshow-se'); ?></div>
+				<div style="font-style: italic;"><?php esc_attr_e('(Leave empty for a transparent background)', 'slideshow-se'); ?></div>
 
 			</div>
 
 			<div class="slideshow-group">
 
-				<div class="slideshow-label"><?php _e('URL', 'slideshow-se'); ?></div>
-				<input type="text" name="<?php echo esc_attr($name); ?>[url]" value="<?php echo esc_textarea($url); ?>" style="width: 100%;" />
+				<div class="slideshow-label"><?php esc_attr_e('URL', 'slideshow-se'); ?></div>
+				<input type="text" name="<?php echo esc_attr($name); ?>[url]" value="<?php echo esc_attr($url); ?>" style="width: 100%;" />
 
-				<div class="slideshow-label slideshow-left"><?php _e('Open URL in', 'slideshow-se'); ?></div>
+				<div class="slideshow-label slideshow-left"><?php esc_attr_e('Open URL in', 'slideshow-se'); ?></div>
 				<select name="<?php echo esc_attr($name); ?>[urlTarget]" class="slideshow-right">
-					<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-se'); ?></option>
-					<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-se'); ?></option>
+					<option value="_self" <?php selected('_self', $target); ?>><?php esc_attr_e('Same window', 'slideshow-se'); ?></option>
+					<option value="_blank" <?php selected('_blank', $target); ?>><?php esc_attr_e('New window', 'slideshow-se'); ?></option>
 				</select>
 				<div class="clear"></div>
 
-				<div class="slideshow-label slideshow-left"><?php _e('Don\'t let search engines follow link', 'slideshow-se'); ?></div>
+				<div class="slideshow-label slideshow-left"><?php esc_attr_e('Don\'t let search engines follow link', 'slideshow-se'); ?></div>
 				<input type="checkbox" name="<?php echo esc_attr($name); ?>[noFollow]" value="" <?php checked($noFollow); ?> class="slideshow-right" />
 				<div class="clear"></div>
 
 			</div>
 
 			<div class="slideshow-group slideshow-delete-slide">
-				<span><?php _e('Delete slide', 'slideshow-se'); ?></span>
+				<span><?php esc_attr_e('Delete slide', 'slideshow-se'); ?></span>
 			</div>
 
 			<input type="hidden" name="<?php echo esc_attr($name); ?>[type]" value="text" />

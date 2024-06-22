@@ -16,7 +16,7 @@ class SlideshowSEPlugin
 	 */
 	static function deploy($postId = null)
 	{
-		echo self::prepare($postId);
+		echo wp_kses_post(self::prepare($postId));
 	}
 
 	/**
@@ -52,7 +52,7 @@ class SlideshowSEPlugin
 				'name'             => $postId,
 				'orderby'          => 'post_date',
 				'order'            => 'DESC',
-				'suppress_filters' => true
+				'suppress_filters' => false
 			));
 
 			if($query->have_posts())
@@ -69,7 +69,7 @@ class SlideshowSEPlugin
 				'offset'           => 0,
 				'orderby'          => 'rand',
 				'post_type'        => SlideshowSEPluginPostType::$postType,
-				'suppress_filters' => true
+				'suppress_filters' => false
 			));
 
 			if(is_array($post))
@@ -130,7 +130,8 @@ class SlideshowSEPlugin
 			'slideshow-jquery-image-gallery-script',
 			SlideshowSEPluginMain::getPluginUrl() . '/js/min/all.frontend.min.js',
 			array('jquery'),
-			SlideshowSEPluginMain::$version
+			SlideshowSEPluginMain::$version,
+			false
 		);
 
 		// Set dimensionWidth and dimensionHeight if dimensions should be preserved

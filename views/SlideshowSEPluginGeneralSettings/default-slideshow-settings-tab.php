@@ -6,21 +6,49 @@ if ($data instanceof stdClass) :
 	$defaultSettings      = SlideshowSEPluginSlideshowSettingsHandler::getDefaultSettings(true);
 	$defaultStyleSettings = SlideshowSEPluginSlideshowSettingsHandler::getDefaultStyleSettings(true);
 
+	// HTML tags to allow in the wp_kses calls
+	$allowedTags = array(
+		'input' => array(
+			'type' => array(),
+			'name' => array(),
+			'class' => array(),
+			'value' => array(),
+			'checked' => array(),
+		),
+		'textarea' => array(
+			'name' => array(),
+			'class' => array(),
+			'rows' => array(),
+			'cols' => array(),
+		),
+		'select' => array(
+			'name' => array(),
+			'class' => array(),
+		),
+		'option' => array(
+			'value' => array(),
+			'selected' => array()
+		),
+		'label' => array(
+			'style' => array(),
+		)
+	)
+	
 	?>
 
 	<div class="default-slideshow-settings-tab" style="display: none; float: none;">
 		<p>
-			<strong><?php _e('Note', 'slideshow-se'); ?>:</strong>
+			<strong><?php esc_attr_e('Note', 'slideshow-se'); ?>:</strong>
 		</p>
 
 		<p style="width: 500px;">
 			<?php
-
-			echo sprintf(__(
+			/* translators: %s: URL to edit a slideshow */
+			echo wp_kses_post(sprintf(__(
 				'The settings set on this page apply only to newly created slideshows and therefore do not alter any existing ones. To adapt a slideshow\'s settings, %1$sclick here.%2$s', 'slideshow-se'),
-				'<a href="' . get_admin_url(null, 'edit.php?post_type=' . esc_attr(SlideshowSEPluginPostType::$postType)) . '">',
+				'<a href="' . esc_attr(get_admin_url(null, 'edit.php?post_type=' . SlideshowSEPluginPostType::$postType)) . '">',
 				'</a>'
-			);
+			));
 
 			?>
 		</p>
@@ -28,7 +56,7 @@ if ($data instanceof stdClass) :
 
 	<div class="default-slideshow-settings-tab feature-filter" style="display: none;">
 
-		<h4><?php _e('Default Slideshow Settings', 'slideshow-se'); ?></h4>
+		<h4><?php esc_attr_e('Default Slideshow Settings', 'slideshow-se'); ?></h4>
 
 		<table>
 
@@ -40,7 +68,7 @@ if ($data instanceof stdClass) :
 			<tr>
 				<td colspan="3" style="border-bottom: 1px solid #dfdfdf; text-align: center;">
 					<span style="display: inline-block; position: relative; top: 14px; padding: 0 12px; background: #fff;">
-						<?php echo esc_textarea($defaultSettingValue['group']); ?> <?php _e('settings', 'slideshow-se'); ?>
+						<?php echo esc_textarea($defaultSettingValue['group']); ?> <?php esc_attr_e('settings', 'slideshow-se'); ?>
 					</span>
 				</td>
 			</tr>
@@ -57,12 +85,12 @@ if ($data instanceof stdClass) :
 				<td>
 					<?php
 
-					echo SlideshowSEPluginSlideshowSettingsHandler::getInputField(
+					echo wp_kses(SlideshowSEPluginSlideshowSettingsHandler::getInputField(
 						SlideshowSEPluginGeneralSettings::$defaultSettings,
 						$defaultSettingKey,
 						$defaultSettingValue,
 						/* hideDependentValues = */ false
-					);
+					), $allowedTags);
 
 					?>
 				</td>
@@ -76,7 +104,7 @@ if ($data instanceof stdClass) :
 
 	<div class="default-slideshow-settings-tab feature-filter" style="display: none;">
 
-		<h4><?php _e('Default Slideshow Stylesheet', 'slideshow-se'); ?></h4>
+		<h4><?php esc_attr_e('Default Slideshow Stylesheet', 'slideshow-se'); ?></h4>
 
 		<table>
 			<?php foreach($defaultStyleSettings as $defaultStyleSettingKey => $defaultStyleSettingValue): ?>
@@ -88,12 +116,12 @@ if ($data instanceof stdClass) :
 				<td>
 					<?php
 
-					echo SlideshowSEPluginSlideshowSettingsHandler::getInputField(
+					echo wp_kses(SlideshowSEPluginSlideshowSettingsHandler::getInputField(
 						SlideshowSEPluginGeneralSettings::$defaultStyleSettings,
 						$defaultStyleSettingKey,
 						$defaultStyleSettingValue,
 						/* hideDependentValues = */ false
-					);
+					), $allowedTags);
 
 					?>
 				</td>

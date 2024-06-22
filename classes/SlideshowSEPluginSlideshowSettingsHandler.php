@@ -463,6 +463,7 @@ class SlideshowSEPluginSlideshowSettingsHandler
 				'intervalSpeed'               => __('Seconds between changing slides', 'slideshow-se'),
 				'slidesPerView'               => __('Number of slides to fit into one slide', 'slideshow-se'),
 				'maxWidth'                    => __('Maximum width. When maximum width is 0, maximum width is ignored', 'slideshow-se'),
+				/* translators: %%: URL to a definition of Aspect Ratio  */
 				'aspectRatio'                 => sprintf('<a href="' . str_replace('%', '%%', __('http://en.wikipedia.org/wiki/Aspect_ratio_(image)', 'slideshow-se')) . '" title="' . __('More info', 'slideshow-se') . '" target="_blank">' . __('Proportional relationship%s between slideshow\'s width and height (width:height)', 'slideshow-se'), '</a>'),
 				'height'                      => __('Slideshow\'s height', 'slideshow-se'),
 				'imageBehaviour'              => __('Image behaviour', 'slideshow-se'),
@@ -482,6 +483,7 @@ class SlideshowSEPluginSlideshowSettingsHandler
 				'waitUntilLoaded'             => __('Wait until the next slide has loaded before showing it', 'slideshow-se'),
 				'showLoadingIcon'             => __('Show a loading icon until the first slide appears', 'slideshow-se'),
 				'random'                      => __('Randomize slides', 'slideshow-se'),
+				/* translators: %s: Shortcode */
 				'avoidFilter'                 => sprintf(__('Avoid content filter (disable if \'%s\' is shown)', 'slideshow-se'), SlideshowSEPluginShortcode::$bookmark)
 			);
 

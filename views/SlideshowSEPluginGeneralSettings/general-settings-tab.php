@@ -20,9 +20,9 @@ if ($data instanceof stdClass) :
 
 	<div class="general-settings-tab feature-filter">
 
-		<h4><?php _e('User Capabilities', 'slideshow-se'); ?></h4>
+		<h4><?php esc_attr_e('User Capabilities', 'slideshow-se'); ?></h4>
 
-		<p><?php _e('Select the user roles that will able to perform certain actions.', 'slideshow-se');  ?></p>
+		<p><?php esc_attr_e('Select the user roles that will able to perform certain actions.', 'slideshow-se');  ?></p>
 
 		<table>
 
@@ -65,23 +65,23 @@ if ($data instanceof stdClass) :
 
 	<div class="general-settings-tab feature-filter">
 
-		<h4><?php _e('Settings', 'slideshow-se'); ?></h4>
+		<h4><?php esc_attr_e('Settings', 'slideshow-se'); ?></h4>
 
 		<table>
 			<tr>
-				<td><?php _e('Stylesheet location', 'slideshow-se'); ?></td>
+				<td><?php esc_attr_e('Stylesheet location', 'slideshow-se'); ?></td>
 				<td>
 					<select name="<?php echo esc_attr(SlideshowSEPluginGeneralSettings::$stylesheetLocation); ?>">
-						<option value="head" <?php selected('head', $stylesheetLocation); ?>>Head (<?php _e('top', 'slideshow-se'); ?>)</option>
-						<option value="footer" <?php selected('footer', $stylesheetLocation); ?>>Footer (<?php _e('bottom', 'slideshow-se'); ?>)</option>
+						<option value="head" <?php selected('head', $stylesheetLocation); ?>>Head (<?php esc_attr_e('top', 'slideshow-se'); ?>)</option>
+						<option value="footer" <?php selected('footer', $stylesheetLocation); ?>>Footer (<?php esc_attr_e('bottom', 'slideshow-se'); ?>)</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<td><?php _e('Enable lazy loading', 'slideshow-se'); ?></td>
+				<td><?php esc_attr_e('Enable lazy loading', 'slideshow-se'); ?></td>
 				<td>
-					<input type="radio" name="<?php echo esc_attr(SlideshowSEPluginGeneralSettings::$enableLazyLoading); ?>" <?php checked(true, $enableLazyLoading); ?> value="true" /> <?php _e('Yes', 'slideshow-se'); ?>
-					<input type="radio" name="<?php echo esc_attr(SlideshowSEPluginGeneralSettings::$enableLazyLoading); ?>" <?php checked(false, $enableLazyLoading); ?> value="false" /> <?php _e('No', 'slideshow-se'); ?>
+					<input type="radio" name="<?php echo esc_attr(SlideshowSEPluginGeneralSettings::$enableLazyLoading); ?>" <?php checked(true, $enableLazyLoading); ?> value="true" /> <?php esc_attr_e('Yes', 'slideshow-se'); ?>
+					<input type="radio" name="<?php echo esc_attr(SlideshowSEPluginGeneralSettings::$enableLazyLoading); ?>" <?php checked(false, $enableLazyLoading); ?> value="false" /> <?php esc_attr_e('No', 'slideshow-se'); ?>
 				</td>
 			</tr>
 		</table>
