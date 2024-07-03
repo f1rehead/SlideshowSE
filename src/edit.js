@@ -35,7 +35,7 @@ export default function Edit({ attributes, setAttributes, className, isSelected 
 
 	return (
 		<div>
-			<label>{__('Slideshow', 'slideshow-se')}:</label> <select onChange={updateSlideshow} value={attributes.selectedSlideshow}>
+			<label class="components-placeholder__label">{__('Slideshow', 'slideshow-se')}:</label> <select onChange={updateSlideshow} value={attributes.selectedSlideshow}>
 				{
 					Object.values(globals.slideshows).map(slideshow => {
 						return (

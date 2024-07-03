@@ -20,7 +20,10 @@
 						$slideData             = new stdClass();
 						$slideData->properties = $data->slides[$i];
 
-						SlideshowSEPluginMain::outputView('SlideshowSEPluginSlideshowSlide' . DIRECTORY_SEPARATOR . 'frontend_' . esc_attr($data->slides[$i]['type']) . '.php', $slideData);
+						// Only include published slideshows
+						if ($data->post->post_status === 'publish') {
+							SlideshowSEPluginMain::outputView('SlideshowSEPluginSlideshowSlide' . DIRECTORY_SEPARATOR . 'frontend_' . $data->slides[$i]['type'] . '.php', $slideData);
+						}
 
 						if (($i + 1) % $data->settings['slidesPerView'] == 0)
 						{
@@ -28,7 +31,6 @@
 						}
 					}
 
-					//echo '<div style="clear: both;"></div>';
 					echo "			</div>" . PHP_EOL;
 				}
 			}

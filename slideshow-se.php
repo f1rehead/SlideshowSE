@@ -3,9 +3,9 @@
  Plugin Name: Slideshow SE
  Plugin URI: http://wordpress.org/extend/plugins/slideshow-se/
  Description: The slideshow plugin is easily deployable on your website. Add any image that has already been uploaded to add to your slideshow, add text slides, or even add a video. Options and styles are customizable for every single slideshow on your website.
- Version: 2.5.18
+ Version: 2.5.19
  Requires at least: 5.0
- Tested up to: 6.4.3
+ Tested up to: 6.5.5
  Requires PHP: 5.0
  Author: John West
  License: GPLv2
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class SlideshowSEPluginMain
 {
 	/** @var string $version */
-	static $version = '2.5.18';
+	static $version = '2.5.19';
 
 	/**
 	 * Bootstraps the application by assigning the right functions to
@@ -250,8 +250,47 @@ class SlideshowSEPluginMain
 		require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'block.php';
 		spl_autoload_register('SlideshowSEPluginAutoLoader');
 	}
-}
 
+	/**
+	 * This function will return the list of HTML tags allowed in the wp_kses functions.
+	 *
+	 * @since 2.5.19
+	 */
+
+	static function getAllowedTags()
+	{
+		// HTML tags to allow in the wp_kses calls
+		$allowedTags = array(
+			'input' => array(
+				'type' => array(),
+				'name' => array(),
+				'class' => array(),
+				'value' => array(),
+				'checked' => array(),
+			),
+			'textarea' => array(
+				'name' => array(),
+				'class' => array(),
+				'rows' => array(),
+				'cols' => array(),
+			),
+			'select' => array(
+				'name' => array(),
+				'class' => array(),
+			),
+			'option' => array(
+				'value' => array(),
+				'selected' => array()
+			),
+			'label' => array(
+				'style' => array(),
+			)
+		);
+
+		return $allowedTags;
+	}
+};
+ 
 /**
  * Registers all block assets so that they can be enqueued through the block editor
  * in the corresponding context.
@@ -261,7 +300,7 @@ class SlideshowSEPluginMain
 function f1rehead_slideshow_block_init() {
 	$dir = dirname( __FILE__ );
 
-	$script_asset_path = "$dir/block/index.asset.php";
+	$script_asset_path = $dir."/block/index.asset.php";
 	if ( ! file_exists( $script_asset_path ) ) {
 		throw new Error(
 			'You need to run `npm start` or `npm run build` for the "f1rehead/slideshow" block first.'
@@ -282,7 +321,7 @@ function f1rehead_slideshow_block_init() {
 		'f1rehead-slideshow-block-editor',
 		plugins_url( $editor_css, __FILE__ ),
 		array(),
-		filemtime( "$dir/$editor_css" )
+		filemtime( $dir."/".$editor_css )
 	);
 
 	$style_css = 'block/style-index.css';
@@ -290,7 +329,7 @@ function f1rehead_slideshow_block_init() {
 		'f1rehead-slideshow-block',
 		plugins_url( $style_css, __FILE__ ),
 		array(),
-		filemtime( "$dir/$style_css" )
+		filemtime( $dir."/".$style_css )
 	);
 
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `globals` object.

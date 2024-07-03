@@ -5,34 +5,6 @@ if ($data instanceof stdClass) :
 	// Default settings
 	$defaultSettings      = SlideshowSEPluginSlideshowSettingsHandler::getDefaultSettings(true);
 	$defaultStyleSettings = SlideshowSEPluginSlideshowSettingsHandler::getDefaultStyleSettings(true);
-
-	// HTML tags to allow in the wp_kses calls
-	$allowedTags = array(
-		'input' => array(
-			'type' => array(),
-			'name' => array(),
-			'class' => array(),
-			'value' => array(),
-			'checked' => array(),
-		),
-		'textarea' => array(
-			'name' => array(),
-			'class' => array(),
-			'rows' => array(),
-			'cols' => array(),
-		),
-		'select' => array(
-			'name' => array(),
-			'class' => array(),
-		),
-		'option' => array(
-			'value' => array(),
-			'selected' => array()
-		),
-		'label' => array(
-			'style' => array(),
-		)
-	)
 	
 	?>
 
@@ -90,7 +62,7 @@ if ($data instanceof stdClass) :
 						$defaultSettingKey,
 						$defaultSettingValue,
 						/* hideDependentValues = */ false
-					), $allowedTags);
+					), SlideShowSEPluginMain::getAllowedTags());
 
 					?>
 				</td>
@@ -111,7 +83,7 @@ if ($data instanceof stdClass) :
 
 			<tr>
 				<td>
-					<?php echo esc_textarea($defaultStyleSettingValue['description']); ?>
+					<?php echo wp_kses_post($defaultStyleSettingValue['description']); ?>
 				</td>
 				<td>
 					<?php
@@ -121,7 +93,7 @@ if ($data instanceof stdClass) :
 						$defaultStyleSettingKey,
 						$defaultStyleSettingValue,
 						/* hideDependentValues = */ false
-					), $allowedTags);
+					), SlideShowSEPluginMain::getAllowedTags());
 
 					?>
 				</td>

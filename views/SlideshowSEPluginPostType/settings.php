@@ -22,8 +22,8 @@
 			<?php echo !empty($value['group'])? esc_attr('class="group-' . strtolower(str_replace(' ', '-', $value['group'])) . '"'): ''; ?>
 			<?php echo !empty($value['dependsOn'])? 'style="display:none;"': ''; ?>
 		>
-			<td><?php echo esc_textarea($value['description']); ?></td>
-			<td><?php echo esc_attr(SlideshowSEPluginSlideshowSettingsHandler::getInputField(SlideshowSEPluginSlideshowSettingsHandler::$settingsKey), esc_attr($key), esc_attr($value)); ?></td>
+			<td><?php echo wp_kses_post($value['description']); ?></td>
+			<td><?php echo wp_kses(SlideshowSEPluginSlideshowSettingsHandler::getInputField(SlideshowSEPluginSlideshowSettingsHandler::$settingsKey, $key, $value), SlideShowSEPluginMain::getAllowedTags()); ?></td>
 			<td><?php esc_attr_e('Default', 'slideshow-se'); ?>: &#39;<?php echo (isset($value['options']))? esc_attr($value['options'][$value['default']]): esc_attr($value['default']); ?>&#39;</td>
 		</tr>
 
