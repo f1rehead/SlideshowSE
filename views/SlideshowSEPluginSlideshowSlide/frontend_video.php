@@ -9,7 +9,7 @@ if ($data instanceof stdClass) :
 
 	if (isset($properties['videoId']))
 	{
-		$videoId = htmlspecialchars($properties['videoId']);
+		$videoId = esc_attr($properties['videoId']);
 	}
 
 	if (isset($properties['showRelatedVideos']) && $properties['showRelatedVideos'] === 'true')

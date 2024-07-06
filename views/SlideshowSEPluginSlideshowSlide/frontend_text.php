@@ -86,17 +86,17 @@ if ($data instanceof stdClass) :
 	<div class="slideshow_slide slideshow_slide_text" style="<?php echo esc_attr(strlen($color)) > 0 ? 'background-color: ' . esc_attr($color) . ';' : '' ?>">
 		<?php if(strlen($title) > 0): ?>
 		<<?php echo esc_attr($titleElementTag); ?> class="slideshow_title" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
-			<?php echo esc_attr($anchorTag); ?>
+			<?php echo wp_kses_post($anchorTag); ?>
 				<?php echo esc_attr($title); ?>
-			<?php echo esc_attr($endAnchorTag); ?>
+			<?php echo wp_kses_post($endAnchorTag); ?>
 		</<?php echo esc_attr($titleElementTag); ?>>
 		<?php endif; ?>
 
 		<?php if(strlen($description) > 0): ?>
 		<<?php echo esc_attr($descriptionElementTag); ?> class="slideshow_description" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
-			<?php echo esc_attr($anchorTag); ?>
+			<?php echo wp_kses_post($anchorTag); ?>
 			<?php echo wp_kses_post($description); ?>
-			<?php echo esc_attr($endAnchorTag); ?>
+			<?php echo wp_kses_post($endAnchorTag); ?>
 		</<?php echo esc_attr($descriptionElementTag); ?>>
 		<?php endif; ?>
 

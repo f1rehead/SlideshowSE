@@ -124,12 +124,12 @@ if ($data instanceof stdClass):
 			if ($imageAvailable): ?>
 
 				<div class="slideshow_slide slideshow_slide_image">
-					<?php echo esc_attr($anchorTag); ?>
+					<?php echo wp_kses_post($anchorTag); ?>
 						<img src="<?php echo esc_attr($imageSrc); ?>" alt="<?php echo esc_attr($alternativeText); ?>" <?php echo ($imageWidth > 0) ? 'width="' . esc_attr($imageWidth) . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . esc_attr($imageHeight) . '"' : ''; ?> />
-					<?php echo esc_attr($endAnchorTag); ?>
+					<?php echo wp_kses_post($endAnchorTag); ?>
 					<div class="slideshow_description_box slideshow_transparent">
-						<?php echo !empty($title) ? '<' . esc_attr($titleElementTag) . ' class="slideshow_title">' . esc_attr($anchorTag) . wp_kses_post($title) . esc_attr($endAnchorTag) . '</' . esc_attr($titleElementTag) . '>' : ''; ?>
-						<?php echo !empty($description) ? '<' . esc_attr($descriptionElementTag) . ' class="slideshow_description">' . esc_attr($anchorTag) . esc_attr($description) . esc_attr($endAnchorTag) . '</' . esc_attr($descriptionElementTag) . '>' : ''; ?>
+						<?php echo !empty($title) ? '<' . esc_attr($titleElementTag) . ' class="slideshow_title">' . wp_kses_post($anchorTag) . wp_kses_post($title) . wp_kses_post($endAnchorTag) . '</' . esc_attr($titleElementTag) . '>' : ''; ?>
+						<?php echo !empty($description) ? '<' . esc_attr($descriptionElementTag) . ' class="slideshow_description">' . wp_kses_post($anchorTag) . esc_attr($description) . wp_kses_post($endAnchorTag) . '</' . esc_attr($descriptionElementTag) . '>' : ''; ?>
 					</div>
 				</div>
 
