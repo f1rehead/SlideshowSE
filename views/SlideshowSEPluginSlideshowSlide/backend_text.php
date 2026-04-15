@@ -55,7 +55,16 @@ if ($data instanceof stdClass) :
 	    $noFollow = true;
 	}
 
-	?>
+?>
+<style>
+  body > #editor-container {
+    margin: 50px auto;
+    max-width: 720px;
+  }
+  #editor {
+    height: 350px;
+  }
+</style>
 
 	<div class="widefat sortable-slides-list-item postbox">
 
@@ -104,9 +113,34 @@ if ($data instanceof stdClass) :
 						<?php endforeach; ?>
 					</select>
 				</div>
-				<div clear="clear"></div>
-				<textarea name="<?php echo esc_attr($name); ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo esc_textarea($description); ?></textarea><br />
-			</div>
+				<div class="clear"></div>
+				<?php 
+				$slideNum = preg_replace('/[\W_]+/u', '', esc_attr($name));
+				if (!function_exists('my_tinymce_buttons')) {
+					add_filter( 'mce_buttons', 'my_tinymce_buttons' );
+					function my_tinymce_buttons( $buttons ) {
+						$buttons = array(
+							'numlist','bullist','hr','indent','outdent','spellchecker',
+							'wpgallery',
+						);
+						return $buttons;
+					}
+				}
+
+				$args = array(
+					'tinymce'       => array(
+						'toolbar1'      => 'formatselect | bold italic underline | bullist numlist | blockquote | alignleft aligncenter alignright | link | wp_add_media toggle fullscreen',
+						'toolbar2'      => 'strikethrough hr | forecolor backcolor | pastetext removeformat charmap | subscript superscript | outdent indent | undo redo | wp_help',
+						'toolbar3'      => '',
+					),
+					'media_buttons' => false,
+					'textarea_name' => esc_attr( $name ) . '[description]',
+				);
+
+				wp_editor( wp_kses_post($description), 'description'.$slideNum, $args );
+
+			 ?>
+			</div> <!-- slideshow=group -->
 
 			<div class="slideshow-group">
 
@@ -115,13 +149,13 @@ if ($data instanceof stdClass) :
 
 				<div class="slideshow-label"><?php esc_attr_e('Background color', 'slideshow-se'); ?></div>
 				<input type="text" name="<?php echo esc_attr($name); ?>[color]" value="<?php echo esc_attr($color); ?>" class="wp-color-picker-field" />
-				<div style="font-style: italic;"><?php esc_attr_e('(Leave empty for a transparent background)', 'slideshow-se'); ?></div>
+				<div style="font-style: italic;"><?php echo esc_attr('(Leave empty for a transparent background)', 'slideshow-se'); ?></div>
 
 			</div>
 
 			<div class="slideshow-group">
 
-				<div class="slideshow-label"><?php esc_attr_e('URL', 'slideshow-se'); ?></div>
+				<div class="slideshow-label"><?php echo esc_attr('URL', 'slideshow-se'); ?></div>
 				<input type="text" name="<?php echo esc_attr($name); ?>[url]" value="<?php echo esc_attr($url); ?>" style="width: 100%;" />
 
 				<div class="slideshow-label slideshow-left"><?php esc_attr_e('Open URL in', 'slideshow-se'); ?></div>
@@ -134,7 +168,6 @@ if ($data instanceof stdClass) :
 				<div class="slideshow-label slideshow-left"><?php esc_attr_e('Don\'t let search engines follow link', 'slideshow-se'); ?></div>
 				<input type="checkbox" name="<?php echo esc_attr($name); ?>[noFollow]" value="" <?php checked($noFollow); ?> class="slideshow-right" />
 				<div class="clear"></div>
-
 			</div>
 
 			<div class="slideshow-group slideshow-delete-slide">

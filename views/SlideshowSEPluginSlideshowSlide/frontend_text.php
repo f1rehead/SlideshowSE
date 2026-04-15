@@ -4,7 +4,7 @@ if ($data instanceof stdClass) :
 
 	$properties = $data->properties;
 
-	$title = $description = $textColor = $color = $url = $urlTarget = $noFollow = '';
+	$title = $description = $textColor = $color = $url = $urlTarget = '';
 
 	$titleElementTag = $descriptionElementTag = SlideshowSEPluginSlideInserter::getElementTag();
 
@@ -30,26 +30,12 @@ if ($data instanceof stdClass) :
 
 	if (isset($properties['textColor']))
 	{
-		$textColor = $properties['textColor'];
-
-		if (substr($textColor, 0, 1) != '#')
-		{
-			$textColor = '#' . $textColor;
-		}
-
-		$textColor = $textColor;
+		$textColor = SlideshowSEPluginSecurity::sanitize_slide_hex_color($properties['textColor']);
 	}
 
 	if (isset($properties['color']))
 	{
-		$color = $properties['color'];
-
-		if (substr($color, 0, 1) != '#')
-		{
-			$color = '#' . $color;
-		}
-
-		$color = $color;
+		$color = SlideshowSEPluginSecurity::sanitize_slide_hex_color($properties['color']);
 	}
 
 	if (isset($properties['url']))
@@ -62,45 +48,93 @@ if ($data instanceof stdClass) :
 		$urlTarget = $properties['urlTarget'];
 	}
 
-	if (isset($properties['noFollow']))
+	$nofollow = !empty($properties['noFollow']);
+
+	$linkHref = '';
+
+	if (is_string($url) && strlen($url) > 0)
 	{
-		$noFollow = 'rel="nofollow"';
+		$linkHref = SlideshowSEPluginSecurity::sanitize_slide_destination_url($url);
 	}
 
-	$anchorTag = $endAnchorTag = $anchorTagAttributes = '';
+	$linkTarget = SlideshowSEPluginSecurity::sanitize_slide_link_target(
+		is_string($urlTarget) ? $urlTarget : ''
+	);
 
-	if (strlen($url) > 0)
+	$linkRel = array();
+
+	if ($linkTarget === '_blank')
 	{
-		$anchorTagAttributes =
-			'href=' . $url . ' ' .
-			(strlen($urlTarget) > 0 ? 'target="' . $urlTarget . '" ' : '') .
-			(strlen($textColor) > 0 ? 'style="color: ' . $textColor . '" ' : '') .
-			$noFollow;
-
-		$anchorTag    = '<a ' . $anchorTagAttributes . '>';
-		$endAnchorTag = '</a>';
+		$linkRel[] = 'noopener';
+		$linkRel[] = 'noreferrer';
 	}
 
+	if ($nofollow)
+	{
+		$linkRel[] = 'nofollow';
+	}
+
+	$linkAttrs = '';
+
+	if ($linkHref !== '')
+	{
+		$linkAttrs = 'href="' . $linkHref . '"';
+
+		if ($linkTarget !== '')
+		{
+			$linkAttrs .= ' target="' . esc_attr($linkTarget) . '"';
+		}
+
+		if (count($linkRel) > 0)
+		{
+			$linkAttrs .= ' rel="' . esc_attr(implode(' ', $linkRel)) . '"';
+		}
+
+		if ($textColor !== '')
+		{
+			$linkAttrs .= ' style="' . esc_attr('color: ' . $textColor . ';') . '"';
+		}
+	}
+
+	$bgStyle = $color !== '' ? 'background-color: ' . $color . ';' : '';
+	$titleColorStyle = $textColor !== '' ? 'color: ' . $textColor . ';' : '';
+
+	// HTML from TinyMCE: rely on <p>/<br>. Plain text with \n: convert to <br> (avoid white-space:pre-line on
+	// block wrappers — it makes whitespace between tags look like double spacing).
+	$description_html = '';
+	if ( is_string( $description ) && strlen( $description ) > 0 ) {
+		if ( preg_match( '/<[a-z][^>]*>/i', $description ) ) {
+			$description_html = wp_kses_post( $description );
+		} else {
+			$description_html = wp_kses_post( nl2br( esc_html( $description ), false ) );
+		}
+	}
 	?>
 
-	<div class="slideshow_slide slideshow_slide_text" style="<?php echo esc_attr(strlen($color)) > 0 ? 'background-color: ' . esc_attr($color) . ';' : '' ?>">
-		<?php if(strlen($title) > 0): ?>
-		<<?php echo esc_attr($titleElementTag); ?> class="slideshow_title" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
-			<?php echo wp_kses_post($anchorTag); ?>
-				<?php echo esc_attr($title); ?>
-			<?php echo wp_kses_post($endAnchorTag); ?>
+	<div class="slideshow_slide slideshow_slide_text" style="<?php echo esc_attr($bgStyle); ?>">
+		<?php if (strlen($title) > 0) : ?>
+		<<?php echo esc_attr($titleElementTag); ?> class="slideshow_title" style="<?php echo esc_attr($titleColorStyle); ?>">
+			<?php if ($linkAttrs !== '') : ?>
+				<a <?php echo $linkAttrs; ?>><?php echo esc_html($title); ?></a>
+			<?php else : ?>
+				<?php echo esc_html($title); ?>
+			<?php endif; ?>
 		</<?php echo esc_attr($titleElementTag); ?>>
 		<?php endif; ?>
 
-		<?php if(strlen($description) > 0): ?>
-		<<?php echo esc_attr($descriptionElementTag); ?> class="slideshow_description" style="<?php echo esc_attr(strlen($textColor)) > 0 ? 'color: ' . esc_attr($textColor) . ';' : ''; ?>">
-			<?php echo wp_kses_post($anchorTag); ?>
-			<?php echo wp_kses_post($description); ?>
-			<?php echo wp_kses_post($endAnchorTag); ?>
+		<?php if (strlen($description) > 0) : ?>
+		<<?php echo esc_attr($descriptionElementTag); ?> class="slideshow_description" style="<?php echo esc_attr($titleColorStyle); ?>">
+			<?php if ($linkAttrs !== '') : ?>
+				<a <?php echo $linkAttrs; ?>><?php echo $description_html; ?></a>
+			<?php else : ?>
+				<?php echo $description_html; ?>
+			<?php endif; ?>
 		</<?php echo esc_attr($descriptionElementTag); ?>>
 		<?php endif; ?>
 
-		<a <?php echo esc_attr($anchorTagAttributes) ?> class="slideshow_background_anchor"></a>
+		<?php if ($linkAttrs !== '') : ?>
+		<a <?php echo $linkAttrs; ?> class="slideshow_background_anchor"></a>
+		<?php endif; ?>
 	</div>
 
 <?php endif; ?>

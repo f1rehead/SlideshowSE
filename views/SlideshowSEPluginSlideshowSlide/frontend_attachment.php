@@ -4,7 +4,7 @@ if ($data instanceof stdClass):
 
 	$properties = $data->properties;
 
-	$title = $description = $url = $urlTarget = $alternativeText = $noFollow = $postId = '';
+	$title = $description = $url = $urlTarget = $alternativeText = $postId = '';
 
 	$titleElementTag = $descriptionElementTag = SlideshowSEPluginSlideInserter::getElementTag();
 
@@ -43,31 +43,56 @@ if ($data instanceof stdClass):
 		$alternativeText = $properties['alternativeText'];
 	}
 
-	if (isset($properties['noFollow']))
-	{
-		$noFollow = ' rel="nofollow" ';
-	}
+	$nofollow = !empty($properties['noFollow']);
 
 	if (isset($properties['postId']))
 	{
 		$postId = $properties['postId'];
 	}
 
+	$linkHref = '';
+
+	if (is_string($url) && strlen($url) > 0)
+	{
+		$linkHref = SlideshowSEPluginSecurity::sanitize_slide_destination_url($url);
+	}
+
+	$linkTarget = SlideshowSEPluginSecurity::sanitize_slide_link_target(
+		is_string($urlTarget) ? $urlTarget : ''
+	);
+
+	$linkRel = array();
+
+	if ($linkTarget === '_blank')
+	{
+		$linkRel[] = 'noopener';
+		$linkRel[] = 'noreferrer';
+	}
+
+	if ($nofollow)
+	{
+		$linkRel[] = 'nofollow';
+	}
+
+	$linkAttrs = '';
+
+	if ($linkHref !== '')
+	{
+		$linkAttrs = 'href="' . $linkHref . '"';
+
+		if ($linkTarget !== '')
+		{
+			$linkAttrs .= ' target="' . esc_attr($linkTarget) . '"';
+		}
+
+		if (count($linkRel) > 0)
+		{
+			$linkAttrs .= ' rel="' . esc_attr(implode(' ', $linkRel)) . '"';
+		}
+	}
+
 	// Post ID should always be numeric
 	if (is_numeric($postId)):
-
-		$anchorTag = $endAnchorTag = $anchorTagAttributes = '';
-
-		if (strlen($url) > 0)
-		{
-			$anchorTagAttributes =
-				'href=' . $url . ' ' .
-				(strlen($urlTarget) > 0 ? 'target="' . $urlTarget . '" ' : '') .
-				$noFollow;
-
-			$anchorTag    = '<a ' . $anchorTagAttributes . '>';
-			$endAnchorTag = '</a>';
-		}
 
 		// Get post from post id. Post should be able to load
 		$attachment = get_post($postId);
@@ -124,12 +149,20 @@ if ($data instanceof stdClass):
 			if ($imageAvailable): ?>
 
 				<div class="slideshow_slide slideshow_slide_image">
-					<?php echo wp_kses_post($anchorTag); ?>
-						<img src="<?php echo esc_attr($imageSrc); ?>" alt="<?php echo esc_attr($alternativeText); ?>" <?php echo ($imageWidth > 0) ? 'width="' . esc_attr($imageWidth) . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . esc_attr($imageHeight) . '"' : ''; ?> />
-					<?php echo wp_kses_post($endAnchorTag); ?>
+					<?php if ($linkAttrs !== '') : ?>
+					<a <?php echo $linkAttrs; ?>>
+						<img src="<?php echo esc_url($imageSrc); ?>" alt="<?php echo esc_attr($alternativeText); ?>" <?php echo ($imageWidth > 0) ? 'width="' . esc_attr($imageWidth) . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . esc_attr($imageHeight) . '"' : ''; ?> />
+					</a>
+					<?php else : ?>
+						<img src="<?php echo esc_url($imageSrc); ?>" alt="<?php echo esc_attr($alternativeText); ?>" <?php echo ($imageWidth > 0) ? 'width="' . esc_attr($imageWidth) . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . esc_attr($imageHeight) . '"' : ''; ?> />
+					<?php endif; ?>
 					<div class="slideshow_description_box slideshow_transparent">
-						<?php echo !empty($title) ? '<' . esc_attr($titleElementTag) . ' class="slideshow_title">' . wp_kses_post($anchorTag) . wp_kses_post($title) . wp_kses_post($endAnchorTag) . '</' . esc_attr($titleElementTag) . '>' : ''; ?>
-						<?php echo !empty($description) ? '<' . esc_attr($descriptionElementTag) . ' class="slideshow_description">' . wp_kses_post($anchorTag) . esc_attr($description) . wp_kses_post($endAnchorTag) . '</' . esc_attr($descriptionElementTag) . '>' : ''; ?>
+						<?php if (!empty($title)) : ?>
+						<<?php echo esc_attr($titleElementTag); ?> class="slideshow_title"><?php if ($linkAttrs !== '') : ?><a <?php echo $linkAttrs; ?>><?php echo wp_kses_post($title); ?></a><?php else : ?><?php echo wp_kses_post($title); ?><?php endif; ?></<?php echo esc_attr($titleElementTag); ?>>
+						<?php endif; ?>
+						<?php if (!empty($description)) : ?>
+						<<?php echo esc_attr($descriptionElementTag); ?> class="slideshow_description"><?php if ($linkAttrs !== '') : ?><a <?php echo $linkAttrs; ?>><?php echo esc_html($description); ?></a><?php else : ?><?php echo esc_html($description); ?><?php endif; ?></<?php echo esc_attr($descriptionElementTag); ?>>
+						<?php endif; ?>
 					</div>
 				</div>
 

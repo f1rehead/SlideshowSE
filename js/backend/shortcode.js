@@ -1,4 +1,4 @@
-slideshow_jquery_image_gallery_backend_script.shortcode = (function () {
+window.slideshow_jquery_image_gallery_backend_script.shortcode = (function () {
 	var $ = jQuery,
 		self = {};
 

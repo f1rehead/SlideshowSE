@@ -1,4 +1,4 @@
-slideshow_jquery_image_gallery_backend_script.editSlideshow = ( function () {
+window.slideshow_jquery_image_gallery_backend_script.editSlideshow = ( function () {
 	var $ = jQuery,
 		self = {};
 
@@ -8,7 +8,16 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow = ( function () {
 	 *
 	 */
 	self.init = function () {
-		if ( window.pagenow === 'slideshow' ) {
+		// Classic editor: post-php (edit) or post-new-php (add new). (pagenow is "post", never "slideshow".)
+		// Block editor: body.block-editor-page.post-type-slideshow.
+		var body = document.body;
+		if (
+			body &&
+			body.classList.contains( 'post-type-slideshow' ) &&
+			( body.classList.contains( 'post-php' ) ||
+				body.classList.contains( 'post-new-php' ) ||
+				body.classList.contains( 'block-editor-page' ) )
+		) {
 			self.isCurrentPage = true;
 
 			self.activateSettingsVisibilityDependency();
@@ -93,15 +102,3 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow = ( function () {
 
 	return self;
 } )();
-
-$.getScript( 'backend/editSlideshow.slideManager.js' ).fail( function (
-	jqxhr,
-	settings,
-	exception
-) {
-	$( 'div.log' ).text(
-		'Unable to load backend/editSlideshow.slideManager.js.'
-	);
-} );
-
-//=include editSlideshow.slideManager.js

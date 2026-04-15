@@ -1,14 +1,16 @@
-slideshow_jquery_image_gallery_backend_script_scriptsloadedFlag = false;
-
 /**
  * Slideshow frontend script
  *
  * @author Stefan Boonstra
  * @version 4
  */
-slideshow_jquery_image_gallery_script = (function () {
+import './frontend/slideshow-namespace.js';
+import './frontend/slideshow.js';
+import './frontend/scriptsLoadedFlag.js';
+
+(function () {
 	var $ = jQuery,
-		self = {};
+		self = window.slideshow_jquery_image_gallery_script;
 
 	self.slideshowInstances = {};
 	self.initialized = false;
@@ -242,13 +244,14 @@ slideshow_jquery_image_gallery_script = (function () {
 		self.init();
 	});
 
-	$(window).on('load', self.init());
+	$(window).on('load', function () {
+		self.init();
+	});
 
 	$.fn.getSlideshowInstance = function () {
 		return self.getSlideshowInstance(this);
 	};
 
-	return self;
 })();
 
 /**
@@ -256,20 +259,5 @@ slideshow_jquery_image_gallery_script = (function () {
  * has loaded.
  */
 function onYouTubeIframeAPIReady() {
-	slideshow_jquery_image_gallery_script.youTubeAPIReady = true;
+	window.slideshow_jquery_image_gallery_script.youTubeAPIReady = true;
 }
-
-//=include frontend/slideshow.js
-//=include frontend/scriptsLoadedFlag.js
-
-///**
-//* Simple logging function for Internet Explorer
-//*
-//* @param message
-//*/
-//function log(message)
-//{
-//	var $ = jQuery;
-//
-//	$('body').prepend('<p style="color: red;">' + message +  '</p>');
-//}

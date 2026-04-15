@@ -26,24 +26,23 @@ import './style.scss';
  */
 import Edit from './edit';
 
-
 /**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
-registerBlockType('f1rehead/slideshow', {
+registerBlockType( 'f1rehead/slideshow', {
 	/**
 	 * This is the display title for your block, which can be translated with `i18n` functions.
 	 * The block inserter will show this name.
 	 */
-	title: __('Slideshow', 'f1rehead'),
+	title: __( 'Slideshow', 'slideshow-se' ),
 
 	/**
 	 * This is a short description for your block, can be translated with `i18n` functions.
 	 * It will be shown in the Block Tab in the Settings Sidebar.
 	 */
-	description: __('A slideshow block', 'f1rehead'),
+	description: __( 'A slideshow block', 'slideshow-se' ),
 
 	/**
 	 * Blocks are grouped into categories to help users browse and discover them.
@@ -66,9 +65,9 @@ registerBlockType('f1rehead/slideshow', {
 	},
 
 	keywords: [
-		__('slideshow carousel'),
-		__('image photo photograph'),
-		__('video youtibe vimeo'),
+		__( 'slideshow carousel', 'slideshow-se' ),
+		__( 'image photo photograph', 'slideshow-se' ),
+		__( 'video youtube vimeo', 'slideshow-se' ),
 	],
 	attributes: {
 		selectedSlideshow: { type: 'string' },
@@ -83,11 +82,11 @@ registerBlockType('f1rehead/slideshow', {
 	 * The "save" property must be specified and must be a valid function. This is a dynamic block,
 	 * so return null.
 	 *
-	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
+	 * @see https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 *
-	 * @return {null}
+	 * @return {null} Null because rendering is server-side.
 	 */
 	save: () => {
 		return null;
 	},
-});
+} );

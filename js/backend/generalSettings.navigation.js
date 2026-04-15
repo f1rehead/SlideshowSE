@@ -1,4 +1,4 @@
-slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = ( function () {
+window.slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = ( function () {
 	var $ = jQuery,
 		self = {};
 
@@ -7,7 +7,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = ( f
 	 */
 	self.init = function () {
 		if (
-			! slideshow_jquery_image_gallery_backend_script.generalSettings
+			! window.slideshow_jquery_image_gallery_backend_script.generalSettings
 				.isCurrentPage
 		) {
 			return;

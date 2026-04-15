@@ -19,30 +19,49 @@ import './editor.scss';
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  *
- * @param {Object} [props]           Properties passed from the editor.
- * @param {string} [props.className] Class name generated for the block.
+ * @param {Object}   props               Properties passed from the editor.
+ * @param {Object}   props.attributes    Block attributes.
+ * @param {Function} props.setAttributes Attribute update callback.
  *
- * @return {WPElement} Element to render.
+ * @return {JSX.Element} Block editor UI.
  */
-export default function Edit({ attributes, setAttributes, className, isSelected }) {
-	// Creates a <p class='wp-block-cgb-block-f1reslider'></p>.
+export default function Edit( { attributes, setAttributes } ) {
+	const slideshows = ( () => {
+		const g = typeof window !== 'undefined' ? window.globals : undefined;
+		if ( ! g || ! g.slideshows ) {
+			return [];
+		}
+		return Array.isArray( g.slideshows )
+			? g.slideshows
+			: Object.values( g.slideshows );
+	} )();
 
-	function updateSlideshow(ev) {
-		setAttributes({
+	function updateSlideshow( ev ) {
+		setAttributes( {
 			selectedSlideshow: ev.target.value,
-		});
+		} );
 	}
+
+	const selectId = 'slideshow-se-block-slideshow-select';
 
 	return (
 		<div>
-			<label class="components-placeholder__label">{__('Slideshow', 'slideshow-se')}:</label> <select onChange={updateSlideshow} value={attributes.selectedSlideshow}>
-				{
-					Object.values(globals.slideshows).map(slideshow => {
-						return (
-							<option value={slideshow.ID} key={slideshow.ID}>{slideshow.post_title}</option>
-						);
-					})
-				}
+			<label
+				className="components-placeholder__label"
+				htmlFor={ selectId }
+			>
+				{ __( 'Slideshow', 'slideshow-se' ) }:
+			</label>{ ' ' }
+			<select
+				id={ selectId }
+				onChange={ updateSlideshow }
+				value={ attributes.selectedSlideshow }
+			>
+				{ slideshows.map( ( slideshow ) => (
+					<option value={ slideshow.ID } key={ slideshow.ID }>
+						{ slideshow.post_title }
+					</option>
+				) ) }
 			</select>
 		</div>
 	);

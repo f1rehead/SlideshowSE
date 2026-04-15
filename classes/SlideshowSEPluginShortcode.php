@@ -140,7 +140,7 @@ class SlideshowSEPluginShortcode
 	static function localizeScript()
 	{
 		wp_localize_script(
-			'slideshow-jquery-image-gallery-backend-script',
+			'slideshow-se-jquery-image-gallery-backend-script',
 			'slideshow_jquery_image_gallery_backend_script_shortcode',
 			array(
 				'data' => array('shortcode' => SlideshowSEPluginShortcode::$shortCode),

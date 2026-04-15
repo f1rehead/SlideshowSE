@@ -1,6 +1,6 @@
 ( function () {
 	var $ = jQuery,
-		self = slideshow_jquery_image_gallery_script;
+		self = window.slideshow_jquery_image_gallery_script;
 
 	/**
 	 * Activates description boxes. Only activates when showDescription is set to true.

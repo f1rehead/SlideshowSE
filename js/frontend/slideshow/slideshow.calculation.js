@@ -1,6 +1,6 @@
 ( function () {
 	var $ = jQuery,
-		self = slideshow_jquery_image_gallery_script;
+		self = window.slideshow_jquery_image_gallery_script;
 
 	/**
 	 * Set container width to parent width, set overflow width to container width

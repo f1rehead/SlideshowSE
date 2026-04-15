@@ -1,6 +1,6 @@
 (function () {
 	var $ = jQuery,
-		self = slideshow_jquery_image_gallery_script;
+		self = window.slideshow_jquery_image_gallery_script;
 
 	/**
 	 * Slideshow constructor
@@ -214,7 +214,7 @@
 						}
 
 						if ($slide.hasClass('slideshow_slide_video')) {
-							slideshow_jquery_image_gallery_script.loadYouTubeAPI();
+							window.slideshow_jquery_image_gallery_script.loadYouTubeAPI();
 						}
 					}, this)
 				);

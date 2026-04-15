@@ -157,4 +157,109 @@ class SlideshowSEPluginSecurity
 
 		return $text;
 	}
+
+	/**
+	 * Allow only link targets supported by the slide admin UI.
+	 *
+	 * @since 2.5.21
+	 * @param mixed $target Raw target value from slide meta.
+	 * @return string '' or '_self' or '_blank'
+	 */
+	public static function sanitize_slide_link_target( $target )
+	{
+		if ( ! is_string( $target ) || $target === '' )
+		{
+			return '';
+		}
+
+		return in_array( $target, array( '_self', '_blank' ), true ) ? $target : '';
+	}
+
+	/**
+	 * Restrict slide background/text colors to simple hex values.
+	 *
+	 * @since 2.5.21
+	 * @param mixed $color Raw color from slide meta.
+	 * @return string Normalized '#rrggbb' / '#rgb' or empty string if invalid.
+	 */
+	public static function sanitize_slide_hex_color( $color )
+	{
+		if ( ! is_string( $color ) || $color === '' )
+		{
+			return '';
+		}
+
+		if ( '#' !== $color[0] )
+		{
+			$color = '#' . $color;
+		}
+
+		if ( preg_match( '/^#([0-9a-f]{3}|[0-9a-f]{6})$/i', $color ) )
+		{
+			return $color;
+		}
+
+		return '';
+	}
+
+	/**
+	 * Prepare a slide URL for safe output in href; keeps relative and scheme-less URLs working when esc_url() would drop them.
+	 *
+	 * @since 2.5.21
+	 * @param mixed $url Raw URL from slide meta.
+	 * @return string Escaped URL safe for href="" or empty if unusable.
+	 */
+	public static function sanitize_slide_destination_url( $url )
+	{
+		if ( ! is_string( $url ) )
+		{
+			return '';
+		}
+
+		$url = trim( $url );
+
+		if ( $url === '' )
+		{
+			return '';
+		}
+
+		$escaped = esc_url( $url );
+
+		if ( $escaped !== '' )
+		{
+			return $escaped;
+		}
+
+		if ( isset( $url[0] ) && '/' === $url[0] )
+		{
+			return esc_url( home_url( $url ) );
+		}
+
+		if ( 0 === stripos( $url, '//' ) )
+		{
+			return esc_url( ( is_ssl() ? 'https:' : 'http:' ) . $url );
+		}
+
+		if ( function_exists( 'is_email' ) && is_email( $url ) )
+		{
+			return esc_url( 'mailto:' . $url );
+		}
+
+		if ( isset( $url[0] ) && '#' === $url[0] )
+		{
+			return esc_url( untrailingslashit( home_url() ) . $url );
+		}
+
+		if ( isset( $url[0] ) && '?' === $url[0] )
+		{
+			return esc_url( home_url( '/' ) . $url );
+		}
+
+		if ( preg_match( '/^[a-z0-9.-]+\\.[a-z]{2,}([/?#]|$)/i', $url ) )
+		{
+			return esc_url( 'https://' . $url );
+		}
+
+		return '';
+	}
 }

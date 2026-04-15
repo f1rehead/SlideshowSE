@@ -1,6 +1,6 @@
 ( function () {
 	var $ = jQuery,
-		self = slideshow_jquery_image_gallery_script;
+		self = window.slideshow_jquery_image_gallery_script;
 
 	/**
 	 * Animate to a certain viewID that's not the same as the current view ID and is within the range of the $views

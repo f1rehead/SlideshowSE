@@ -151,18 +151,22 @@ class SlideshowSEPluginSlideshowStylesheet
 	 */
 	public static function loadStylesheetByAJAX()
 	{
-		$styleName = filter_input(INPUT_GET, 'style', FILTER_SANITIZE_SPECIAL_CHARS);
+		$styleName = isset($_GET['style']) ? sanitize_text_field(wp_unslash($_GET['style'])) : '';
 
-		// If no style name is set, all stylesheets will be loaded.
-		if (isset($styleName) &&
-			!empty($styleName) &&
-			strlen($styleName) > 0)
-		{
-			$stylesheet = self::getStylesheet($styleName);
-		}
-		else
+		if ($styleName === '')
 		{
 			return;
+		}
+
+		$stylesheet = self::getStylesheet($styleName);
+
+		if (false === $stylesheet)
+		{
+			status_header(404);
+			nocache_headers();
+			header('Content-Type: text/css; charset=UTF-8');
+			echo '/* Slideshow SE: unknown stylesheet */';
+			die;
 		}
 
 		// Exit if headers have already been sent
@@ -177,7 +181,8 @@ class SlideshowSEPluginSlideshowStylesheet
 		header('Pragma: cache');
 		header("Cache-Control: public, max-age=31556926");
 
-		echo wp_kses_post($stylesheet);
+		// Raw CSS from disk or from a trusted admin-only option; not HTML.
+		echo "\n" . $stylesheet;
 
 		die;
 	}
@@ -186,33 +191,77 @@ class SlideshowSEPluginSlideshowStylesheet
 	 * Gets the stylesheet with the parsed style name, then returns it.
 	 *
 	 * @since 2.2.8
-	 * @param string $styleName
-	 * @return string $stylesheet
+	 * @param string $styleName Requested style key or bundled file token.
+	 * @return string|false CSS string on success (may be empty), false if unknown or unsafe.
 	 */
 	public static function getStylesheet($styleName)
 	{
-		// Get custom style keys
-		$customStyleKeys = array_keys(get_option(SlideshowSEPluginGeneralSettings::$customStyles, array()));
+		if (!is_string($styleName) || $styleName === '')
+		{
+			return false;
+		}
+
+		// Get custom style keys (option names); only those may load arbitrary CSS from options.
+		$customStyleKeys = array_keys((array) get_option(SlideshowSEPluginGeneralSettings::$customStyles, array()));
 
 		// Match $styleName against custom style keys
-		if (in_array($styleName, $customStyleKeys))
+		if (in_array($styleName, $customStyleKeys, true))
 		{
-			// Get custom stylesheet
 			$stylesheet = get_option($styleName, '');
+
+			if (!is_string($stylesheet))
+			{
+				$stylesheet = '';
+			}
 		}
 		else
 		{
-			$stylesheetFile = SlideshowSEPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowSEPlugin' . DIRECTORY_SEPARATOR . $styleName . '.css';
+			// Bundled files: basename-style token only (no path segments).
+			$fileToken = $styleName;
 
-			if (!file_exists($stylesheetFile))
+			if (strlen($fileToken) > 4 && substr($fileToken, -4) === '.css')
 			{
-				$stylesheetFile = SlideshowSEPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowSEPlugin' . DIRECTORY_SEPARATOR . 'style-light.css';
+				$fileToken = substr($fileToken, 0, -4);
 			}
 
-			// Get contents of stylesheet
-			ob_start();
-			include($stylesheetFile);
-			$stylesheet = ob_get_clean();
+			if (1 !== preg_match('/^[A-Za-z0-9_-]+$/', $fileToken))
+			{
+				return false;
+			}
+
+			$styleDir = realpath(
+				SlideshowSEPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowSEPlugin'
+			);
+
+			if ($styleDir === false)
+			{
+				return false;
+			}
+
+			$styleDirNorm = wp_normalize_path($styleDir);
+
+			$stylesheetFile = realpath($styleDir . DIRECTORY_SEPARATOR . $fileToken . '.css');
+			$fileNorm        = ($stylesheetFile !== false) ? wp_normalize_path($stylesheetFile) : false;
+
+			if ($fileNorm === false ||
+				strpos($fileNorm, $styleDirNorm) !== 0)
+			{
+				$stylesheetFile = realpath($styleDir . DIRECTORY_SEPARATOR . 'style-light.css');
+				$fileNorm       = ($stylesheetFile !== false) ? wp_normalize_path($stylesheetFile) : false;
+			}
+
+			if ($fileNorm === false ||
+				strpos($fileNorm, $styleDirNorm) !== 0)
+			{
+				return false;
+			}
+
+			$stylesheet = file_get_contents($stylesheetFile);
+
+			if ($stylesheet === false)
+			{
+				return false;
+			}
 		}
 
 		// Replace the URL placeholders with actual URLs and add a unique identifier to separate stylesheets

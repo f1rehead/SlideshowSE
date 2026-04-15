@@ -1,4 +1,4 @@
-slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = ( function () {
+window.slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = ( function () {
 	var $ = jQuery,
 		self = {};
 
@@ -7,7 +7,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = ( f
 	 */
 	self.init = function () {
 		if (
-			! slideshow_jquery_image_gallery_backend_script.generalSettings
+			! window.slideshow_jquery_image_gallery_backend_script.generalSettings
 				.isCurrentPage
 		) {
 			return;
@@ -29,7 +29,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = ( f
 				title = $this.closest( 'li' ).find( '.style-title' ).html(),
 				content = $this.closest( 'li' ).find( '.style-content' ).html(),
 				externalData =
-					window.slideshow_jquery_image_gallery_backend_script_generalSettings,
+					window.window.slideshow_jquery_image_gallery_backend_script_generalSettings,
 				customStylesKey =
 					'slideshow-jquery-image-gallery-custom-styles',
 				customStyleID,
@@ -166,7 +166,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = ( f
 			var $this = $( event.currentTarget ),
 				customStyleKey = $this.attr( 'class' ).split( ' ' )[ 1 ],
 				externalData =
-					window.slideshow_jquery_image_gallery_backend_script_generalSettings,
+					window.window.slideshow_jquery_image_gallery_backend_script_generalSettings,
 				confirmDeleteMessage =
 					'Are you sure you want to delete this custom style?';
 

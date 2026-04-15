@@ -69,7 +69,7 @@ class SlideshowSEPluginSlideInserter
         }
 
 		wp_localize_script(
-			'slideshow-jquery-image-gallery-backend-script',
+			'slideshow-se-jquery-image-gallery-backend-script',
 			'slideshow_jquery_image_gallery_backend_script_editSlideshow',
 			array(
 				'data' => array(),

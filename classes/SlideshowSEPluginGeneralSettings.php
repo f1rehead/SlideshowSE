@@ -127,8 +127,7 @@ class SlideshowSEPluginGeneralSettings
 		register_setting(self::$settingsGroup, self::$capabilities['deleteSlideshows'], array(__CLASS__, 'saveCapabilities'));
 
 		// Register default slideshow settings
-		//register_setting(self::$settingsGroup, self::$defaultSettings, array(__CLASS__, 'saveDefaultSettings'));
-		register_setting(self::$settingsGroup, self::$defaultSettings);
+		register_setting(self::$settingsGroup, self::$defaultSettings, array(__CLASS__, 'sanitize_default_settings'));
 		register_setting(self::$settingsGroup, self::$defaultStyleSettings);
 
 		// Register custom style settings
@@ -147,7 +146,7 @@ class SlideshowSEPluginGeneralSettings
 
 		// Localize general settings script
 		wp_localize_script(
-			'slideshow-jquery-image-gallery-backend-script',
+			'slideshow-se-jquery-image-gallery-backend-script',
 			'slideshow_jquery_image_gallery_backend_script_generalSettings',
 			array(
 				'data'         => array('customStylesKey' => self::$customStyles),
@@ -325,14 +324,20 @@ class SlideshowSEPluginGeneralSettings
 	}
 
 	/**
-	 * Validate the changed settings, called by a callback from a registered setting.
+	 * Sanitize default slideshow settings submitted through the Settings API.
 	 *
-	 * @since 2.5.6
-	 * @param array $defaultStyles
-	 * @return array $newDefaultStyles
+	 * @since 2.5.21
+	 * @param mixed $value Raw option value from the form.
+	 * @return array
 	 */
-	function saveDefaultSettings( $defaultStyles )
+	public static function sanitize_default_settings($value)
 	{
+		$defaults = SlideshowSEPluginSlideshowSettingsHandler::getDefaultSettings(false, false);
+
+		if (!is_array($value))
+		{
+			return $defaults;
+		}
 
 		$animations = array(
 			'slide',
@@ -342,56 +347,94 @@ class SlideshowSEPluginGeneralSettings
 			'crossFade',
 			'directFade',
 			'fade',
-			'random'
+			'random',
 		);
 
 		$behaviours = array(
 			'natural',
 			'crop',
-			'stretch'
+			'stretch',
 		);
 
-		// Verify nonce
-		//$nonce = isset($_POST['_wpnonce']) ? $_POST['_wpnonce'] : '';
+		$out = $defaults;
 
-		if (isset($_POST['_wpnonce']) && !wp_verify_nonce($nonce, self::$settingsGroup . '-options'))
+		if (isset($value['animation']) && in_array($value['animation'], $animations, true))
 		{
-			return $defaultStyles;
+			$out['animation'] = $value['animation'];
 		}
 
-		//animation
-		(in_array($defaultStyles['animation'], $animations)) ? $newDefaultStyles['animation'] = $defaultStyles['animation'] : $newDefaultStyles['animation'] = "slide"; 
+		if (isset($value['slideSpeed']))
+		{
+			$out['slideSpeed'] = (string) filter_var($value['slideSpeed'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		}
 
-		$newDefaultStyles['slideSpeed'] = filter_var($defaultStyles['slideSpeed'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-		$newDefaultStyles['descriptionSpeed'] = filter_var($defaultStyles['descriptionSpeed'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-		$newDefaultStyles['intervalSpeed'] = filter_var($defaultStyles['intervalSpeed'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-		$newDefaultStyles['slidesPerView'] = filter_var($defaultStyles['slidesPerView'], FILTER_SANITIZE_NUMBER_INT);
-		$newDefaultStyles['maxWidth'] = filter_var($defaultStyles['maxWidth'], FILTER_SANITIZE_NUMBER_INT);
-		$newDefaultStyles['aspectRatio'] = preg_replace("/[^0-9\:]+/i", "", $defaultStyles['aspectRatio']);
-		$newDefaultStyles['height'] = filter_var($defaultStyles['height'], FILTER_SANITIZE_NUMBER_INT);
+		if (isset($value['descriptionSpeed']))
+		{
+			$out['descriptionSpeed'] = (string) filter_var($value['descriptionSpeed'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		}
 
-		//imageBehaviour
-		(in_array($defaultStyles['imageBehaviour'], $behaviours)) ? $newDefaultStyles['imageBehaviour'] = $defaultStyles['imageBehaviour'] : $newDefaultStyles['imageBehaviour'] = "natural"; 
+		if (isset($value['intervalSpeed']))
+		{
+			$out['intervalSpeed'] = (string) filter_var($value['intervalSpeed'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		}
 
-		(filter_var($defaultStyles['preserveSlideshowDimensions'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['preserveSlideshowDimensions'] = TRUE : $newDefaultStyles['preserveSlideshowDimensions'] = $defaultStyles['preserveSlideshowDimensions']; 
-		(filter_var($defaultStyles['enableResponsiveness'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['enableResponsiveness'] = TRUE : $newDefaultStyles['enableResponsiveness'] = $defaultStyles['enableResponsiveness']; 
-		(filter_var($defaultStyles['showDescription'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['showDescription'] = TRUE : $newDefaultStyles['showDescription'] = $defaultStyles['showDescription']; 
-		(filter_var($defaultStyles['hideDescription'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['hideDescription'] = TRUE : $newDefaultStyles['hideDescription'] = $defaultStyles['hideDescription']; 
-		(filter_var($defaultStyles['play'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['play'] = TRUE : $newDefaultStyles['play'] = $defaultStyles['play']; 
-		(filter_var($defaultStyles['loop'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['loop'] = TRUE : $newDefaultStyles['loop'] = $defaultStyles['loop']; 
-		(filter_var($defaultStyles['pauseOnHover'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['pauseOnHover'] = TRUE : $newDefaultStyles['pauseOnHover'] = $defaultStyles['pauseOnHover']; 
-		(filter_var($defaultStyles['controllable'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['controllable'] = TRUE : $newDefaultStyles['controllable'] = $defaultStyles['controllable']; 
-		(filter_var($defaultStyles['hideNavigationButtons'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['hideNavigationButtons'] = TRUE : $newDefaultStyles['hideNavigationButtons'] = $defaultStyles['hideNavigationButtons']; 
-		(filter_var($defaultStyles['showPagination'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['showPagination'] = TRUE : $newDefaultStyles['showPagination'] = $defaultStyles['showPagination']; 
-		(filter_var($defaultStyles['hidePagination'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['hidePagination'] = TRUE : $newDefaultStyles['hidePagination'] = $defaultStyles['hidePagination']; 
-		(filter_var($defaultStyles['controlPanel'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['controlPanel'] = TRUE : $newDefaultStyles['controlPanel'] = $defaultStyles['controlPanel']; 
-		(filter_var($defaultStyles['hideControlPanel'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['hideControlPanel'] = TRUE : $newDefaultStyles['hideControlPanel'] = $defaultStyles['hideControlPanel']; 
-		(filter_var($defaultStyles['waitUntilLoaded'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['waitUntilLoaded'] = TRUE : $newDefaultStyles['waitUntilLoaded'] = $defaultStyles['waitUntilLoaded']; 
-		(filter_var($defaultStyles['showLoadingIcon'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['showLoadingIcon'] = TRUE : $newDefaultStyles['showLoadingIcon'] = $defaultStyles['showLoadingIcon']; 
-		(filter_var($defaultStyles['random'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['random'] = TRUE : $newDefaultStyles['random'] = $defaultStyles['random']; 
-		(filter_var($defaultStyles['avoidFilter'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === NULL) ? $newDefaultStyles['avoidFilter'] = TRUE : $newDefaultStyles['avoidFilter'] = $defaultStyles['avoidFilter']; 
+		if (isset($value['slidesPerView']))
+		{
+			$out['slidesPerView'] = (string) filter_var($value['slidesPerView'], FILTER_SANITIZE_NUMBER_INT);
+		}
 
-		return $newDefaultStyles;
+		if (isset($value['maxWidth']))
+		{
+			$out['maxWidth'] = (string) filter_var($value['maxWidth'], FILTER_SANITIZE_NUMBER_INT);
+		}
+
+		if (isset($value['aspectRatio']))
+		{
+			$out['aspectRatio'] = preg_replace('/[^0-9:]/', '', (string) $value['aspectRatio']);
+		}
+
+		if (isset($value['height']))
+		{
+			$out['height'] = (string) filter_var($value['height'], FILTER_SANITIZE_NUMBER_INT);
+		}
+
+		if (isset($value['imageBehaviour']) && in_array($value['imageBehaviour'], $behaviours, true))
+		{
+			$out['imageBehaviour'] = $value['imageBehaviour'];
+		}
+
+		$boolKeys = array(
+			'preserveSlideshowDimensions',
+			'enableResponsiveness',
+			'showDescription',
+			'hideDescription',
+			'play',
+			'loop',
+			'pauseOnHover',
+			'controllable',
+			'hideNavigationButtons',
+			'showPagination',
+			'hidePagination',
+			'controlPanel',
+			'hideControlPanel',
+			'waitUntilLoaded',
+			'showLoadingIcon',
+			'random',
+			'avoidFilter',
+		);
+
+		foreach ($boolKeys as $key)
+		{
+			if (!array_key_exists($key, $value))
+			{
+				continue;
+			}
+
+			$parsed = filter_var($value[$key], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
+			$out[$key] = ($parsed === null) ? $defaults[$key] : ($parsed ? 'true' : 'false');
+		}
+
+		return $out;
 	}
 
 	/**

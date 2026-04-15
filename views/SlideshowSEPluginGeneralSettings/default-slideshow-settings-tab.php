@@ -62,7 +62,7 @@ if ($data instanceof stdClass) :
 						$defaultSettingKey,
 						$defaultSettingValue,
 						/* hideDependentValues = */ false
-					), SlideShowSEPluginMain::getAllowedTags());
+					), SlideshowSEPluginMain::getAllowedTags());
 
 					?>
 				</td>
@@ -93,7 +93,7 @@ if ($data instanceof stdClass) :
 						$defaultStyleSettingKey,
 						$defaultStyleSettingValue,
 						/* hideDependentValues = */ false
-					), SlideShowSEPluginMain::getAllowedTags());
+					), SlideshowSEPluginMain::getAllowedTags());
 
 					?>
 				</td>

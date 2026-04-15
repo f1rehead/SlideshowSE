@@ -4,17 +4,22 @@
  * @author Stefan Boonstra
  * @version 2.2.12
  */
-slideshow_jquery_image_gallery_backend_script = (function () {
+import './backend/backend-namespace.js';
+import './backend/generalSettings.js';
+import './backend/generalSettings.navigation.js';
+import './backend/generalSettings.customStyles.js';
+import './backend/editSlideshow.js';
+import './backend/editSlideshow.slideManager.js';
+import './backend/shortcode.js';
+
+(function () {
 	var $ = jQuery,
-		self = {};
+		self = window.slideshow_jquery_image_gallery_backend_script;
 
 	self.isBackendInitialized = false;
 
 	/**
-	 * Called by either jQuery's document ready event or JavaScript's window load event in case document ready fails to
-	 * fire.
-	 *
-	 * Triggers the slideshowBackendReady on the document to inform all backend scripts they can start.
+	 * Triggers slideshowBackendReady on the document so backend modules can start.
 	 */
 	self.init = function () {
 		if (self.isBackendInitialized) {
@@ -29,22 +34,4 @@ slideshow_jquery_image_gallery_backend_script = (function () {
 	$(document).ready(self.init);
 
 	$(window).on('load', self.init);
-
-	return self;
 })();
-
-//=include backend/generalSettings.js
-//=include backend/editSlideshow.js
-//=include backend/shortcode.js
-
-///**
-// * Simple logging function for Internet Explorer
-// *
-// * @param message
-// */
-//function log(message)
-//{
-//	var $ = jQuery;
-//
-//	$('body').prepend('<p style="color: red;">' + message +  '</p>');
-//}

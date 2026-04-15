@@ -3,9 +3,9 @@
  Plugin Name: Slideshow SE
  Plugin URI: http://wordpress.org/extend/plugins/slideshow-se/
  Description: The slideshow plugin is easily deployable on your website. Add any image that has already been uploaded to add to your slideshow, add text slides, or even add a video. Options and styles are customizable for every single slideshow on your website.
- Version: 2.5.20
+ Version: 2.6.0
  Requires at least: 5.0
- Tested up to: 6.8.2
+ Tested up to: 6.9.4
  Requires PHP: 5.0
  Author: John West
  License: GPLv2
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class SlideshowSEPluginMain
 {
 	/** @var string $version */
-	static $version = '2.5.20';
+	static $version = '2.6.0';
 
 	/**
 	 * Bootstraps the application by assigning the right functions to
@@ -290,7 +290,41 @@ class SlideshowSEPluginMain
 		return $allowedTags;
 	}
 };
- 
+
+/**
+ * Include the slideshow post type in front-end search without replacing other post types.
+ *
+ * @since 2.5.21
+ * @param WP_Query $query Main query.
+ */
+function f1rehead_slideshow_include_custom_post_types_in_search_results( $query ) {
+	if ( ! $query->is_main_query() || ! $query->is_search() || is_admin() ) {
+		return;
+	}
+
+	$post_types = $query->get( 'post_type' );
+
+	if ( empty( $post_types ) ) {
+		$searchable = get_post_types( array( 'exclude_from_search' => false ), 'names' );
+		$searchable['slideshow'] = SlideshowSEPluginPostType::$postType;
+		$query->set( 'post_type', array_values( array_unique( $searchable ) ) );
+		return;
+	}
+
+	if ( is_array( $post_types ) ) {
+		if ( ! in_array( SlideshowSEPluginPostType::$postType, $post_types, true ) ) {
+			$post_types[] = SlideshowSEPluginPostType::$postType;
+			$query->set( 'post_type', array_values( array_unique( $post_types ) ) );
+		}
+		return;
+	}
+
+	if ( is_string( $post_types ) && SlideshowSEPluginPostType::$postType !== $post_types ) {
+		$query->set( 'post_type', array( $post_types, SlideshowSEPluginPostType::$postType ) );
+	}
+}
+add_action( 'pre_get_posts', 'f1rehead_slideshow_include_custom_post_types_in_search_results' );
+
 /**
  * Registers all block assets so that they can be enqueued through the block editor
  * in the corresponding context.
@@ -300,14 +334,28 @@ class SlideshowSEPluginMain
 function f1rehead_slideshow_block_init() {
 	$dir = dirname( __FILE__ );
 
-	$script_asset_path = $dir."/block/index.asset.php";
-	if ( ! file_exists( $script_asset_path ) ) {
-		throw new Error(
-			'You need to run `npm start` or `npm run build` for the "f1rehead/slideshow" block first.'
+	$script_asset_path = $dir . '/block/index.asset.php';
+	$index_js_path     = $dir . '/block/index.js';
+	if ( ! file_exists( $script_asset_path ) || ! file_exists( $index_js_path ) ) {
+		_doing_it_wrong(
+			__FUNCTION__,
+			'Slideshow SE: run `npm install` and `npm run build` in the plugin directory so block assets exist.',
+			'2.6.0'
 		);
+		if ( is_admin() && current_user_can( 'activate_plugins' ) ) {
+			add_action(
+				'admin_notices',
+				static function () {
+					echo '<div class="notice notice-error"><p>';
+					echo esc_html__( 'Slideshow SE: Gutenberg block assets are missing. From the plugin folder, run npm install and npm run build.', 'slideshow-se' );
+					echo '</p></div>';
+				}
+			);
+		}
+		return;
 	}
 	$index_js     = 'block/index.js';
-	$script_asset = require( $script_asset_path );
+	$script_asset = require $script_asset_path;
 	wp_register_script(
 		'f1rehead-slideshow-block-editor',
 		plugins_url( $index_js, __FILE__ ),
@@ -316,43 +364,54 @@ function f1rehead_slideshow_block_init() {
 		false
 	);
 
-	$editor_css = 'block/index.css';
-	wp_register_style(
-		'f1rehead-slideshow-block-editor',
-		plugins_url( $editor_css, __FILE__ ),
-		array(),
-		filemtime( $dir."/".$editor_css )
-	);
-
-	$style_css = 'block/style-index.css';
+	$block_css      = 'block/index.css';
+	$block_css_full = $dir . '/' . $block_css;
 	wp_register_style(
 		'f1rehead-slideshow-block',
-		plugins_url( $style_css, __FILE__ ),
+		plugins_url( $block_css, __FILE__ ),
 		array(),
-		filemtime( $dir."/".$style_css )
+		file_exists( $block_css_full ) ? filemtime( $block_css_full ) : false
 	);
 
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `globals` object.
+	$slideshow_posts = get_posts(
+		array(
+			'posts_per_page' => -1,
+			'post_type'      => 'slideshow',
+			'post_status'    => array( 'publish', 'draft', 'pending', 'private', 'future' ),
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+		)
+	);
+	$slideshow_choices = array();
+	foreach ( $slideshow_posts as $p ) {
+		$slideshow_choices[] = array(
+			'ID'         => (int) $p->ID,
+			'post_title' => $p->post_title,
+		);
+	}
 	wp_localize_script(
 		'f1rehead-slideshow-block-editor',
-		'globals', // Array containing dynamic data for a JS Global.
-		[
-			'pluginDirPath' => plugin_dir_path( __DIR__ ),
-			'pluginDirUrl'  => plugin_dir_url( __DIR__ ),
-			// Add data here to access from `globals` object.
-			'slideshows' => get_posts(['posts_per_page' => -1, 'post_type' => 'slideshow']),
-		]
-	);	
+		'globals',
+		array(
+			'pluginDirPath' => plugin_dir_path( __FILE__ ),
+			'pluginDirUrl'  => plugin_dir_url( __FILE__ ),
+			'slideshows'    => $slideshow_choices,
+		)
+	);
 	
-	register_block_type( 'f1rehead/slideshow', array(
-		'editor_script' => 'f1rehead-slideshow-block-editor',
-		'editor_style'  => 'f1rehead-slideshow-block-editor',
-		'style'         => 'f1rehead-slideshow-block',
-		'render_callback' => 'f1rehead_slideshow_render_slideshow_block',
-		) );
-	}
+	register_block_type(
+		'f1rehead/slideshow',
+		array(
+			'editor_script'   => 'f1rehead-slideshow-block-editor',
+			'editor_style'    => 'f1rehead-slideshow-block',
+			'style'           => 'f1rehead-slideshow-block',
+			'render_callback' => 'f1rehead_slideshow_render_slideshow_block',
+		)
+	);
+}
 
 /**
  * Activate plugin
  */
-SlideShowSEPluginMain::bootStrap();
+SlideshowSEPluginMain::bootStrap();
