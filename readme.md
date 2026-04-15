@@ -3,8 +3,8 @@
 Contributors: f1rehead
 Tags: slideshow, carousel, image, gallery, free
 Requires at least: 5.0
-Tested up to: 6.8.2
-Stable tag: 2.5.20
+Tested up to: 6.9.4
+Stable tag: 2.6.0
 License: GPLv2
 Completely free, open source plugin to easily add slideshows to your WordPress site.
 
@@ -152,6 +152,14 @@ Absolutely! I will look at all pull requests on the Github repo. If you have any
    personal taste.
 
 ## Changelog
+
+### 2.6.0
+
+- New feature: Adds styled text to Text slides
+- Lots of security fixes, including a fix for CVE-2024-35769.
+- Address some code style issues (linting, typos, etc).
+- Changes to webpack config to combine and minimize the Javascript files as part of the build (the old process was not working any more).
+
 
 ### 2.5.20
 
