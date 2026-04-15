@@ -27,9 +27,9 @@
 
 			foreach ($data->slides as $slide)
 			{
-				$data             = new stdClass();
-				$data->name       = SlideshowSEPluginSlideshowSettingsHandler::$slidesKey . '[' . $i . ']';
-				$data->properties = $slide;
+				$slideView             = new stdClass();
+				$slideView->name       = SlideshowSEPluginSlideshowSettingsHandler::$slidesKey . '[' . $i . ']';
+				$slideView->properties = $slide;
 
 				// This switch statement works to prevent local file injection issues
 				// by not providing any way for attackers to modify the file name.
@@ -48,7 +48,7 @@
 						break;
 					}
 
-				SlideshowSEPluginMain::outputView('SlideshowSEPluginSlideshowSlide' . DIRECTORY_SEPARATOR . 'backend_' . esc_attr($stype) . '.php', $data);
+				SlideshowSEPluginMain::outputView('SlideshowSEPluginSlideshowSlide' . DIRECTORY_SEPARATOR . 'backend_' . esc_attr($stype) . '.php', $slideView);
 
 				$i++;
 			}

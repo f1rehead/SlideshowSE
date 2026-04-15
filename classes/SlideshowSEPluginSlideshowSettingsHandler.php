@@ -325,27 +325,21 @@ class SlideshowSEPluginSlideshowSettingsHandler
 			is_array($_POST[self::$settingsKey]))
 		{
 			$newPostSettings = sanitize_post($_POST[self::$settingsKey]);
-			// Remove unwanted sanitize_post additions
-			unset($newPostSlides["ID"]);
-			unset($newPostSlides["filter"]);
+			unset($newPostSettings['ID'], $newPostSettings['filter']);
 		}
 
 		if (isset($_POST[self::$styleSettingsKey]) &&
 			is_array($_POST[self::$styleSettingsKey]))
 		{
 			$newPostStyleSettings = sanitize_post($_POST[self::$styleSettingsKey]);
-			// Remove unwanted sanitize_post additions
-			unset($newPostSlides["ID"]);
-			unset($newPostSlides["filter"]);
+			unset($newPostStyleSettings['ID'], $newPostStyleSettings['filter']);
 		}
 
 		if (isset($_POST[self::$slidesKey]) &&
 			is_array($_POST[self::$slidesKey]))
 		{
 			$newPostSlides = sanitize_post($_POST[self::$slidesKey]);
-			// Remove unwanted sanitize_post additions
-			unset($newPostSlides["ID"]);
-			unset($newPostSlides["filter"]);
+			unset($newPostSlides['ID'], $newPostSlides['filter']);
 		}
 
 		// Merge new settings with its old values

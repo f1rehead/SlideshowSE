@@ -271,9 +271,9 @@ class SlideshowSEPluginPostType
 	 */
 	static function duplicateSlideshow()
 	{
-		$postID           = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
-		$nonce            = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
-		$postType         = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
+		$postID   = filter_input(INPUT_GET, 'post', FILTER_VALIDATE_INT);
+		$nonce    = isset($_GET['nonce']) ? sanitize_text_field(wp_unslash($_GET['nonce'])) : '';
+		$postType = isset($_GET['post_type']) ? sanitize_key(wp_unslash($_GET['post_type'])) : '';
 		$errorRedirectURL = remove_query_arg(array('action', 'post', 'nonce'));
 
 		// Check if nonce is correct and user has the correct privileges
