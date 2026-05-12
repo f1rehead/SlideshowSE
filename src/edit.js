@@ -4,6 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
+import ServerSideRender from '@wordpress/server-side-render';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -22,10 +23,11 @@ import './editor.scss';
  * @param {Object}   props               Properties passed from the editor.
  * @param {Object}   props.attributes    Block attributes.
  * @param {Function} props.setAttributes Attribute update callback.
+ * @param {string}   props.clientId      Unique block instance id (editor).
  *
  * @return {JSX.Element} Block editor UI.
  */
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit( { attributes, setAttributes, clientId } ) {
 	const slideshows = ( () => {
 		const g = typeof window !== 'undefined' ? window.globals : undefined;
 		if ( ! g || ! g.slideshows ) {
@@ -42,27 +44,55 @@ export default function Edit( { attributes, setAttributes } ) {
 		} );
 	}
 
-	const selectId = 'slideshow-se-block-slideshow-select';
+	const selectId = `slideshow-se-block-slideshow-select-${ clientId }`;
+	const selected = attributes.selectedSlideshow
+		? String( attributes.selectedSlideshow )
+		: '';
+	const hasSelection =
+		selected !== '' &&
+		selected !== '0' &&
+		! Number.isNaN( parseInt( selected, 10 ) );
 
 	return (
-		<div>
-			<label
-				className="components-placeholder__label"
-				htmlFor={ selectId }
-			>
-				{ __( 'Slideshow', 'slideshow-se' ) }:
-			</label>{ ' ' }
-			<select
-				id={ selectId }
-				onChange={ updateSlideshow }
-				value={ attributes.selectedSlideshow }
-			>
-				{ slideshows.map( ( slideshow ) => (
-					<option value={ slideshow.ID } key={ slideshow.ID }>
-						{ slideshow.post_title }
+		<div className="f1rehead-slideshow-se-block-edit">
+			<div className="f1rehead-slideshow-se-block-edit__preview">
+				{ hasSelection ? (
+					<ServerSideRender
+						block="f1rehead/slideshow"
+						attributes={ attributes }
+					/>
+				) : (
+					<div className="f1rehead-slideshow-se-block-edit__preview-placeholder">
+						{ __(
+							'Select a slideshow to preview it here.',
+							'slideshow-se'
+						) }
+					</div>
+				) }
+			</div>
+			<div className="f1rehead-slideshow-se-block-edit__controls">
+				<label
+					className="f1rehead-slideshow-se-block-edit__label"
+					htmlFor={ selectId }
+				>
+					{ __( 'Slideshow', 'slideshow-se' ) }:
+				</label>
+				<select
+					id={ selectId }
+					className="f1rehead-slideshow-se-block-edit__select"
+					onChange={ updateSlideshow }
+					value={ selected }
+				>
+					<option value="">
+						{ __( '— Select —', 'slideshow-se' ) }
 					</option>
-				) ) }
-			</select>
+					{ slideshows.map( ( slideshow ) => (
+						<option value={ slideshow.ID } key={ slideshow.ID }>
+							{ slideshow.post_title }
+						</option>
+					) ) }
+				</select>
+			</div>
 		</div>
 	);
 }

@@ -1,9 +1,112 @@
 /**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
+ * Slideshow SE block: preview behind the picker (editor only).
  */
 
-.wp-block-create-block-slideshow-se {
-	border: 1px dotted #f00;
+.f1rehead-slideshow-se-block-edit {
+	position: relative;
+	min-height: 200px;
+	margin: 0;
+	padding: 0;
+}
+
+/* Preview layer (back): server-rendered slideshow HTML */
+.f1rehead-slideshow-se-block-edit__preview {
+	position: relative;
+	z-index: 0;
+	min-height: 200px;
+	padding-top: 0px;
+	overflow: hidden;
+	border: 1px solid #ccd0d4;
+	border-radius: 2px;
+	background: #fff;
+	pointer-events: none;
+	box-sizing: border-box;
+}
+
+.f1rehead-slideshow-se-block-edit__preview .slideshow_container {
+	pointer-events: none;
+}
+
+/*
+ * Server-side block preview has no slideshow JS. functional.css sets
+ * .slideshow_view to position absolute and 0×0 until JS runs, and slides use
+ * float:left — without a BFC the view’s height collapses to 0, so overflow on
+ * ancestors clips all images. Load functional.css (slideshow-se.php) and reset
+ * the first view so floats are contained and images have space.
+ */
+.f1rehead-slideshow-se-block-edit__preview .slideshow_content {
+	display: block !important;
+	overflow: hidden;
+}
+
+.f1rehead-slideshow-se-block-edit__preview .slideshow_container .slideshow_view:first-child {
+	position: relative !important;
+	top: auto !important;
+	left: auto !important;
+	width: 100% !important;
+	height: auto !important;
+	min-height: 0 !important;
+	max-width: 100% !important;
+	overflow: visible !important;
+	display: flow-root !important;
+}
+
+.f1rehead-slideshow-se-block-edit__preview .slideshow_container .slideshow_view:not(:first-child) {
+	display: none !important;
+}
+
+.f1rehead-slideshow-se-block-edit__preview .slideshow_container .slideshow_slide_image img {
+	max-width: 100% !important;
+	width: auto !important;
+	height: auto !important;
+	vertical-align: top;
+}
+
+.f1rehead-slideshow-se-block-edit__preview-placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 148px;
+	padding: 24px 16px;
+	margin: 0;
+	text-align: center;
+	color: #757575;
+	font-size: 13px;
+	background: #f6f7f7;
+	box-sizing: border-box;
+}
+
+/* Controls layer (front) */
+.f1rehead-slideshow-se-block-edit__controls {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 12px;
+	padding: 10px 12px;
+	background: rgba(255, 255, 255, 0.94);
+	border: 1px solid #ccd0d4;
+	border-radius: 2px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+	pointer-events: auto;
+	box-sizing: border-box;
+}
+
+.f1rehead-slideshow-se-block-edit__label {
+	font-size: 13px;
+	font-weight: 600;
+	margin: 0;
+}
+
+.f1rehead-slideshow-se-block-edit__select {
+	flex: 1 1 160px;
+	min-width: 140px;
+	max-width: 100%;
+	font-size: 13px;
+	line-height: 1.4;
+	margin: 0;
 }

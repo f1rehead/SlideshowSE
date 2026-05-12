@@ -2,9 +2,9 @@
 
 Contributors: f1rehead
 Tags: slideshow, carousel, image, gallery, free
-Requires at least: 5.0
+Requires at least: 6.3
 Tested up to: 6.9.4
-Stable tag: 2.6.0
+Stable tag: 2.7.0
 License: GPLv2
 Completely free, open source plugin to easily add slideshows to your WordPress site.
 
@@ -20,7 +20,7 @@ different images, settings, and styles for each one.
 
 ## Features
 
-- First (rough) stab at a Gutenberg block
+- Gutenberg block
 - Create as many slideshows with as many slides as you like
 - Image slides
 - Text slides
@@ -120,11 +120,6 @@ an anchor tag (`<a></a>`) or paragraph tag (`<p></p>`), while you can only place
 
 Good question! There are a couple reasons: First, I maintain a site that has hundreds of slideshows and, to be honest, it's more rewarding for me to update the plugin than it is to find a new one and manually convert all the slideshows to whatever the new one is. Secondly, there is a real dearth of good quality, FREE slideshow plugins for Wordpress. I'm not saying this one is the best, but it's pretty good and more or less honors Wordpress UI. There's nothing worse than installing a new slideshow plugin only to find that your admin interface is now an ungodly color with giant, weird fonts and icons and your slideshows are now being stored in the cloud for a monthly fee. Ugh. So, primarily I'll be maintaining this fork to suit my needs but I will entertain suggestions or pull requests. I'm (probably) not going to rewrite this plugin, but I will work to keep it functioning in the up-to-date versions of Wordpress and I'll implement new features as I need them (i.e. the Gutenberg block, which I hope to improve).
 
-### OK, what's on the roadmap for this plugin?
-
-Well, first up is to improve the Gutenberg block. I want to add a preview so that you can see what your post will look like on the
-backend. I have some good ideas on that front. Also, I want to beef up the video slide option. Just having YouTube doesn't cut it. That will probably mean a new slide type and deprecation of the YouTube slide (but I won't drop support for the current YouTube slides). After all that, I'm thinking about supporting either Bootstrap carousel or Slick carousel in addition to the original version. Or maybe both. I need to do some analysis to see if one is easier or if both are possible.
-
 ### Can I help?
 
 Absolutely! I will look at all pull requests on the Github repo. If you have any feedback or suggestions or want to volunteer, please post over on Github. While I will monitor the Wordpress Support forums, I spent a lot of my day on Github so I'm more likely to see your post over there. Thanks in advance for your help in make this the best slideshow plugin available for Wordpress, free or not!
@@ -153,13 +148,15 @@ Absolutely! I will look at all pull requests on the Github repo. If you have any
 
 ## Changelog
 
+### 2.7.0
+- Add preview to the Gutenberg block. The first slide of the selected will display as the preview image.
+
 ### 2.6.0
 
 - New feature: Adds styled text to Text slides
 - Lots of security fixes, including a fix for CVE-2024-35769.
 - Address some code style issues (linting, typos, etc).
 - Changes to webpack config to combine and minimize the Javascript files as part of the build (the old process was not working any more).
-
 
 ### 2.5.20
 

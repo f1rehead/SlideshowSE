@@ -1,10 +1,18 @@
 {
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
 	"name": "f1rehead/slideshow",
 	"title": "Slideshow SE",
 	"category": "common",
 	"icon": "format-gallery",
 	"description": "A slideshow block",
 	"textdomain": "f1rehead",
+	"attributes": {
+		"selectedSlideshow": {
+			"type": "string",
+			"default": ""
+		}
+	},
 	"supports": {
 		"html": false
 	},

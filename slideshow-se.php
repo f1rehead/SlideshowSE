@@ -3,8 +3,8 @@
  Plugin Name: Slideshow SE
  Plugin URI: http://wordpress.org/extend/plugins/slideshow-se/
  Description: The slideshow plugin is easily deployable on your website. Add any image that has already been uploaded to add to your slideshow, add text slides, or even add a video. Options and styles are customizable for every single slideshow on your website.
- Version: 2.6.0
- Requires at least: 5.0
+ Version: 2.7.0
+ Requires at least: 6.3
  Tested up to: 6.9.4
  Requires PHP: 5.0
  Author: John West
@@ -367,9 +367,16 @@ function f1rehead_slideshow_block_init() {
 	$block_css      = 'block/index.css';
 	$block_css_full = $dir . '/' . $block_css;
 	wp_register_style(
+		'slideshow-se-editor-functional',
+		plugins_url( 'style/SlideshowSEPlugin/functional.css', __FILE__ ),
+		array(),
+		SlideshowSEPluginMain::$version
+	);
+
+	wp_register_style(
 		'f1rehead-slideshow-block',
 		plugins_url( $block_css, __FILE__ ),
-		array(),
+		array( 'slideshow-se-editor-functional' ),
 		file_exists( $block_css_full ) ? filemtime( $block_css_full ) : false
 	);
 
@@ -379,8 +386,8 @@ function f1rehead_slideshow_block_init() {
 			'posts_per_page' => -1,
 			'post_type'      => 'slideshow',
 			'post_status'    => array( 'publish', 'draft', 'pending', 'private', 'future' ),
-			'orderby'        => 'title',
-			'order'          => 'ASC',
+			'orderby'        => 'date',
+			'order'          => 'DESC',
 		)
 	);
 	$slideshow_choices = array();
@@ -403,10 +410,18 @@ function f1rehead_slideshow_block_init() {
 	register_block_type(
 		'f1rehead/slideshow',
 		array(
+			'api_version'     => 3,
 			'editor_script'   => 'f1rehead-slideshow-block-editor',
 			'editor_style'    => 'f1rehead-slideshow-block',
 			'style'           => 'f1rehead-slideshow-block',
 			'render_callback' => 'f1rehead_slideshow_render_slideshow_block',
+			// Must match src/index.js — REST block renderer validates against server registration.
+			'attributes'      => array(
+				'selectedSlideshow' => array(
+					'type'    => 'string',
+					'default' => '',
+				),
+			),
 		)
 	);
 }

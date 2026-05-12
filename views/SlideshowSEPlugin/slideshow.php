@@ -20,8 +20,12 @@
 						$slideData             = new stdClass();
 						$slideData->properties = $data->slides[$i];
 
-						// Only include published slideshows
-						if ($data->post->post_status === 'publish') {
+						// Published on the front; in REST (e.g. block preview) also show when the user can edit this slideshow.
+						$show_slide_markup = ( 'publish' === $data->post->post_status );
+						if ( ! $show_slide_markup && defined( 'REST_REQUEST' ) && REST_REQUEST && isset( $data->post->ID ) ) {
+							$show_slide_markup = current_user_can( 'edit_post', (int) $data->post->ID );
+						}
+						if ( $show_slide_markup ) {
 							SlideshowSEPluginMain::outputView('SlideshowSEPluginSlideshowSlide' . DIRECTORY_SEPARATOR . 'frontend_' . $data->slides[$i]['type'] . '.php', $slideData);
 						}
 
