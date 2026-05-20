@@ -48,14 +48,33 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	const selected = attributes.selectedSlideshow
 		? String( attributes.selectedSlideshow )
 		: '';
+	const selectedId = parseInt( selected, 10 );
 	const hasSelection =
 		selected !== '' &&
 		selected !== '0' &&
-		! Number.isNaN( parseInt( selected, 10 ) );
+		! Number.isNaN( selectedId );
+	const selectedSlideshow = hasSelection
+		? slideshows.find( ( s ) => Number( s.ID ) === selectedId )
+		: null;
+	const selectedHeightPx =
+		selectedSlideshow &&
+		typeof selectedSlideshow.height === 'number' &&
+		selectedSlideshow.height > 0
+			? selectedSlideshow.height
+			: null;
+	const previewStyle =
+		selectedHeightPx !== null
+			? {
+					'--f1rehead-slideshow-preview-max-height': `${ selectedHeightPx }px`,
+			  }
+			: undefined;
 
 	return (
 		<div className="f1rehead-slideshow-se-block-edit">
-			<div className="f1rehead-slideshow-se-block-edit__preview">
+			<div
+				className="f1rehead-slideshow-se-block-edit__preview"
+				style={ previewStyle }
+			>
 				{ hasSelection ? (
 					<ServerSideRender
 						block="f1rehead/slideshow"

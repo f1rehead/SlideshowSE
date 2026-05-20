@@ -392,9 +392,17 @@ function f1rehead_slideshow_block_init() {
 	);
 	$slideshow_choices = array();
 	foreach ( $slideshow_posts as $p ) {
+		$settings        = SlideshowSEPluginSlideshowSettingsHandler::getSettings( (int) $p->ID, false );
+		$slideshow_height = isset( $settings['height'] )
+			? (int) filter_var( (string) $settings['height'], FILTER_SANITIZE_NUMBER_INT )
+			: 0;
+		if ( $slideshow_height < 1 ) {
+			$slideshow_height = 200;
+		}
 		$slideshow_choices[] = array(
 			'ID'         => (int) $p->ID,
 			'post_title' => $p->post_title,
+			'height'     => $slideshow_height,
 		);
 	}
 	wp_localize_script(
