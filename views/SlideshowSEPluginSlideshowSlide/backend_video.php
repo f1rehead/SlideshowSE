@@ -24,7 +24,7 @@ if ($data instanceof stdClass) :
 
 	<div class="widefat sortable-slides-list-item postbox">
 
-		<div class="handlediv" title="<?php esc_attr_e('Click to toggle'); ?>"><br></div>
+		<div class="handlediv" title="<?php esc_attr_e('Click to toggle', 'slideshow-se'); ?>"><br></div>
 
 		<div class="hndle">
 			<div class="slide-icon video-slide-icon"></div>

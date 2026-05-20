@@ -2,7 +2,7 @@
 	<div class="text-slide-template" style="display: none;">
 		<div class="widefat sortable-slides-list-item postbox">
 
-			<div class="handlediv" title="<?php esc_attr_e('Click to toggle'); ?>"><br></div>
+			<div class="handlediv" title="<?php esc_attr_e('Click to toggle', 'slideshow-se'); ?>"><br></div>
 
 			<div class="hndle">
 				<div class="slide-icon text-slide-icon"></div>
@@ -87,7 +87,7 @@
 	<div class="video-slide-template" style="display: none;">
 		<div class="widefat sortable-slides-list-item postbox">
 
-			<div class="handlediv" title="<?php esc_attr_e('Click to toggle'); ?>"><br></div>
+			<div class="handlediv" title="<?php esc_attr_e('Click to toggle', 'slideshow-se'); ?>"><br></div>
 
 			<div class="hndle">
 				<div class="slide-icon video-slide-icon"></div>
@@ -128,7 +128,7 @@
 	<div class="embed-slide-template" style="display: none;">
 		<div class="widefat sortable-slides-list-item postbox">
 
-			<div class="handlediv" title="<?php esc_attr_e('Click to toggle'); ?>"><br></div>
+			<div class="handlediv" title="<?php esc_attr_e('Click to toggle', 'slideshow-se'); ?>"><br></div>
 
 			<div class="hndle">
 				<div class="slide-icon embed-slide-icon"></div>
@@ -165,7 +165,7 @@
 	<div class="image-slide-template" style="display: none;">
 		<div class="widefat sortable-slides-list-item postbox">
 
-			<div class="handlediv" title="<?php esc_attr_e('Click to toggle'); ?>"><br></div>
+			<div class="handlediv" title="<?php esc_attr_e('Click to toggle', 'slideshow-se'); ?>"><br></div>
 
 			<div class="hndle">
 				<div class="slide-icon image-slide-icon"></div>
