@@ -39,7 +39,7 @@ const plugin = Object.assign( {}, config, {
 		iife: false,
 	},
 	optimization: {
-		minimize: false,
+		minimize: true,
 		chunkIds: false,
 	},
 	module: {
