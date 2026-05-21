@@ -149,7 +149,10 @@ Absolutely! I will look at all pull requests on the Github repo. If you have any
 ## Changelog
 
 ### 2.7.0
-- Add preview to the Gutenberg block. The first slide of the selected will display as the preview image.
+- Add preview to the Gutenberg block. The first slide of the slideshow will display as the preview.
+- Fixed: styling controls now appear on a new text slide.
+- Set the Block API to version 3, per WP recommendation. This means that WP 6.3 is the new minimum version.
+- Start to implement some of the code recommendations from Plugin Check (minor changes).
 
 ### 2.6.0
 
