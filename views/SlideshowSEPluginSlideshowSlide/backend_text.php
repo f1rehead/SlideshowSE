@@ -114,32 +114,13 @@ if ($data instanceof stdClass) :
 					</select>
 				</div>
 				<div class="clear"></div>
-				<?php 
-				$slideNum = preg_replace('/[\W_]+/u', '', esc_attr($name));
-				if (!function_exists('my_tinymce_buttons')) {
-					add_filter( 'mce_buttons', 'my_tinymce_buttons' );
-					function my_tinymce_buttons( $buttons ) {
-						$buttons = array(
-							'numlist','bullist','hr','indent','outdent','spellchecker',
-							'wpgallery',
-						);
-						return $buttons;
-					}
-				}
-
-				$args = array(
-					'tinymce'       => array(
-						'toolbar1'      => 'formatselect | bold italic underline | bullist numlist | blockquote | alignleft aligncenter alignright | link | wp_add_media toggle fullscreen',
-						'toolbar2'      => 'strikethrough hr | forecolor backcolor | pastetext removeformat charmap | subscript superscript | outdent indent | undo redo | wp_help',
-						'toolbar3'      => '',
-					),
-					'media_buttons' => false,
-					'textarea_name' => esc_attr( $name ) . '[description]',
+				<?php
+				SlideshowSEPluginSlideInserter::renderDescriptionEditor(
+					$description,
+					SlideshowSEPluginSlideInserter::getDescriptionEditorIdFromSlideName( $name ),
+					$name . '[description]'
 				);
-
-				wp_editor( wp_kses_post($description), 'description'.$slideNum, $args );
-
-			 ?>
+				?>
 			</div> <!-- slideshow=group -->
 
 			<div class="slideshow-group">

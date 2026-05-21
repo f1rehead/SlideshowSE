@@ -175,7 +175,81 @@ window.slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager 
 			return;
 		}
 
+		self.removeDescriptionEditor( $slide );
 		$slide.remove();
+	};
+
+	/**
+	 * Removes a dynamically initialized TinyMCE instance before the slide is deleted.
+	 *
+	 * @param {jQuery} $slide Slide list item.
+	 */
+	self.removeDescriptionEditor = function ( $slide ) {
+		var $textarea = $slide.find(
+			'.slideshow-description-editor-field textarea.description'
+		);
+		var editorId = $textarea.attr( 'id' );
+
+		if (
+			! editorId ||
+			typeof wp === 'undefined' ||
+			! wp.editor ||
+			typeof wp.editor.remove !== 'function'
+		) {
+			return;
+		}
+
+		wp.editor.remove( editorId );
+	};
+
+	/**
+	 * Initializes TinyMCE on a newly inserted text slide description field.
+	 *
+	 * @param {jQuery} $textSlide Cloned text slide element.
+	 */
+	self.initTextSlideDescriptionEditor = function ( $textSlide ) {
+		var externalData,
+			editorSettings,
+			$field,
+			$textarea,
+			editorId;
+
+		if (
+			typeof wp === 'undefined' ||
+			! wp.editor ||
+			typeof wp.editor.initialize !== 'function'
+		) {
+			return;
+		}
+
+		externalData =
+			window.slideshow_jquery_image_gallery_backend_script_editSlideshow;
+
+		if (
+			! externalData ||
+			typeof externalData.descriptionEditor !== 'object'
+		) {
+			return;
+		}
+
+		editorSettings = externalData.descriptionEditor;
+		$field = $textSlide.find( '.slideshow-description-editor-field' );
+		$textarea = $field.find( 'textarea.description' );
+
+		if ( ! $textarea.length ) {
+			return;
+		}
+
+		$field.find( '.wp-editor-wrap' ).remove();
+
+		editorId =
+			'slideshow-text-description-' +
+			Date.now() +
+			'-' +
+			Math.floor( Math.random() * 10000 );
+		$textarea.attr( 'id', editorId );
+
+		wp.editor.initialize( editorId, editorSettings );
 	};
 
 	/**
@@ -334,6 +408,7 @@ window.slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager 
 
 		$( '.sortable-slides-list' ).prepend( $textSlide );
 
+		self.initTextSlideDescriptionEditor( $textSlide );
 		self.tryInitSortable();
 		self.indexSlidesOrder();
 	};
