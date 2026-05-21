@@ -5,7 +5,7 @@
  Description: The slideshow plugin is easily deployable on your website. Add any image that has already been uploaded to add to your slideshow, add text slides, or even add a video. Options and styles are customizable for every single slideshow on your website.
  Version: 2.7.0
  Requires at least: 6.3
- Tested up to: 6.9
+ Tested up to: 7.0
  Requires PHP: 5.0
  Author: John West
  License: GPLv2
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class SlideshowSEPluginMain
 {
 	/** @var string $version */
-	static $version = '2.6.0';
+	static $version = '2.7.0';
 
 	/**
 	 * Bootstraps the application by assigning the right functions to
@@ -121,21 +121,27 @@ class SlideshowSEPluginMain
 
 		$currentScreen = get_current_screen();
 
-		// Enqueue 3.5 uploader
-		if ($currentScreen->post_type === 'slideshow' &&
-			function_exists('wp_enqueue_media'))
-		{
-			wp_enqueue_media();
+		$backend_script_dependencies = array(
+			'jquery',
+			'jquery-ui-sortable',
+			'wp-color-picker',
+		);
+
+		// Enqueue 3.5 uploader and editor for slideshow add/edit screens.
+		if ($currentScreen->post_type === 'slideshow') {
+			if (function_exists('wp_enqueue_media')) {
+				wp_enqueue_media();
+			}
+			if (function_exists('wp_enqueue_editor')) {
+				wp_enqueue_editor();
+				$backend_script_dependencies[] = 'wp-editor';
+			}
 		}
 
 		wp_enqueue_script(
 			'slideshow-se-jquery-image-gallery-backend-script',
 			self::getPluginUrl() . '/js/min/all.backend.min.js',
-			array(
-				'jquery',
-				'jquery-ui-sortable',
-				'wp-color-picker'
-			),
+			$backend_script_dependencies,
 			SlideshowSEPluginMain::$version,
 			false
 		);

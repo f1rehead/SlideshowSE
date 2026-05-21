@@ -3,7 +3,7 @@
 Contributors: f1rehead
 Tags: slideshow, carousel, image, gallery, free
 Requires at least: 6.3
-Tested up to: 6.9
+Tested up to: 7.0
 Stable tag: 2.7.0
 License: GPLv2
 Completely free, open source plugin to easily add slideshows to your WordPress site.
