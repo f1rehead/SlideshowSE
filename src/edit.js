@@ -4,6 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
+import { useBlockProps } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 
 /**
@@ -69,8 +70,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			  }
 			: undefined;
 
+	const blockProps = useBlockProps( {
+		className: 'f1rehead-slideshow-se-block-edit',
+	} );
+
 	return (
-		<div className="f1rehead-slideshow-se-block-edit">
+		<div { ...blockProps }>
 			<div
 				className="f1rehead-slideshow-se-block-edit__preview"
 				style={ previewStyle }
