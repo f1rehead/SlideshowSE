@@ -56,7 +56,7 @@ if ($data instanceof stdClass) :
 					<?php if(!isset($defaultStyleValues['style']) || empty($defaultStyleValues['style'])) continue; // Continue if style is not set or empty ?>
 
 					<li>
-						<span class="style-title"><?php echo (isset($defaultStyleValues['name'])) ? esc_attr($defaultStyleValues['name']) : esc_attr(esc_attr_e('Untitled'), 'slideshow-se'); ?></span>
+						<span class="style-title"><?php echo (isset($defaultStyleValues['name'])) ? esc_attr($defaultStyleValues['name']) : esc_attr(esc_attr_e('Untitled', 'slideshow-se')); ?></span>
 							<span
 								class="style-action style-default <?php esc_attr($defaultStyleKey); ?>"
 								title="<?php esc_attr_e('Create a new custom style from this style', 'slideshow-se'); ?>"
