@@ -4,7 +4,7 @@ Contributors: f1rehead
 Tags: slideshow, carousel, image, gallery, free
 Requires at least: 6.3
 Tested up to: 7.0
-Stable tag: 2.7.0
+Stable tag: 2.7.1
 License: GPLv2
 Completely free, open source plugin to easily add slideshows to your WordPress site.
 
@@ -147,6 +147,9 @@ Absolutely! I will look at all pull requests on the Github repo. If you have any
    personal taste.
 
 ## Changelog
+
+### 2.7.1
+- Update the Gutenberg block to support useBlockProps, which is required by API v3
 
 ### 2.7.0
 - Add preview to the Gutenberg block. The first slide of the slideshow will display as the preview.
