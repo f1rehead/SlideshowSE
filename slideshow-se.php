@@ -6,7 +6,7 @@
  Version: 2.7.1
  Requires at least: 6.3
  Tested up to: 7.0
- Requires PHP: 5.0
+ Requires PHP: 7.0
  Author: John West
  License: GPLv2
  Text Domain: slideshow-se
