@@ -130,14 +130,14 @@ class SlideshowSEPluginWidget extends WP_Widget
 		// Update title
 		if (isset($newInstance['title']))
 		{
-			$instance['title'] = $newInstance['title'];
+			$instance['title'] = sanitize_text_field($newInstance['title']);
 		}
 
 		// Update slideshowId
 		if (isset($newInstance['slideshowId']) &&
 			!empty($newInstance['slideshowId']))
 		{
-			$instance['slideshowId'] = $newInstance['slideshowId'];
+			$instance['slideshowId'] = absint($newInstance['slideshowId']);
 		}
 
 		// Save
