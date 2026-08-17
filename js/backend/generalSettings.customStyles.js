@@ -26,8 +26,8 @@ window.slideshow_jquery_image_gallery_backend_script.generalSettings.customStyle
 			'.custom-styles-tab .styles-list .style-action.style-default'
 		).click( function ( event ) {
 			var $this = $( event.currentTarget ),
-				title = $this.closest( 'li' ).find( '.style-title' ).html(),
-				content = $this.closest( 'li' ).find( '.style-content' ).html(),
+				title = $this.closest( 'li' ).find( '.style-title' ).text(),
+				content = $this.closest( 'li' ).find( '.style-content' ).val(),
 				externalData =
 					window.window.slideshow_jquery_image_gallery_backend_script_generalSettings,
 				customStylesKey =
@@ -81,7 +81,7 @@ window.slideshow_jquery_image_gallery_backend_script.generalSettings.customStyle
 
 			// Add value attributes
 			$editor.find( '.new-custom-style-title' ).attr( 'value', title );
-			$editor.find( '.new-custom-style-content' ).html( content );
+			$editor.find( '.new-custom-style-content' ).val( content );
 
 			// Add name attributes
 			$editor
