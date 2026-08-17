@@ -1,5 +1,10 @@
 <?php
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Render callback for the dynamic block. All this does is call the deploy function
  * of the SlideshowSEPlugin class.

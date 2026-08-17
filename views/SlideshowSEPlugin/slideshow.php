@@ -1,4 +1,12 @@
-<?php if ($data instanceof stdClass) : ?>
+<?php 
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ($data instanceof stdClass) : 
+?>
 
 	<div class="slideshow_container slideshow_container_<?php echo esc_attr($data->styleName); ?>" data-slideshow-id="<?php echo esc_attr($data->post->ID); ?>" data-style-name="<?php echo esc_attr($data->styleName); ?>" data-style-version="<?php echo esc_attr($data->styleVersion); ?>" <?php if (SlideshowSEPluginGeneralSettings::getEnableLazyLoading()) : ?>data-settings="<?php echo esc_attr(wp_json_encode($data->settings)); ?>"<?php endif; ?>>
 <?php if(isset($data->settings['showLoadingIcon']) && $data->settings['showLoadingIcon'] === 'true'): ?>

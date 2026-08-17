@@ -1,4 +1,11 @@
-<?php if ($data instanceof stdClass) : ?>
+<?php // Exit if accessed directly.
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ($data instanceof stdClass) : 
+?>
 
 	<p><?php esc_attr_e('To use this slideshow in your website either add this piece of shortcode to your posts or pages', 'slideshow-se'); ?>:</p>
 	<p style="font-style: italic;"><?php echo esc_attr($data->shortCode); ?></p>

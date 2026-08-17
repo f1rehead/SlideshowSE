@@ -1,4 +1,12 @@
-<?php if ($data instanceof stdClass) : ?>
+<?php 
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ($data instanceof stdClass) : 
+?>
 
 	<p>
 		<label for="<?php echo esc_attr($data->widget->get_field_id('title')); ?>"><?php esc_attr_e('Title', 'slideshow-se'); ?></label>

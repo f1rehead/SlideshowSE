@@ -1,4 +1,12 @@
-<?php if ($data instanceof stdClass) : ?>
+<?php 
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ($data instanceof stdClass) : 
+?>
 
 	<p style="text-align: center; font-style: italic"><?php esc_attr_e('Insert', 'slideshow-se'); ?>:</p>
 	<p style="text-align: center;">

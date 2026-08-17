@@ -1,4 +1,12 @@
-<?php if ($data instanceof stdClass) : ?>
+<?php 
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ($data instanceof stdClass) : 
+?>
 
 	<a
 		href="#TB_inline?width=450&inlineId=insertSlideshowShortcode"

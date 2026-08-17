@@ -1,4 +1,12 @@
-<?php if ($data instanceof stdClass) : ?>
+<?php 
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ($data instanceof stdClass) : 
+?>
 	<table>
 		<?php $groups = array(); ?>
 		<?php if(count($data->settings) > 0): ?>
