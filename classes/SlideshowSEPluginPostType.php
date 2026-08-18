@@ -281,7 +281,7 @@ class SlideshowSEPluginPostType
 			!current_user_can('slideshow-jquery-image-gallery-add-slideshows') ||
 			$postType !== self::$postType)
 		{
-			wp_redirect($errorRedirectURL);
+			wp_safe_redirect($errorRedirectURL);
 
 			die();
 		}
@@ -292,7 +292,7 @@ class SlideshowSEPluginPostType
 		if (!$post instanceof WP_Post ||
 			$post->post_type !== self::$postType)
 		{
-			wp_redirect($errorRedirectURL);
+			wp_safe_redirect($errorRedirectURL);
 
 			die();
 		}
@@ -318,7 +318,7 @@ class SlideshowSEPluginPostType
 
 		if (is_wp_error($newPostID))
 		{
-			wp_redirect($errorRedirectURL);
+			wp_safe_redirect($errorRedirectURL);
 
 			die();
 		}
@@ -346,7 +346,7 @@ class SlideshowSEPluginPostType
 			}
 		}
 
-		wp_redirect(admin_url('post.php?action=edit&post=' . $newPostID));
+		wp_safe_redirect(admin_url('post.php?action=edit&post=' . $newPostID));
 
 		die();
 	}
