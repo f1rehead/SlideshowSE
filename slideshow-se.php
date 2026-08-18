@@ -346,7 +346,7 @@ function f1rehead_slideshow_block_init() {
 		_doing_it_wrong(
 			__FUNCTION__,
 			'Slideshow SE: run `npm install` and `npm run build` in the plugin directory so block assets exist.',
-			SlideshowSEPluginMain::$version
+			wp_kses_post(SlideshowSEPluginMain::$version)
 		);
 		if ( is_admin() && current_user_can( 'activate_plugins' ) ) {
 			add_action(

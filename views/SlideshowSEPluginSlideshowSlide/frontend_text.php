@@ -120,7 +120,7 @@ if ($data instanceof stdClass) :
 		<?php if (strlen($title) > 0) : ?>
 		<<?php echo esc_attr($titleElementTag); ?> class="slideshow_title" style="<?php echo esc_attr($titleColorStyle); ?>">
 			<?php if ($linkAttrs !== '') : ?>
-				<a <?php echo $linkAttrs; ?>><?php echo esc_html($title); ?></a>
+				<a <?php echo wp_kses_post($linkAttrs); ?>><?php echo esc_html($title); ?></a>
 			<?php else : ?>
 				<?php echo esc_html($title); ?>
 			<?php endif; ?>
@@ -130,15 +130,15 @@ if ($data instanceof stdClass) :
 		<?php if (strlen($description) > 0) : ?>
 		<<?php echo esc_attr($descriptionElementTag); ?> class="slideshow_description" style="<?php echo esc_attr($titleColorStyle); ?>">
 			<?php if ($linkAttrs !== '') : ?>
-				<a <?php echo $linkAttrs; ?>><?php echo $description_html; ?></a>
+				<a <?php echo wp_kses_post($linkAttrs); ?>><?php echo wp_kses_post($description_html); ?></a>
 			<?php else : ?>
-				<?php echo $description_html; ?>
+				<?php echo wp_kses_post($description_html); ?>
 			<?php endif; ?>
 		</<?php echo esc_attr($descriptionElementTag); ?>>
 		<?php endif; ?>
 
 		<?php if ($linkAttrs !== '') : ?>
-		<a <?php echo $linkAttrs; ?> class="slideshow_background_anchor"></a>
+		<a <?php echo wp_kses_post($linkAttrs); ?> class="slideshow_background_anchor"></a>
 		<?php endif; ?>
 	</div>
 

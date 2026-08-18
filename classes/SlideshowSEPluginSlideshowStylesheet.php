@@ -182,7 +182,7 @@ class SlideshowSEPluginSlideshowStylesheet
 		header("Cache-Control: public, max-age=31556926");
 
 		// Raw CSS from disk or from a trusted admin-only option; not HTML.
-		echo "\n" . $stylesheet;
+		echo "\n" . wp_kses_post($stylesheet);
 
 		die;
 	}

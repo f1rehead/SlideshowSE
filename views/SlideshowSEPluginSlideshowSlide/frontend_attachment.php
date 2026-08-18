@@ -154,24 +154,24 @@ if ($data instanceof stdClass):
 			if ($imageAvailable): ?>
 
 				<div class="slideshow_slide slideshow_slide_image">
-					<?php if ($linkAttrs !== '') : ?>
-					<a <?php echo $linkAttrs; ?>>
+<?php if ($linkAttrs !== '') : ?>
+					<a <?php echo wp_kses_post($linkAttrs); ?>>
 						<img src="<?php echo esc_url($imageSrc); ?>" alt="<?php echo esc_attr($alternativeText); ?>" <?php echo ($imageWidth > 0) ? 'width="' . esc_attr($imageWidth) . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . esc_attr($imageHeight) . '"' : ''; ?> />
 					</a>
-					<?php else : ?>
+<?php else : ?>
 						<img src="<?php echo esc_url($imageSrc); ?>" alt="<?php echo esc_attr($alternativeText); ?>" <?php echo ($imageWidth > 0) ? 'width="' . esc_attr($imageWidth) . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . esc_attr($imageHeight) . '"' : ''; ?> />
-					<?php endif; ?>
+<?php endif; ?>
 					<div class="slideshow_description_box slideshow_transparent">
-						<?php if (!empty($title)) : ?>
-						<<?php echo esc_attr($titleElementTag); ?> class="slideshow_title"><?php if ($linkAttrs !== '') : ?><a <?php echo $linkAttrs; ?>><?php echo wp_kses_post($title); ?></a><?php else : ?><?php echo wp_kses_post($title); ?><?php endif; ?></<?php echo esc_attr($titleElementTag); ?>>
-						<?php endif; ?>
-						<?php if (!empty($description)) : ?>
-						<<?php echo esc_attr($descriptionElementTag); ?> class="slideshow_description"><?php if ($linkAttrs !== '') : ?><a <?php echo $linkAttrs; ?>><?php echo esc_html($description); ?></a><?php else : ?><?php echo esc_html($description); ?><?php endif; ?></<?php echo esc_attr($descriptionElementTag); ?>>
-						<?php endif; ?>
+<?php if (!empty($title)) : ?>
+						<<?php echo esc_attr($titleElementTag); ?> class="slideshow_title"><?php if ($linkAttrs !== '') : ?><a <?php echo wp_kses_post($linkAttrs); ?>><?php echo wp_kses_post($title); ?></a><?php else : ?><?php echo wp_kses_post($title); ?><?php endif; ?></<?php echo esc_attr($titleElementTag); ?>>
+<?php endif; ?>
+<?php if (!empty($description)) : ?>
+						<<?php echo esc_attr($descriptionElementTag); ?> class="slideshow_description"><?php if ($linkAttrs !== '') : ?><a <?php echo wp_kses_post($linkAttrs); ?>><?php echo esc_html($description); ?></a><?php else : ?><?php echo esc_html($description); ?><?php endif; ?></<?php echo esc_attr($descriptionElementTag); ?>>
+<?php endif; ?>
 					</div>
 				</div>
 
-			<?php endif; ?>
-		<?php endif; ?>
-	<?php endif; ?>
+<?php 			endif; ?>
+<?php 		endif; ?>
+<?php 	endif; ?>
 <?php endif; ?>
