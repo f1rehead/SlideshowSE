@@ -117,18 +117,39 @@ class SlideshowSEPluginGeneralSettings
 			return;
 		}
 
+		$text_args = array(
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'      => '',
+			'type'         => 'string',
+			'show_in_rest' => true,
+		);
+
+		$arr_srgs = array(
+			'show_in_rest' => array(
+				'schema' => array(
+					'type'  => 'array',
+					'items' => array(
+						'id'    => 'string',
+						'order' => 'string',
+					),
+				),
+			),
+			'type' => 'array',
+			'sanitize_callback' => 'wpdocs_admin_post_save_data',
+		);
+
 		// Register general settings
-		register_setting(self::$settingsGroup, self::$stylesheetLocation);
-		register_setting(self::$settingsGroup, self::$enableLazyLoading);
+		register_setting(self::$settingsGroup, self::$stylesheetLocation, $text_args);
+		register_setting(self::$settingsGroup, self::$enableLazyLoading, $text_args);
 
 		// Register user capability settings, saving capabilities only has to be called once.
-		register_setting(self::$settingsGroup, self::$capabilities['addSlideshows']);
-		register_setting(self::$settingsGroup, self::$capabilities['editSlideshows']);
+		register_setting(self::$settingsGroup, self::$capabilities['addSlideshows'], array(__CLASS__, 'saveCapabilities'));
+		register_setting(self::$settingsGroup, self::$capabilities['editSlideshows'], array(__CLASS__, 'saveCapabilities'));
 		register_setting(self::$settingsGroup, self::$capabilities['deleteSlideshows'], array(__CLASS__, 'saveCapabilities'));
 
 		// Register default slideshow settings
-		register_setting(self::$settingsGroup, self::$defaultSettings, array(__CLASS__, 'sanitize_default_settings'));
-		register_setting(self::$settingsGroup, self::$defaultStyleSettings);
+		register_setting(self::$settingsGroup, self::$defaultSettings, array('sanitize_callback', 'sanitize_default_settings'));
+		register_setting(self::$settingsGroup, self::$defaultStyleSettings, $arr_args);
 
 		// Register custom style settings
 		register_setting(self::$settingsGroup, self::$customStyles, array(__CLASS__, 'saveCustomStyles'));
