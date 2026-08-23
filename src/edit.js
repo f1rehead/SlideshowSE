@@ -15,16 +15,16 @@ import { useBlockProps } from '@wordpress/block-editor';
 import './editor.scss';
 
 /**
- * @return {Array<Object>} Slideshow choices from localized script data.
+ * @return {Array<Object>} Slideshows from script data.
  */
 function getSlideshows() {
 	const g = typeof window !== 'undefined' ? window.globals : undefined;
-	if ( ! g || ! g.slideshows ) {
+	if (!g || !g.slideshows) {
 		return [];
 	}
-	return Array.isArray( g.slideshows )
+	return Array.isArray(g.slideshows)
 		? g.slideshows
-		: Object.values( g.slideshows );
+		: Object.values(g.slideshows);
 }
 
 /**
@@ -35,99 +35,99 @@ function getSlideshows() {
  * @param {number} [props.height]
  * @return {JSX.Element} Aspect-ratio-safe preview image.
  */
-function PreviewImage( { src, alt = '', width, height } ) {
+function PreviewImage({ src, alt = '', width, height }) {
 	const imgProps = {
 		className: 'f1rehead-slideshow-se-block-edit__preview-image',
 		src,
 		alt,
 	};
-	if ( width > 0 && height > 0 ) {
+	if (width > 0 && height > 0) {
 		imgProps.width = width;
 		imgProps.height = height;
 	}
-	return <img { ...imgProps } />;
+	return <img {...imgProps} />;
 }
 
 /**
- * @param {Object|null|undefined} preview First-slide preview payload from PHP.
+ * @param {Object|null|undefined} Preview First-slide preview from the PHP side.
  * @return {JSX.Element} Static confirmation preview.
  */
-function SlideshowPreview( { preview } ) {
+function SlideshowPreview({ preview }) {
 	const type = preview && preview.type ? preview.type : 'empty';
 
 	let body = null;
 
-	if ( type === 'attachment' && preview.imageUrl ) {
+	if (type === 'attachment' && preview.imageUrl) {
 		body = (
 			<PreviewImage
-				src={ preview.imageUrl }
-				alt={ preview.alt || '' }
-				width={ preview.width }
-				height={ preview.height }
+				src={preview.imageUrl}
+				alt={preview.alt || ''}
+				width={preview.width}
+				height={preview.height}
 			/>
 		);
-	} else if ( type === 'video' && preview.imageUrl ) {
+	} else if (type === 'video' && preview.imageUrl) {
 		body = (
 			<div className="f1rehead-slideshow-se-block-edit__preview-video">
 				<PreviewImage
-					src={ preview.imageUrl }
-					alt={ preview.alt || '' }
-					width={ preview.width || 480 }
-					height={ preview.height || 360 }
+					src={preview.imageUrl}
+					alt={preview.alt || ''}
+					width={preview.width || 480}
+					height={preview.height || 360}
 				/>
 				<span className="f1rehead-slideshow-se-block-edit__preview-badge">
-					{ preview.label || __( 'Video slide', 'slideshow-se' ) }
+					{preview.label || __('Video slide', 'slideshow-se')}
 				</span>
 			</div>
 		);
-	} else if ( type === 'video' ) {
+	} else if (type === 'video') {
 		body = (
 			<div className="f1rehead-slideshow-se-block-edit__preview-message">
-				{ preview.label || __( 'Video slide', 'slideshow-se' ) }
+				{preview.label || __('Video slide', 'slideshow-se')}
 			</div>
 		);
-	} else if ( type === 'text' ) {
+	} else if (type === 'text') {
 		const textStyle = {};
-		if ( preview.backgroundColor ) {
+		if (preview.backgroundColor) {
 			textStyle.backgroundColor = preview.backgroundColor;
 		}
-		if ( preview.textColor ) {
+		if (preview.textColor) {
 			textStyle.color = preview.textColor;
 		}
 		body = (
 			<div
 				className="f1rehead-slideshow-se-block-edit__preview-text"
-				style={ textStyle }
+				style={textStyle}
 			>
-				{ preview.title ? (
+				{preview.title ? (
 					<div className="f1rehead-slideshow-se-block-edit__preview-text-title">
-						{ preview.title }
+						{preview.title}
 					</div>
-				) : null }
-				{ preview.description ? (
+				) : null}
+				{preview.description ? (
 					<div className="f1rehead-slideshow-se-block-edit__preview-text-description">
-						{ preview.description }
+						{preview.description}
 					</div>
-				) : null }
-				{ ! preview.title && ! preview.description ? (
+				) : null}
+				{!preview.title && !preview.description ? (
 					<div className="f1rehead-slideshow-se-block-edit__preview-message">
-						{ preview.label ||
-							__( 'Text slide', 'slideshow-se' ) }
+						{preview.label ||
+							__('Text slide', 'slideshow-se')}
 					</div>
-				) : null }
+				) : null}
 			</div>
 		);
 	} else {
 		body = (
 			<div className="f1rehead-slideshow-se-block-edit__preview-message">
-				{ __( 'This slideshow has no slides.', 'slideshow-se' ) }
+				{__('This slideshow has no slides.', 'slideshow-se')}
 			</div>
 		);
 	}
 
 	return (
 		<div className="f1rehead-slideshow-se-block-edit__preview-inner">
-			{ body }
+			{body}
 		</div>
 	);
 }
@@ -145,74 +145,74 @@ function SlideshowPreview( { preview } ) {
  *
  * @return {JSX.Element} Block editor UI.
  */
-export default function Edit( { attributes, setAttributes, clientId } ) {
+export default function Edit({ attributes, setAttributes, clientId }) {
 	const slideshows = getSlideshows();
 
-	function updateSlideshow( ev ) {
-		setAttributes( {
+	function updateSlideshow(ev) {
+		setAttributes({
 			selectedSlideshow: ev.target.value,
-		} );
+		});
 	}
 
-	const selectId = `slideshow-se-block-slideshow-select-${ clientId }`;
+	const selectId = `slideshow-se-block-slideshow-select-${clientId}`;
 	const selected = attributes.selectedSlideshow
-		? String( attributes.selectedSlideshow )
+		? String(attributes.selectedSlideshow)
 		: '';
-	const selectedId = parseInt( selected, 10 );
+	const selectedId = parseInt(selected, 10);
 	const hasSelection =
 		selected !== '' &&
 		selected !== '0' &&
-		! Number.isNaN( selectedId );
+		!Number.isNaN(selectedId);
 	const selectedSlideshow = hasSelection
-		? slideshows.find( ( s ) => Number( s.ID ) === selectedId )
+		? slideshows.find((s) => Number(s.ID) === selectedId)
 		: null;
 
-	const blockProps = useBlockProps( {
+	const blockProps = useBlockProps({
 		className: 'f1rehead-slideshow-se-block-edit',
-	} );
+	});
 
 	return (
-		<div { ...blockProps }>
+		<div {...blockProps}>
 			<div className="f1rehead-slideshow-se-block-edit__preview">
-				{ hasSelection && selectedSlideshow ? (
-					<SlideshowPreview preview={ selectedSlideshow.preview } />
+				{hasSelection && selectedSlideshow ? (
+					<SlideshowPreview preview={selectedSlideshow.preview} />
 				) : hasSelection ? (
 					<div className="f1rehead-slideshow-se-block-edit__preview-placeholder">
-						{ __(
+						{__(
 							'Selected slideshow is unavailable.',
 							'slideshow-se'
-						) }
+						)}
 					</div>
 				) : (
 					<div className="f1rehead-slideshow-se-block-edit__preview-placeholder">
-						{ __(
+						{__(
 							'Select a slideshow to preview it here.',
 							'slideshow-se'
-						) }
+						)}
 					</div>
-				) }
+				)}
 			</div>
 			<div className="f1rehead-slideshow-se-block-edit__controls">
 				<label
 					className="f1rehead-slideshow-se-block-edit__label"
-					htmlFor={ selectId }
+					htmlFor={selectId}
 				>
-					{ __( 'Slideshow', 'slideshow-se' ) }:
+					{__('Slideshow', 'slideshow-se')}:
 				</label>
 				<select
-					id={ selectId }
+					id={selectId}
 					className="f1rehead-slideshow-se-block-edit__select"
-					onChange={ updateSlideshow }
-					value={ selected }
+					onChange={updateSlideshow}
+					value={selected}
 				>
 					<option value="">
-						{ __( '— Select —', 'slideshow-se' ) }
+						{__('— Select —', 'slideshow-se')}
 					</option>
-					{ slideshows.map( ( slideshow ) => (
-						<option value={ slideshow.ID } key={ slideshow.ID }>
-							{ slideshow.post_title }
+					{slideshows.map((slideshow) => (
+						<option value={slideshow.ID} key={slideshow.ID}>
+							{slideshow.post_title}
 						</option>
-					) ) }
+					))}
 				</select>
 			</div>
 		</div>
