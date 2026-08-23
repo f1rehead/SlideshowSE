@@ -373,16 +373,9 @@ function f1rehead_slideshow_block_init() {
 	$block_css      = 'block/index.css';
 	$block_css_full = $dir . '/' . $block_css;
 	wp_register_style(
-		'slideshow-se-editor-functional',
-		plugins_url( 'style/SlideshowSEPlugin/functional.css', __FILE__ ),
-		array(),
-		SlideshowSEPluginMain::$version
-	);
-
-	wp_register_style(
 		'f1rehead-slideshow-block',
 		plugins_url( $block_css, __FILE__ ),
-		array( 'slideshow-se-editor-functional' ),
+		array(),
 		file_exists( $block_css_full ) ? filemtime( $block_css_full ) : false
 	);
 
@@ -398,7 +391,7 @@ function f1rehead_slideshow_block_init() {
 	);
 	$slideshow_choices = array();
 	foreach ( $slideshow_posts as $p ) {
-		$settings        = SlideshowSEPluginSlideshowSettingsHandler::getSettings( (int) $p->ID, false );
+		$settings         = SlideshowSEPluginSlideshowSettingsHandler::getSettings( (int) $p->ID, false );
 		$slideshow_height = isset( $settings['height'] )
 			? (int) filter_var( (string) $settings['height'], FILTER_SANITIZE_NUMBER_INT )
 			: 0;
@@ -409,6 +402,7 @@ function f1rehead_slideshow_block_init() {
 			'ID'         => (int) $p->ID,
 			'post_title' => $p->post_title,
 			'height'     => $slideshow_height,
+			'preview'    => f1rehead_slideshow_get_block_preview( (int) $p->ID ),
 		);
 	}
 	wp_localize_script(
@@ -427,7 +421,6 @@ function f1rehead_slideshow_block_init() {
 			'api_version'     => 3,
 			'editor_script'   => 'f1rehead-slideshow-block-editor',
 			'editor_style'    => 'f1rehead-slideshow-block',
-			'style'           => 'f1rehead-slideshow-block',
 			'render_callback' => 'f1rehead_slideshow_render_slideshow_block',
 			// Must match src/index.js — REST block renderer validates against server registration.
 			'attributes'      => array(
